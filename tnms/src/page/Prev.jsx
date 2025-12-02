@@ -6,7 +6,7 @@ export default function prev() {
     const [selected, setSelected] = useState("wind");
 
     return (
-        <div className="max-w-[1500px] mx-auto border">
+        <div className="max-w-[1500px] mx-auto">
             <div>
                 <p className="font-bold text-5xl pt-13 pb-10">자연재난행동요령</p>
 
@@ -24,7 +24,7 @@ export default function prev() {
                         <button
                             key={tab.key}
                             onClick={() => setSelected(tab.key)}
-                            className={`w-[140px] h-[55px] border transition-all ${selected === tab.key ? "border-[#75C1E6] border-3" : "bg-white"}`}
+                            className={`w-[140px] h-[55px] border transition-all ${selected === tab.key ? "border-[#75C1E6] border-2" : "bg-white"}`}
                         >
                             {tab.label}
                         </button>
