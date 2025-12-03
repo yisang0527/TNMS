@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Prev_wind from "../component/Prev_wind";
+import Prev_dust from "../component/Prev_dust";
 
 export default function prev() {
 
@@ -33,6 +34,7 @@ export default function prev() {
 
                 <div>
                     {selected === "wind" && <Prev_wind />}
+                    {selected === "dust" && <Prev_dust />}
                 </div>
             </div>
 
