@@ -1,4 +1,4 @@
-export default function Prev_dust_text3() {
+export default function PrevDustText1() {
     return (
         <>
             <div className="flex mt-11 mb-2">
@@ -9,7 +9,7 @@ export default function Prev_dust_text3() {
             <p className="text-2xl mb-10 font-bold">핵심 행동요령</p>
 
             <div className="w-[100%] h-[150px] border-[#cccccc] border-10">
-                <p className="text-center pt-14">황사가 지나간 후 실내 · 외 방역 및 환기 · 청소를 실시하고, 민감자(어린이·노인 등)의 건강상태를 살피도록 합니다.</p>
+                <p className="text-center pt-14">TV, 라디오, 인터넷 등에서 미세먼지 예, 경보 상황을 수시로 확인하고, 황사 피해 예방을 위해 시설물을 점검합니다.</p>
             </div>
 
             <div className="flex mt-11 mb-2">
@@ -17,12 +17,15 @@ export default function Prev_dust_text3() {
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
 
-            <p className="text-2xl mb-10 font-bold">황사발생 후 행동요령 (황사 위기경보 해제 시)</p>
+            <p className="text-2xl mb-10 font-bold">황사발생 전 행동요령 (황사 위기경보 '관심' 단계 발령 시)</p>
 
             <ul className="text-[20px] font-normal text-[#333333]">
                 <li className=" mb-10">1. 가정에서
                     <ul className=" ml-1.5">
-                        <li>- 실내공기를 환기해 주고, 황사에 노출되어 오염된 물품은 충분히 세척 후 사용합니다.</li>
+                        <li>- 미세먼지 예, 경보 상황을 수시로 확인합니다.</li>
+                        <li>- 황사가 실내로 들어오지 못하도록 창문 등을 점검합니다.</li>
+                        <li>- 외출 시, 필요한 보호안경, 마스크, 긴소매 의복 등을 준비합니다.</li>
+                        <li>- 노약자, 호흡기질환자 등은 실외활동을 자제합니다.</li>
                     </ul>
                 </li>
             </ul>
@@ -30,7 +33,11 @@ export default function Prev_dust_text3() {
             <ul className="text-[20px] font-normal text-[#333333]">
                 <li className=" mb-10">2. 교육기관에서
                     <ul className=" ml-1.5">
-                        <li>- 학교 실내 · 외 방역 및 청소를 실시하고, 학생들의 건강을 살펴서 감기 · 안질환자 등은 쉬게 하거나 일찍 귀가시킵니다.</li>
+                        <li>- 미세먼지 예, 경보 상황을 수시로 확인합니다.</li>
+                        <li>- 등 · 하교시간 조정이나 단축수업, 실내수업 대체 등을 검토합니다.</li>
+                        <li>- 학생들의 비상연락망을 사전에 점검하고, 연락체계를 유지해 둡니다.</li>
+                        <li>- 교육기관에 마스크, 상비약 등이 구비되었는지 확인하고, 공기정화장치 등 시설물을 점검합니다.</li>
+                        <li>- 학부모에게 황사 행동요령을 알리고, 학생들을 대상으로 행동요령을 지도합니다.</li>
                     </ul>
                 </li>
             </ul>
@@ -38,10 +45,11 @@ export default function Prev_dust_text3() {
             <ul className="text-[20px] font-normal text-[#333333]">
                 <li className=" mb-10">3. 농가에서
                     <ul className=" ml-1.5">
-                        <li>- 축사, 방목자 사료조 및 가축과 접촉되는 기구류 등은 세척하거나 소독을 실시합니다.</li>
-                        <li>- 황사에 노출된 가축은 몸에 묻은 황사를 털어낸 후 구연산 소독제 등으로 소독해 줍니다.</li>
-                        <li>- 가축 질병의 발생 유무를 관찰하고, 병든 가축이 발견되면 즉시 신고합니다.</li>
-                        <li>- 비닐하우스, 온실 등에 쌓인 황사를 제거해줍니다.</li>
+                        <li>- 미세먼지 예, 경보 상황을 수시로 확인합니다.</li>
+                        <li>- 실외에 있는 가축은 축사 안으로 대피 준비를 합니다.</li>
+                        <li>- 노지에 방치 · 야적된 사료용 볏집 등에 비닐 등 피복물품을 준비합니다.</li>
+                        <li>- 동력분무기 등 황사 세척용 장비를 점검합니다.</li>
+                        <li>- 비닐하우스, 온실 등 시설물의 출입문과 환기창을 점검합니다.</li>
                     </ul>
                 </li>
             </ul>
@@ -49,7 +57,10 @@ export default function Prev_dust_text3() {
             <ul className="text-[20px] font-normal text-[#333333]">
                 <li className=" mb-10">4. 어르신보호시설에서
                     <ul className=" ml-1.5">
-                        <li>- 보호시설 실내 · 외 방역 및 청소를 실시하고, 어르신들의 건강을 살펴서 쉬게 하거나 병원 진료를 받도록 합니다.</li>
+                        <li>- 미세먼지 예, 경보 상황을 수시로 확인합니다.</li>
+                        <li>- 어르신 건강상태를 확인하고, 황사발생을 대비해 위생점검을 합니다.</li>
+                        <li>- 보호시설에 마스크, 상비약 등이 구비되었는지 확인하고, 공기정화장치 등 시설물을 점검합니다.</li>
+                        <li>- 보호자에게 황사 행동요령을 알리고, 어르신을 대상으로 행동요령을 지도합니다.</li>
                     </ul>
                 </li>
             </ul>

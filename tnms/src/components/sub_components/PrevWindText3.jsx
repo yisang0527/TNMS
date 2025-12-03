@@ -1,4 +1,4 @@
-export default function Prev_wind_text3() {
+export default function PrevWindText3() {
     return (
         <>
             <div>

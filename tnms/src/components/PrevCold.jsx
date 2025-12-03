@@ -1,16 +1,16 @@
 import { useState } from "react"
-import Prev_dust_text1 from "./sub_component/Prev_dust_text1"
-import Prev_dust_text2 from "./sub_component/Prev_dust_text2"
-import Prev_dust_text3 from "./sub_component/Prev_dust_text3"
+import PrevColdText1 from "./sub_components/PrevColdText1"
+import PrevColdText2 from "./sub_components/PrevColdText2"
+import PrevColdText3 from "./sub_components/PrevColdText3"
 
-export default function Prev_dust() {
+export default function PrevCold() {
 
     const [selected, setSelected] = useState("menu1")
 
     return (
         <>
             <div>
-                <p className="font-bold text-5xl pt-15 pb-11">황사</p>
+                <p className="font-bold text-5xl pt-15 pb-11">한파</p>
 
                 <div className="m-auto bg-[#ccc] w-[98%] h-[1px]"></div>
 
@@ -21,14 +21,14 @@ export default function Prev_dust() {
 
                 <div className="flex justify-between">
                     {[
-                        { key: "menu1", label: "황사발생 전 행동요령" },
-                        { key: "menu2", label: "황사발생 중 행동요령" },
-                        { key: "menu3", label: "황사발생 후 행동요령" }
+                        { key: "menu1", label: "평상시 행동요령" },
+                        { key: "menu2", label: "한파 발생 시 행동요령" },
+                        { key: "menu3", label: "한파 관련 정보" }
                     ].map((tab) => (
                         <button
                             key={tab.key}
                             onClick={() => setSelected(tab.key)}
-                            className={`w-[500px] h-[35px] transition-all border-1 border-[#132a35] ${selected === tab.key ? "bg-[#132a35] text-[#ffffff] font-bold" : "bg-white"}`}
+                            className={`w-[500px] h-[35px] transition-all border border-[#132a35] ${selected === tab.key ? "bg-[#132a35] text-[#ffffff] font-bold" : "bg-white"}`}
                         >
                             {tab.label}
                         </button>
@@ -36,9 +36,9 @@ export default function Prev_dust() {
                 </div>
 
                 <div>
-                    {selected === "menu1" && <Prev_dust_text1 />}
-                    {selected === "menu2" && <Prev_dust_text2 />}
-                    {selected === "menu3" && <Prev_dust_text3 />}
+                    {selected === "menu1" && <PrevColdText1 />}
+                    {selected === "menu2" && <PrevColdText2 />}
+                    {selected === "menu3" && <PrevColdText3 />}
                 </div>
             </div>
         </>

@@ -1,8 +1,14 @@
 import { useState } from "react";
-import Prev_wind from "../component/Prev_wind";
-import Prev_dust from "../component/Prev_dust";
+import PrevWind from "../components/PrevWind";
+import PrevDust from "../components/PrevDust";
+import PrevRain1 from "../components/PrevRain1";
+import PrevMountain from "../components/PrevMountain";
+import PrevRain2 from "../components/PrevRain2";
+import PrevFire from "../components/PrevFire";
+import PrevSnow from "../components/PrevSnow";
+import PrevCold from "../components/PrevCold";
 
-export default function prev() {
+export default function Prev() {
 
     const [selected, setSelected] = useState("wind");
 
@@ -33,8 +39,14 @@ export default function prev() {
                 </div>
 
                 <div>
-                    {selected === "wind" && <Prev_wind />}
-                    {selected === "dust" && <Prev_dust />}
+                    {selected === "wind" && <PrevWind />}
+                    {selected === "dust" && <PrevDust />}
+                    {selected === "rain1" && <PrevRain1 />}
+                    {selected === "mountain" && <PrevMountain />}
+                    {selected === "rain2" && <PrevRain2 />}
+                    {selected === "fire" && <PrevFire />}
+                    {selected === "snow" && <PrevSnow />}
+                    {selected === "cold" && <PrevCold />}
                 </div>
             </div>
 

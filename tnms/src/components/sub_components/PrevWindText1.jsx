@@ -1,4 +1,4 @@
-export default function Prev_wind_text1() {
+export default function PrevWindText1() {
     return (
         <>
             <div className="flex mt-11 mb-2">
