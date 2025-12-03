@@ -1,0 +1,110 @@
+.nav {
+  position: relative;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  width: 100px;
+  margin: 200px;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 50px;
+  padding: 0;
+  list-style: none;
+}
+
+/* 주 메뉴 기본 스타일 */
+.navContainer li {
+  color: black;
+  background-color: white;
+  padding: 30px;
+  transition: all 0.2s ease-in-out;
+  font-size: 24px;
+  white-space: nowrap;
+}
+
+.navContainer li:hover {
+  color: #387DA2; /* 호버 글씨색 */
+}
+
+/* 현재 호버 중인 메뉴 (주메뉴 혹은 서브메뉴 호버) */
+.navContainer li.active {
+  color: #387DA2;      /* 글씨색 */
+  font-weight: bold;
+}
+
+/* 전체 서브 메뉴 영역 */
+.detailMenu {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  background-color: white; /* 기본 배경 */
+  border-top: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+  z-index: 10;
+  font-size: 20px;
+  display: none; /* 기본 숨김 */
+}
+
+.detailMenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+}
+
+.detailMenu ul li {
+  color: black;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+  padding-left: 30px;
+  margin: auto;
+}
+
+.detailMenu ul li:hover {
+  color: #387DA2; /* 호버 글씨색 */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 메뉴바 호버 시 전체 서브 메뉴 보이기 */
+.nav:hover .detailMenu {
+  display: flex;
+}
+
+button{
+  all: unset;
+  cursor: pointer;
+}
+
+.login{
+padding : 5px 10px;
+border:1px solid #ccc;
+text-align: center;
+width: 100px;
+height:20px;
+font-size: 12px;
+box-shadow: 4px 4px 2px rgba(0,0,0,0.1);
+margin: 200px;
+}
+
+.login:hover{
+  border: 1px solid #ccc;
+}
+
