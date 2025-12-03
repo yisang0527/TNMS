@@ -3,13 +3,14 @@ import { Line } from "react-chartjs-2";
 import "chart.js/auto"
 
 export default function StatsChart() {
-    const [weatherData, setWeatherData] = useState([]);
-    const [selectedTab, setSelectedTab] = useState("wind");
-    const [selectedMonth, setSelectedMonth] = useState("all");
-    const [selectedYear, setSelectedYear] = useState("2020");
-    const [loading, setLoading] = useState(true);
+    const [weatherData, setWeatherData] = useState([]); // 기상데이터 저장
+    const [selectedTab, setSelectedTab] = useState("wind"); // 선택한 탭
+    const [selectedMonth, setSelectedMonth] = useState("all"); // 선택한 월
+    const [selectedYear, setSelectedYear] = useState("2020"); // 선택한 연도
+    const [loading, setLoading] = useState(true); // 로딩
 
     const tabs = [
+        //     식별         표시이름             그래프 색상              단위
         { id: "wind", name: "강풍", color: "rgb(75, 192, 192)", unit: "m/s" },
         { id: "dust", name: "황사", color: "rgb(222, 204, 150)", unit: "㎍/㎥" },
         { id: "rain1", name: "장마", color: "rgb(153, 102, 255)", unit: "mm" },
@@ -26,7 +27,7 @@ export default function StatsChart() {
     }, [selectedYear]);
 
     const parseWeatherData = () => {
-        // 각 연도별데이터 삽입
+        // 20200101~251202년도까지 데이터
         const dataByYear = {
             '2020': `20200101 108  0.6   509   5  2.6  904   5  4.8  906  -2.2   0.3 1457  -6.5    1  -8.1  -0.9  -6.6  64.4  37.0    2   3.4   0.6   0.4 -9.00 1021.1 1032.1 1034.0  952 1031.2 1418  8.9  0.8  9.6 -9.0  4.53  1.00 1100    0.1    0.1  9.83   -9.0   -9   -9.0   -9   -9.0   -9    0.0   -9    0.0   -9   4.1   7.2   9.8  15.3  17.0
 20200102 108  1.2   996  29  4.0 1525  25  6.7 1437   1.0   3.8 1500  -0.7    1  -4.8   0.1  -7.0  65.4  54.0 1212   4.3   1.0   0.7 -9.00 1018.7 1029.6 1031.3    1 1028.2 1355  7.9  0.0  9.6 -9.0  3.47  0.67 1200   -9.0   -9.0 -9.00   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   3.7   7.0   9.7  15.2  17.0
@@ -2194,9 +2195,11 @@ export default function StatsChart() {
 `
         };
 
+        // 선택한 연도 데이터 가져오기
         const rawData = dataByYear[selectedYear] || dataByYear["2020"];
+        // 줄바꿈
         const lines = rawData.trim().split("\n");
-
+        // 객체변환
         const parsed = lines.map(line => {
             const parts = line.trim().split(/\s+/);
             const date = parts[0];
@@ -2232,6 +2235,7 @@ export default function StatsChart() {
     };
 
     const getChartData = () => {
+        // 현 탭 정보
         const currentTab = tabs.find(t => t.id === selectedTab);
 
         // 월 필터
@@ -2239,6 +2243,7 @@ export default function StatsChart() {
             ? weatherData
             : weatherData.filter(d => d.month === parseInt(selectedMonth));
 
+        // 탭에 맞는 데이터
         let data, warningData, label;
 
         switch (selectedTab) {
@@ -2278,6 +2283,7 @@ export default function StatsChart() {
                 label = "평균기온";
         }
 
+        // 차트화
         return {
             labels: filteredData.map(d => `${d.month}/${d.day}`),
             datasets: [
@@ -2294,20 +2300,23 @@ export default function StatsChart() {
                     pointHoverBackgroundColor: currentTab.color,
                     pointBorderWidth: 1,
                     pointHoverBorderWidth: 2,
-                    pointHoverBorderColor: '#fff'
+                    pointHoverBorderColor: '#fff',
+                    order: 2
                 },
                 {
                     label: '경보 발생',
                     data: warningData,
                     borderColor: 'transparent',
                     backgroundColor: 'rgb(255, 0, 0)',
-                    pointRadius: 5,
-                    pointHoverRadius: 7,
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
                     pointHoverBackgroundColor: 'rgb(255, 0, 0)',
-                    pointBorderWidth: 0,
-                    pointHoverBorderWidth: 2,
+                    pointBorderWidth: 2,
+                    pointBorderColor: '#fff',
+                    pointHoverBorderWidth: 3,
                     pointHoverBorderColor: '#fff',
-                    showLine: false
+                    showLine: false,
+                    order: 1
                 }
             ]
         };
@@ -2319,6 +2328,7 @@ export default function StatsChart() {
     };
 
     const getStatistics = () => {
+        // 월필터
         const filteredData = selectedMonth === "all"
             ? weatherData
             : weatherData.filter(d => d.month === parseInt(selectedMonth));
@@ -2327,6 +2337,7 @@ export default function StatsChart() {
         let warningCount = 0;
         let warningThreshold = "";
 
+        // 탭에따라 통계
         switch (selectedTab) {
             case "cold":
                 values = filteredData.map(d => d.taAvg).filter(v => v !== null);
@@ -2360,6 +2371,7 @@ export default function StatsChart() {
                 break;
         }
 
+        // 값 계산
         if (values.length === 0) {
             return { max: 0, min: 0, avg: 0, warningCount: 0, warningThreshold, totalDays: 0 };
         }
@@ -2449,11 +2461,11 @@ export default function StatsChart() {
             <div className="bg-white rounded-lg shadow-lg p-6 h-full flex flex-col">
                 <div className="mb-4 flex items-center justify-between flex-wrap gap-4">
                     <h2 className="text-2xl font-bold text-gray-800">{selectedYear}년 데이터</h2>
-                    
+
                     <div className="flex items-center gap-4">
                         <div className="flex items-center gap-2">
                             <label className="text-gray-700 font-medium">연도:</label>
-                            <select 
+                            <select
                                 value={selectedYear}
                                 onChange={(e) => setSelectedYear(e.target.value)}
                                 className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -2466,7 +2478,7 @@ export default function StatsChart() {
                                 <option value="2025">2025년</option>
                             </select>
                         </div>
-                        
+
                         <div className="flex items-center gap-2">
                             <label className="text-gray-700 font-medium">기간:</label>
                             <select
