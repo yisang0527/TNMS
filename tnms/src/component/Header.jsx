@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import './Header.css';
 import {Link} from "react-router-dom";
 
@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <nav className="nav">
-        <img src="./logo1.png" alt="Logo" className="logo"/>
+      <img src="./logo1.png" alt="Logo" className="logo" />
       <ul className="navContainer">
         {menuLst.map((v, idx) => (
           <li
