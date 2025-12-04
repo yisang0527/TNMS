@@ -7,7 +7,3 @@ html, body, #root {
   margin: 0;
   padding: 0;
 }
-.map-container {
-  width: 100%;
-  height: 100vh; /* 화면 전체 */
-}

@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MainMap from "./component/MainMap";
+import MainMap from "./component/mainMap";
 
 export default function App() {
   return (
