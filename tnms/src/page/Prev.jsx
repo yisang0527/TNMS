@@ -1,4 +1,6 @@
+import './Prev.css';
 import { useState } from "react";
+
 import PrevWind from "../components/PrevWind";
 import PrevDust from "../components/PrevDust";
 import PrevRain1 from "../components/PrevRain1";
@@ -8,48 +10,46 @@ import PrevFire from "../components/PrevFire";
 import PrevSnow from "../components/PrevSnow";
 import PrevCold from "../components/PrevCold";
 
+
+
 export default function Prev() {
 
-    const [selected, setSelected] = useState("wind");
+    // 버튼과 컴포넌트 내용을 하나의 객체 배열로 합침
+    const tabs = [
+        { key: "wind", label: "강풍", component: <PrevWind /> },
+        { key: "dust", label: "황사", component: <PrevDust /> },
+        { key: "rain1", label: "장마", component: <PrevRain1 /> },
+        { key: "mountain", label: "산사태", component: <PrevMountain /> },
+        { key: "rain2", label: "호우", component: <PrevRain2 /> },
+        { key: "fire", label: "산불", component: <PrevFire /> },
+        { key: "snow", label: "폭설", component: <PrevSnow /> },
+        { key: "cold", label: "한파", component: <PrevCold /> },
+    ];
+
+    const [selected, setSelected] = useState(tabs[0].key);
 
     return (
         <div className="max-w-[1500px] mx-auto">
-            <div>
-                <p className="font-bold text-5xl pt-13 pb-10">자연재난행동요령</p>
+            <p className="font-bold text-5xl pt-13 pb-10">자연재난행동요령</p>
 
-                <div className="flex justify-between">
-                    {[
-                        { key: "wind", label: "강풍" },
-                        { key: "dust", label: "황사" },
-                        { key: "rain1", label: "장마" },
-                        { key: "mountain", label: "산사태" },
-                        { key: "rain2", label: "호우" },
-                        { key: "fire", label: "산불" },
-                        { key: "snow", label: "폭설" },
-                        { key: "cold", label: "한파" }
-                    ].map((tab) => (
-                        <button
-                            key={tab.key}
-                            onClick={() => setSelected(tab.key)}
-                            className={`w-[140px] h-[55px] border transition-all ${selected === tab.key ? "border-[#75C1E6] border-2" : "bg-white"}`}
-                        >
-                            {tab.label}
-                        </button>
-                    ))}
-                </div>
-
-                <div>
-                    {selected === "wind" && <PrevWind />}
-                    {selected === "dust" && <PrevDust />}
-                    {selected === "rain1" && <PrevRain1 />}
-                    {selected === "mountain" && <PrevMountain />}
-                    {selected === "rain2" && <PrevRain2 />}
-                    {selected === "fire" && <PrevFire />}
-                    {selected === "snow" && <PrevSnow />}
-                    {selected === "cold" && <PrevCold />}
-                </div>
+            {/* 버튼 영역 */}
+            <div className="flex justify-between">
+                {tabs.map((tab) => (
+                    <button
+                        key={tab.key}
+                        onClick={() => setSelected(tab.key)}
+                        className={`w-[140px] h-[55px] border transition-all
+                            ${selected === tab.key ? "border-[#75C1E6] border-2" : "bg-white"}`}
+                    >
+                        {tab.label}
+                    </button>
+                ))}
             </div>
 
+            {/* 선택된 탭에 맞는 컴포넌트 표시 */}
+            <div className="mt-8">
+                {tabs.find(tab => tab.key === selected)?.component}
+            </div>
         </div>
-    )
+    );
 }
