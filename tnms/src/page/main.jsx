@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-export default function main() {
-    return (
+export default function(){
+    return(
         <>
         
         </>
