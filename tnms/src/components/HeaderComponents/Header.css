@@ -18,6 +18,10 @@
   margin-left: 150px;
 }
 
+.logo:hover {
+  cursor: pointer;
+}
+
 /* 상단 주메뉴 */
 .navContainer {
   display: flex;
@@ -99,7 +103,7 @@
 }
 
 /* 로그인 버튼 */
-button{
+.header-page button{
   all: unset;
   cursor: pointer;
   white-space: nowrap;
@@ -119,4 +123,5 @@ button{
 .login:hover{
   border: 1px solid #387DA2;
   color: #387DA2;
+  cursor: pointer;
 }
