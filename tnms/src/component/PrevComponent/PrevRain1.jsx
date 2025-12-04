@@ -1,17 +1,17 @@
 import { useState } from "react"
-import PrevSnowText1 from "./sub_components/PrevSnowText1"
-import PrevSnowText2 from "./sub_components/PrevSnowText2"
-import PrevSnowText3 from "./sub_components/PrevSnowText3"
-import PrevSnowText4 from "./sub_components/PrevSnowText4"
+import PrevRain1Text1 from "./sub_component/PrevRain1Text1"
+import PrevRain1Text2 from "./sub_component/PrevRain1Text2"
+import PrevRain1Text3 from "./sub_component/PrevRain1Text3"
+import PrevRain1Text4 from "./sub_component/PrevRain1Text4"
 
-export default function PrevSnow() {
+export default function PrevRain1() {
 
     const [selected, setSelected] = useState("menu1")
 
     return (
         <>
             <div>
-                <p className="font-bold text-[28px] pt-15 pb-11">대설</p>
+                <p className="font-bold text-[28px] pt-15 pb-11">호우</p>
 
                 <div className="m-auto bg-[#ccc] w-[98%] h-[1px]"></div>
 
@@ -22,10 +22,10 @@ export default function PrevSnow() {
 
                 <div className="flex justify-between">
                     {[
-                        { key: "menu1", label: "평상시 대설대비" },
-                        { key: "menu2", label: "대설 예보 시 행동요령" },
-                        { key: "menu3", label: "대설 특보 중 행동요령" },
-                        { key: "menu4", label: "대설 후 행동요령" },
+                        { key: "menu1", label: "사전준비" },
+                        { key: "menu2", label: "호우특보 예보시" },
+                        { key: "menu3", label: "호우특보 중" },
+                        { key: "menu4", label: "호우 이후" },
                     ].map((tab) => (
                         <button
                             key={tab.key}
@@ -38,10 +38,10 @@ export default function PrevSnow() {
                 </div>
 
                 <div>
-                    {selected === "menu1" && <PrevSnowText1 />}
-                    {selected === "menu2" && <PrevSnowText2 />}
-                    {selected === "menu3" && <PrevSnowText3 />}
-                    {selected === "menu4" && <PrevSnowText4 />}
+                    {selected === "menu1" && <PrevRain1Text1 />}
+                    {selected === "menu2" && <PrevRain1Text2 />}
+                    {selected === "menu3" && <PrevRain1Text3 />}
+                    {selected === "menu4" && <PrevRain1Text4 />}
                 </div>
             </div>
         </>

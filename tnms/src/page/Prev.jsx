@@ -1,14 +1,14 @@
 import './Prev.css';
 import { useState } from "react";
 
-import PrevWind from "../components/PrevComponents/PrevWind";
-import PrevDust from "../components/PrevComponents/PrevDust";
-import PrevRain1 from "../components/PrevComponents/PrevRain1";
-import PrevMountain from "../components/PrevComponents/PrevMountain";
-import PrevRain2 from "../components/PrevComponents/PrevRain2";
-import PrevFire from "../components/PrevComponents/PrevFire";
-import PrevSnow from "../components/PrevComponents/PrevSnow";
-import PrevCold from "../components/PrevComponents/PrevCold";
+import PrevWind from "../component/PrevComponent/PrevWind";
+import PrevDust from "../component/PrevComponent/PrevDust";
+import PrevRain1 from "../component/PrevComponent/PrevRain1";
+import PrevMountain from "../component/PrevComponent/PrevMountain";
+import PrevRain2 from "../component/PrevComponent/PrevRain2";
+import PrevFire from "../component/PrevComponent/PrevFire";
+import PrevSnow from "../component/PrevComponent/PrevSnow";
+import PrevCold from "../component/PrevComponent/PrevCold";
 
 import windImg from "../assets/windLogo.png";
 import dustImg from "../assets/dustLogo.png";
