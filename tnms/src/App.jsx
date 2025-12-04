@@ -1,17 +1,12 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './App.css'
-import StatsChart from './component/stats'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Stats from "./page/stats";
 
-function App() {
+export default function App() {
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route path='/stats' element={<StatsChart />} />
-        </Routes>
-      </Router>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/stats" element={<Stats />} />
+      </Routes>
+    </Router>
+  );
 }
-
-export default App

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Line } from "react-chartjs-2";
+import { Line, Bar } from "react-chartjs-2";
 import "chart.js/auto"
 
 export default function StatsChart() {
@@ -14,7 +14,7 @@ export default function StatsChart() {
         { id: "wind", name: "강풍", color: "rgb(75, 192, 192)", unit: "m/s" },
         { id: "dust", name: "황사", color: "rgb(222, 204, 150)", unit: "㎍/㎥" },
         { id: "rain1", name: "장마", color: "rgb(153, 102, 255)", unit: "mm" },
-        { id: "mauntain", name: "산사태", color: "rgb(139, 115, 85)", unit: "발생수" },
+        { id: "mauntain", name: "산사태", color: "rgb(139, 115, 85)", unit: "ha" },
         { id: "rain2", name: "호우", color: "rgb(255, 159, 64)", unit: "mm" },
         { id: "fire", name: "산불", color: "rgb(220, 60, 30)", unit: "발생수" },
         { id: "snow", name: "폭설", color: "rgb(201, 203, 207)", unit: "cm" },
@@ -1890,7 +1890,7 @@ export default function StatsChart() {
 20250201 108  1.6  1356   7  2.9 1056   5  4.7 1107   1.6   7.9 1558  -2.0  645  -2.7  -0.6  -7.3  74.3  51.0 1646   5.0   1.9   1.3 -9.00 1010.7 1021.4 1025.2    8 1018.7 1518  4.3  7.3 10.3 -9.0 11.15  2.12 1300   -9.0   -9.0 -9.00   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9    2.8    1   2.1   4.7   7.3  14.0  16.7
 20250202 108  2.0  1739  25  4.4 1757  27  6.4 1753   1.5   6.8 1537  -2.5  808  -4.2   0.2  -8.1  67.1  41.0 1457   4.5   2.4   1.7 -9.00 1007.6 1018.4 1021.0  308 1016.3 1502  3.5  7.8 10.4 -9.0 12.04  2.06 1200    0.0    0.0  0.08   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   2.1   4.7   7.3  13.9  16.6
 20250203 108  4.2  3620  27  8.0 1649  25 14.4 1649  -4.1   0.6    1  -8.2 2327 -13.5  -0.7 -10.3  48.8  28.0 1544   2.2   2.4   1.7 -9.00 1009.0 1020.0 1022.1 2140 1017.4    4  0.0  9.6 10.4 -9.0 15.08  2.43 1200   -9.0   -9.0 -9.00   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   2.1   4.7   7.2  13.8  16.6
-20250204 108  3.7  3221  29  6.3 1347  29 11.6 1347  -9.0  -5.3 1508 -11.5  753 -17.4  -3.9 -13.1  50.8  37.0 1447   1.6   1.8   1.2 -9.00 1008.4 1019.6 1021.8    3 1017.6 1711  0.0  9.7 10.4 -9.0 15.63  2.47 1200   -9.0   -9.0 -9.00   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   2.1   4.7   7.2  13.7  16.5
+20250204 108  3.7  3221  29  6.3 1347  29 11.6 1347  -9.1  -5.3 1508 -11.5  753 -17.4  -3.9 -13.1  50.8  37.0 1447   1.6   1.8   1.2 -9.00 1008.4 1019.6 1021.8    3 1017.6 1711  0.0  9.7 10.4 -9.0 15.63  2.47 1200   -9.0   -9.0 -9.00   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   2.1   4.7   7.2  13.7  16.5
 20250205 108  3.2  2792  29  6.7 1621  29 12.1 1258  -8.6  -3.7 1454 -11.8  440 -17.7  -4.0 -15.7  49.1  32.0 1251   1.5   1.8   1.2 -9.00 1007.8 1019.0 1022.2 2249 1016.5 1454  2.0  6.8 10.5 -9.0 12.04  2.41 1300   -9.0   -9.0 -9.00   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   2.0   4.6   7.1  13.7  16.5
 20250206 108  1.7  1433  23  5.0 1524  23  9.0 1516  -5.6  -0.2 1332 -11.5  358 -12.5  -3.4 -17.4  59.9  32.0 1144   2.5   1.6   1.1 -9.00 1009.5 1020.6 1023.8  833 1018.0 1511  3.1  5.9 10.5 -9.0 11.43  2.40 1200    2.3    2.7  2.75   -9.0   -9   -9.0   -9   -9.0   -9    3.3 1655    3.3 1655   1.9   4.6   7.1  13.6  16.4
 20250207 108  3.9  3405  27  7.6 1015  27 15.6 1015  -8.0  -4.7  310 -10.7 2243 -14.6  -2.4 -13.1  60.1  41.0 1513   2.1   1.7   1.2 -9.00 1010.1 1021.3 1027.3 2358 1015.8  547  3.5  7.6 10.6 -9.0 14.93  2.63 1200    0.4    0.0  6.17   -9.0   -9   -9.0   -9   -9.0   -9    0.7  755    2.8  655   1.9   4.5   7.1  13.5  16.4
@@ -2192,6 +2192,7 @@ export default function StatsChart() {
 20251130 108  1.9  1646  20  4.3 1520  20  7.5 1513  12.4  16.1 1406   9.1   34   8.6   9.6   3.0  78.8  59.0 1516  11.2   2.2   1.5 -9.00 1004.8 1015.1 1016.7  830 1013.3 1635  3.0  3.9  9.8 -9.0  6.97  1.51 1200   -9.0   -9.0 -9.00   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   9.8  13.1  16.1  19.6  21.0
 20251201 108  3.1  2669  27  5.7  127  25 10.5  120   5.5  12.2    1   2.3 2358  -4.1   4.8  -2.5  50.5  31.0 1417   4.6   3.0   2.1 -9.00 1010.4 1021.0 1023.6 2350 1015.1    1  0.8  9.1  9.8 -9.0 11.80  2.02 1200   -9.0   -9.0 -9.00   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9  10.4  12.9  16.0  19.6  20.9
 20251202 108  3.3  2866  29  6.3 1616  27 10.7 1313   0.1   3.3 1500  -5.4 2354 -12.0   1.5  -8.9  41.1  25.0 1200   2.5   2.7   1.9 -9.00 1014.1 1025.0 1027.6 2258 1023.0  230  2.1  8.5  9.8 -9.0 10.19  1.71 1100   -9.0   -9.0 -9.00   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9  10.1  12.9  15.8  19.5  20.8
+20251203 108  3.2  2792  29  6.0 1503  34 11.3  224  -5.9  -2.8 1436  -8.1 2359 -17.2  -2.1 -13.7  41.4  28.0  918   1.6   1.9   1.4 -9.00 1016.3 1027.5 1029.7 2329 1025.3 1351  0.6  8.4  9.7 -9.0 11.25  2.03 1200   -9.0   -9.0 -9.00   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   -9.0   -9   9.1  12.7  15.7  19.4  20.7
 `
         };
 
@@ -2234,9 +2235,75 @@ export default function StatsChart() {
         setLoading(false);
     };
 
+    // 산사태피해량 데이터
+    const getLandslideChartData = () => {
+        const landslideData = {
+            '2020': 1343,
+            '2021': 27,
+            '2022': 327,
+            '2023': 459,
+            '2024': 179,
+            '2025': 0  // 집계중
+        };
+
+        const years = Object.keys(landslideData);
+        const values = Object.values(landslideData);
+
+        return {
+            labels: years.map(y => y + '년'),
+            datasets: [
+                {
+                    label: '피해물량 (ha)',
+                    data: values,
+                    backgroundColor: 'rgba(139, 115, 85, 0.8)',
+                    borderColor: 'rgb(139, 115, 85)',
+                    borderWidth: 2
+                }
+            ]
+        };
+    };
+
+    // 산불발생횟수 데이터
+    const getFireChartData = () => {
+        const fireDataByYear = {
+            '2020': [29, 42, 171, 184, 26, 38, 0, 1, 2, 35, 46, 46],
+            '2021': [44, 82, 44, 94, 20, 3, 7, 6, 1, 0, 24, 24],
+            '2022': [88, 143, 82, 180, 115, 26, 3, 0, 11, 24, 47, 37],
+            '2023': [38, 114, 229, 108, 33, 11, 0, 1, 2, 13, 25, 22],
+            '2024': [18, 11, 74, 67, 17, 28, 0, 7, 6, 2, 18, 31],
+            '2025': [44, 74, 144, 82, 6, 27, 11, 8, 1, 0, 26, 0]  // 12월 집계중
+        };
+
+        const monthlyData = fireDataByYear[selectedYear] || fireDataByYear['2020'];
+        const months = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
+
+        return {
+            labels: months,
+            datasets: [
+                {
+                    label: '산불 발생 건수',
+                    data: monthlyData,
+                    backgroundColor: 'rgba(220, 60, 30, 0.8)',
+                    borderColor: 'rgb(220, 60, 30)',
+                    borderWidth: 2
+                }
+            ]
+        };
+    };
+
     const getChartData = () => {
         // 현 탭 정보
         const currentTab = tabs.find(t => t.id === selectedTab);
+
+        // 산사태는 별도 처리
+        if (selectedTab === "mauntain") {
+            return getLandslideChartData();
+        }
+
+        // 산불은 별도 처리
+        if (selectedTab === "fire") {
+            return getFireChartData();
+        }
 
         // 월 필터
         const filteredData = selectedMonth === "all"
@@ -2327,7 +2394,68 @@ export default function StatsChart() {
         return currentTab ? currentTab.unit : "";
     };
 
+    const getFireStatistics = () => {
+        const fireDataByYear = {
+            '2020': [29, 42, 171, 184, 26, 38, 0, 1, 2, 35, 46, 46],
+            '2021': [44, 82, 44, 94, 20, 3, 7, 6, 1, 0, 24, 24],
+            '2022': [88, 143, 82, 180, 115, 26, 3, 0, 11, 24, 47, 37],
+            '2023': [38, 114, 229, 108, 33, 11, 0, 1, 2, 13, 25, 22],
+            '2024': [18, 11, 74, 67, 17, 28, 0, 7, 6, 2, 18, 31],
+            '2025': [44, 74, 144, 82, 6, 27, 11, 8, 1, 0, 26, 0]
+        };
+
+        const monthlyData = fireDataByYear[selectedYear] || fireDataByYear['2020'];
+        const values = monthlyData.filter(v => v > 0);
+        const max = Math.max(...monthlyData);
+        const min = Math.min(...values);
+        const avg = values.reduce((a, b) => a + b, 0) / values.length;
+        const total = monthlyData.reduce((a, b) => a + b, 0);
+
+        return {
+            max: max.toFixed(0),
+            min: min.toFixed(0),
+            avg: avg.toFixed(1),
+            total: total.toFixed(0),
+            monthCount: 12
+        };
+    };
+
+    const getLandslideStatistics = () => {
+        const landslideData = {
+            '2020': 1343,
+            '2021': 27,
+            '2022': 327,
+            '2023': 459,
+            '2024': 179,
+            '2025': 0
+        };
+
+        const values = Object.values(landslideData).filter(v => v > 0);
+        const max = Math.max(...Object.values(landslideData));
+        const min = Math.min(...values);
+        const avg = values.reduce((a, b) => a + b, 0) / values.length;
+        const total = Object.values(landslideData).reduce((a, b) => a + b, 0);
+
+        return {
+            max: max.toFixed(0),
+            min: min.toFixed(0),
+            avg: avg.toFixed(0),
+            total: total.toFixed(0),
+            yearCount: 6
+        };
+    };
+
     const getStatistics = () => {
+        // 산사태는 별도 통계
+        if (selectedTab === "mauntain") {
+            return getLandslideStatistics();
+        }
+
+        // 산불은 별도 통계
+        if (selectedTab === "fire") {
+            return getFireStatistics();
+        }
+
         // 월필터
         const filteredData = selectedMonth === "all"
             ? weatherData
@@ -2409,13 +2537,33 @@ export default function StatsChart() {
             },
             title: {
                 display: true,
-                text: `${selectedYear}년 ${tabs.find(t => t.id === selectedTab)?.name} 데이터${selectedMonth !== "all" ? ` (${selectedMonth}월)` : ""}`,
+                text: selectedTab === "mauntain" 
+                    ? `2020~2025년 산사태 피해물량 (연도별)` 
+                    : selectedTab === "fire"
+                    ? `${selectedYear}년 산불 발생 건수 (월별)`
+                    : `${selectedYear}년 ${tabs.find(t => t.id === selectedTab)?.name} 데이터${selectedMonth !== "all" ? ` (${selectedMonth}월)` : ""}`,
                 font: {
                     size: 18
                 }
             }
         },
-        scales: {
+        scales: selectedTab === "mauntain" ? {
+            y: {
+                title: {
+                    display: true,
+                    text: getYAxisLabel()
+                },
+                beginAtZero: true
+            }
+        } : selectedTab === "fire" ? {
+            y: {
+                title: {
+                    display: true,
+                    text: getYAxisLabel()
+                },
+                beginAtZero: true
+            }
+        } : {
             x: {
                 ticks: {
                     autoSkip: false,
@@ -2455,53 +2603,60 @@ export default function StatsChart() {
 
     const stats = getStatistics();
     const currentTab = tabs.find(t => t.id === selectedTab);
+    const unit = currentTab ? currentTab.unit : "";
 
     return (
         <div className="w-full h-screen p-8 bg-gray-50">
             <div className="bg-white rounded-lg shadow-lg p-6 h-full flex flex-col">
                 <div className="mb-4 flex items-center justify-between flex-wrap gap-4">
-                    <h2 className="text-2xl font-bold text-gray-800">{selectedYear}년 데이터</h2>
+                    <h2 className="text-2xl font-bold text-gray-800">
+                        {selectedTab === "mauntain" ? "산사태 피해물량 통계" : selectedTab === "fire" ? `${selectedYear}년 산불 발생 통계` : `${selectedYear}년 데이터`}
+                    </h2>
 
-                    <div className="flex items-center gap-4">
-                        <div className="flex items-center gap-2">
-                            <label className="text-gray-700 font-medium">연도:</label>
-                            <select
-                                value={selectedYear}
-                                onChange={(e) => setSelectedYear(e.target.value)}
-                                className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            >
-                                <option value="2020">2020년</option>
-                                <option value="2021">2021년</option>
-                                <option value="2022">2022년</option>
-                                <option value="2023">2023년</option>
-                                <option value="2024">2024년</option>
-                                <option value="2025">2025년</option>
-                            </select>
-                        </div>
+                    {selectedTab !== "mauntain" && (
+                        <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-2">
+                                <label className="text-gray-700 font-medium">연도:</label>
+                                <select
+                                    value={selectedYear}
+                                    onChange={(e) => setSelectedYear(e.target.value)}
+                                    className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                >
+                                    <option value="2020">2020년</option>
+                                    <option value="2021">2021년</option>
+                                    <option value="2022">2022년</option>
+                                    <option value="2023">2023년</option>
+                                    <option value="2024">2024년</option>
+                                    <option value="2025">2025년</option>
+                                </select>
+                            </div>
 
-                        <div className="flex items-center gap-2">
-                            <label className="text-gray-700 font-medium">기간:</label>
-                            <select
-                                value={selectedMonth}
-                                onChange={(e) => setSelectedMonth(e.target.value)}
-                                className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            >
-                                <option value="all">전체</option>
-                                <option value="1">1월</option>
-                                <option value="2">2월</option>
-                                <option value="3">3월</option>
-                                <option value="4">4월</option>
-                                <option value="5">5월</option>
-                                <option value="6">6월</option>
-                                <option value="7">7월</option>
-                                <option value="8">8월</option>
-                                <option value="9">9월</option>
-                                <option value="10">10월</option>
-                                <option value="11">11월</option>
-                                <option value="12">12월</option>
-                            </select>
+                            {selectedTab !== "fire" && (
+                                <div className="flex items-center gap-2">
+                                    <label className="text-gray-700 font-medium">기간:</label>
+                                    <select
+                                        value={selectedMonth}
+                                        onChange={(e) => setSelectedMonth(e.target.value)}
+                                        className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    >
+                                        <option value="all">전체</option>
+                                        <option value="1">1월</option>
+                                        <option value="2">2월</option>
+                                        <option value="3">3월</option>
+                                        <option value="4">4월</option>
+                                        <option value="5">5월</option>
+                                        <option value="6">6월</option>
+                                        <option value="7">7월</option>
+                                        <option value="8">8월</option>
+                                        <option value="9">9월</option>
+                                        <option value="10">10월</option>
+                                        <option value="11">11월</option>
+                                        <option value="12">12월</option>
+                                    </select>
+                                </div>
+                            )}
                         </div>
-                    </div>
+                    )}
                 </div>
 
                 <div className="flex gap-2 mb-6 border-b overflow-x-auto">
@@ -2520,31 +2675,75 @@ export default function StatsChart() {
                 </div>
 
                 <div className="flex-1 mb-4">
-                    <Line data={getChartData()} options={options} />
+                    {selectedTab === "mauntain" || selectedTab === "fire" ? (
+                        <Bar data={getChartData()} options={options} />
+                    ) : (
+                        <Line data={getChartData()} options={options} />
+                    )}
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-4 p-4 bg-gray-50 rounded-lg">
-                    <div className="text-center">
-                        <div className="text-sm text-gray-600">분석 기간</div>
-                        <div className="text-xl font-bold text-gray-800">{stats.totalDays}일</div>
+                {selectedTab === "mauntain" ? (
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 bg-gray-50 rounded-lg">
+                        <div className="text-center">
+                            <div className="text-sm text-gray-600">분석 기간</div>
+                            <div className="text-xl font-bold text-gray-800">2020~2025년 ({stats.yearCount}년)</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-sm text-gray-600">최대 피해</div>
+                            <div className="text-xl font-bold text-red-600">{stats.max} ha</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-sm text-gray-600">평균 피해</div>
+                            <div className="text-xl font-bold text-purple-600">{stats.avg} ha</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-sm text-gray-600">총 피해물량</div>
+                            <div className="text-xl font-bold text-orange-600">{stats.total} ha</div>
+                        </div>
                     </div>
-                    <div className="text-center">
-                        <div className="text-sm text-gray-600">최댓값</div>
-                        <div className="text-xl font-bold text-blue-600">{stats.max} {currentTab.unit}</div>
+                ) : selectedTab === "fire" ? (
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 bg-gray-50 rounded-lg">
+                        <div className="text-center">
+                            <div className="text-sm text-gray-600">분석 연도</div>
+                            <div className="text-xl font-bold text-gray-800">{selectedYear}년</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-sm text-gray-600">최다 발생 (월)</div>
+                            <div className="text-xl font-bold text-red-600">{stats.max} 건</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-sm text-gray-600">월평균 발생</div>
+                            <div className="text-xl font-bold text-purple-600">{stats.avg} 건</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-sm text-gray-600">연간 총 발생</div>
+                            <div className="text-xl font-bold text-orange-600">{stats.total} 건</div>
+                        </div>
                     </div>
-                    <div className="text-center">
-                        <div className="text-sm text-gray-600">최솟값</div>
-                        <div className="text-xl font-bold text-green-600">{stats.min} {currentTab.unit}</div>
+                ) : (
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 p-4 bg-gray-50 rounded-lg">
+                        <div className="text-center">
+                            <div className="text-sm text-gray-600">분석 기간</div>
+                            <div className="text-xl font-bold text-gray-800">{stats.totalDays}일</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-sm text-gray-600">최댓값</div>
+                            <div className="text-xl font-bold text-blue-600">{stats.max} {unit}</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-sm text-gray-600">최솟값</div>
+                            <div className="text-xl font-bold text-green-600">{stats.min} {unit}</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-sm text-gray-600">평균값</div>
+                            <div className="text-xl font-bold text-purple-600">{stats.avg} {unit}</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-sm text-gray-600">경보 발생 ({stats.warningThreshold})</div>
+                            <div className="text-xl font-bold text-red-600">{stats.warningCount}일</div>
+                        </div>
                     </div>
-                    <div className="text-center">
-                        <div className="text-sm text-gray-600">평균값</div>
-                        <div className="text-xl font-bold text-purple-600">{stats.avg} {currentTab.unit}</div>
-                    </div>
-                    <div className="text-center">
-                        <div className="text-sm text-gray-600">경보 발생 ({stats.warningThreshold})</div>
-                        <div className="text-xl font-bold text-red-600">{stats.warningCount}일</div>
-                    </div>
-                </div>
+                )}
             </div>
         </div>
     );
