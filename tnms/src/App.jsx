@@ -1,3 +1,6 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import './App.css'
+import Prev from './page/Prev'
 import './App.css'
 import Header from './component/Header'
 import React from "react";
@@ -7,6 +10,11 @@ import Main from "./page/Main"
 function App() {
   return (
     <>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Prev />} />
+        </Routes>
+      </Router>
       <Header/>
 
       <Routes>
