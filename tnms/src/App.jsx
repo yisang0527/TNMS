@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './component/Header'
 import React from "react";
+import {Routes,Route} from "react-router-dom";
+import Main from "./page/Main"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +13,10 @@ function App() {
   return (
     <>
       <Header/>
+
+      <Routes>
+        <Route path="/main" element={<Main/>}/>
+      </Routes>
     </>
   )
 }
