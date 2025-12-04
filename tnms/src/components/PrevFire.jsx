@@ -6,13 +6,13 @@ export default function PrevFire() {
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
 
-            <p className="text-2xl mb-10 font-bold">산불 국민행동요령</p>
+            <p className="text-[28px] mb-10 font-bold">산불 국민행동요령</p>
 
-            <p className="text-2xl mb-10 font-bold">산불, 관심과 실천으로 피해를 줄일 수 있습니다.</p>
+            <p className="text-[24px] mb-10 font-bold">산불, 관심과 실천으로 피해를 줄일 수 있습니다.</p>
 
-            <p className="text-2xl mt-15 mb-10 font-bold">01. 평소에 이렇게 대비합니다.</p>
+            <p className="text-[20px] mt-15 mb-10 font-bold">01. 평소에 이렇게 대비합니다.</p>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">1.1. 산불 안전을 지켜주세요.
                     <ul className=" ml-1.5">
                         <li>○ 산과 가까운 곳에서 쓰레기, 영농부산물 등을 소각하지 않습니다.</li>
@@ -28,7 +28,7 @@ export default function PrevFire() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">1.2. 집 주변을 안전하게 관리합니다.
                     <ul className=" ml-1.5">
                         <li>○ 집에서 1.5m 이내의 지면에는 되도록 돌, 모래, 흙 등과 같은 불연성 재료를 사용합니다.</li>
@@ -39,7 +39,7 @@ export default function PrevFire() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">1.3. 가족과 함께 위급 상황에 대비합니다.
                     <ul className=" ml-1.5">
                         <li>○ 비상연락망과 대피 시 각자의 역할을 정하도록 합니다.</li>
@@ -50,7 +50,7 @@ export default function PrevFire() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">1.4. 비상용품을 준비해 둡니다.
                     <ul className=" ml-1.5">
                         <li>○ 산불에 대비하여 비상용품을 준비해 두고 보관장소와 사용법을 알아둡니다.</li>
@@ -62,9 +62,9 @@ export default function PrevFire() {
                 </li>
             </ul>
 
-            <p className="text-2xl mt-15 mb-10 font-bold">02. 산불이 발생하면 이렇게 준비합니다.</p>
+            <p className="text-[20px] mt-15 mb-10 font-bold">02. 산불이 발생하면 이렇게 준비합니다.</p>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">2.1. 집 안에서는 이렇게 준비합니다.
                     <ul className=" ml-1.5">
                         <li>○ 지역 대피 안내에 귀를 기울이고 이웃 주민과 수시로 연락합니다.</li>
@@ -77,7 +77,7 @@ export default function PrevFire() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">2.2. 집 밖에서는 이렇게 준비합니다.
                     <ul className=" ml-1.5">
                         <li>○ 집 주위에 있는 가연성 물질을 되도록 집에서 멀리 옮겨 둡니다.</li>
@@ -99,7 +99,7 @@ export default function PrevFire() {
                 <p className="m-1">- 대피 시 산불이 번지는 상황을 대비하여 축사의 문을 열어두고 반려동물의 목줄을 느슨하게 풀어 둡니다.</p>
             </div>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">2.3. 산행 또는 야영(캠핑) 중에는 이렇게 준비합니다.
                     <ul className=" ml-1.5">
                         <li>○ 구역 내 안내방송, 휴대전화 등을 통해 위험 상황을 확인하고 주변 사람들에게 알립니다.</li>
@@ -108,13 +108,13 @@ export default function PrevFire() {
                 </li>
             </ul>
 
-            <p className="text-2xl mt-15 mb-10 font-bold">03. 산불이 다가오면 이렇게 대피합니다.</p>
+            <p className="text-[20px] mt-15 mb-10 font-bold">03. 산불이 다가오면 이렇게 대피합니다.</p>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className="font-bold mb-10">3.1. 장소에 따라 이렇게 대피합니다.</li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">3.1.1. 집에서는 이렇게 대피합니다.
                     <ul className=" ml-1.5">
                         <li>○ 대피를 권장하는 지역의 안내가 있는 경우 즉시 안내된 장소로 이동합니다.</li>
@@ -126,7 +126,7 @@ export default function PrevFire() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">3.1.2 산행 또는 야영(캠핑) 중에는 이렇게 대피합니다.
                     <ul className=" ml-1.5">
                         <li>○ 산행 중 대피 시 계곡부는 피하고 가능하면 활엽수가 있는 구간을 따라 신속히 하산하도록 합니다.</li>
@@ -136,11 +136,11 @@ export default function PrevFire() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className="font-bold mb-10">3.2. 대상자에 따라 이렇게 대피합니다.</li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">3.2.1. 어린이와 함께 있을 때는 이렇게 대피합니다.
                     <ul className=" ml-1.5">
                         <li>○ 아기는 띠를 이용해 안고 손을 자유롭게 하여 아기와 자신의 신체를 보호합니다.</li>
@@ -149,7 +149,7 @@ export default function PrevFire() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className="font-bold mb-10">3.2.2. 노약자나 몸이 불편하신 분은 이렇게 대피합니다.</li>
             </ul>
 
@@ -163,7 +163,7 @@ export default function PrevFire() {
                 <p className="m-1">취약한 사람</p>
             </div>
 
-            <ul className="text-[20px] font-normal text-[#333333] ml-1.5  mb-10">
+            <ul className="text-[18px] font-normal text-[#333333] ml-1.5  mb-10">
                 <li>○ 아기는 띠를 이용해 안고 손을 자유롭게 하여 아기와 자신의 신체를 보호합니다.</li>
                 <li>※ 긴급 시에는 소방서(119) 또는 경찰서(112)에 신고하여 도움을 요청합니다.</li>
                 <li>○ 거동이 불편한 경우 조금이라도 안전한 장소에서 도움을 기다립니다.</li>
@@ -173,9 +173,9 @@ export default function PrevFire() {
                 <li>○ 정신이 불안정하거나 발달장애가 있는 경우 서두르지 말고 가족이나 주위 사람에게 도움을 요청합니다.</li>
             </ul>
 
-            <p className="text-2xl mt-15 mb-10 font-bold">04. 산불 진화 후에는 이렇게 행동합니다.</p>
+            <p className="text-[20px] mt-15 mb-10 font-bold">04. 산불 진화 후에는 이렇게 행동합니다.</p>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">4.1. 현재 상황을 알리고 부상자를 살펴본 후 즉시 구조를 요청합니다.
                     <ul className=" ml-1.5">
                         <li>○ 안전한 장소로 대피한 후 부상이 없는지 확인하고 가족 또는 지인들에게 상황을 알립니다.</li>
@@ -184,7 +184,7 @@ export default function PrevFire() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">4.2. 주변 피해 상황에 따라 귀가 여부를 결정합니다.
                     <ul className=" ml-1.5">
                         <li>○ 거주지 시·군·구청 및 행정복지센터 등의 안내에 따라 행동하도록 합니다.</li>
@@ -196,8 +196,8 @@ export default function PrevFire() {
             </ul>
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
-            <p className="font-bold text-[20px]">소관부서 : 환경산림재난대응과 (044-205-6171), (044-205-6173)</p>
-            <p className="font-bold text-[20px]">소관부서 : 산림청 산불방지과 (042-281-4251)</p>
+            <p className="font-bold text-[18px]">소관부서 : 환경산림재난대응과 (044-205-6171), (044-205-6173)</p>
+            <p className="font-bold text-[18px]">소관부서 : 산림청 산불방지과 (042-281-4251)</p>
         </>
     )
 }

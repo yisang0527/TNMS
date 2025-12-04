@@ -6,22 +6,22 @@ export default function PrevSnowText3() {
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
 
-            <p className="text-2xl mb-10 font-bold">핵심 행동요령</p>
+            <p className="text-[20px] mb-10 font-bold">핵심 행동요령</p>
 
-            <div className="w-[100%] h-[150px] border-[#cccccc] border-10">
-                <p className="text-center pt-10">야외활동을 자제하되, 불가피하게 외출할 경우에는 대중교통을 이용하거나 자동차의 월동 장비를 반드시 구비해야 합니다.<br />보온 유지를 위해 외투, 장갑, 모자 등을 착용합니다.</p>
+            <div className="w-[100%] h-[150px] border-[#cccccc] border-10 bg-[#ffffff]">
+                <p className="text-center pt-10 text-[18px]">야외활동을 자제하되, 불가피하게 외출할 경우에는 대중교통을 이용하거나 자동차의 월동 장비를 반드시 구비해야 합니다.<br />보온 유지를 위해 외투, 장갑, 모자 등을 착용합니다.</p>
             </div>
 
-            <p className="font-bold text-2xl mt-15">국민행동요령</p>
+            <p className="font-bold text-[28px] mt-15">국민행동요령</p>
 
             <div className="flex mt-11 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
 
-            <p className="text-2xl mb-10 font-bold">대설</p>
+            <p className="text-[20px] mb-10 font-bold">대설</p>
 
-            <ul className="text-[20px] font-normal text-[#333333] mb-10 ml-1.5">
+            <ul className="text-[18px] font-normal text-[#333333] mb-10 ml-1.5">
                 <li>- 산간 고립 우려 지역에서는 식량, 연료 등 비상용품을 준비합니다.</li>
                 <li>- 눈이 많이 쌓인 가로수, 노후건축물, 비닐하우스 등은 붕괴될 우려가 있으니 접근하지 않습니다.</li>
                 <li>- 제설작업은 주간에, 2인 이상, 안전을 확보한 후 실시하며, 지붕 올라가기 등 무리한 작업은 하지 않습니다.</li>
@@ -35,9 +35,9 @@ export default function PrevSnowText3() {
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
 
-            <p className="text-2xl mb-10 font-bold">상세 행동요령</p>
+            <p className="text-[20px] mb-10 font-bold">상세 행동요령</p>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">＜ 일반 가정 ＞
                     <ul className=" ml-1.5">
                         <li>∙ 눈이 많이 올 때에는 외출을 자제하여 피해를 사전 방지합니다.</li>
@@ -50,7 +50,7 @@ export default function PrevSnowText3() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">＜ 차량 이용자 ＞
                     <ul className=" ml-1.5">
                         <li>◇ 운전 시</li>
@@ -75,7 +75,7 @@ export default function PrevSnowText3() {
                 <p className="m-1"> - 터널 등의 출입구: 그늘이 지는 경우가 많아 국소적으로 노면이 동결될 수 있음</p>
             </div>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">
                     <ul className=" ml-1.5">
                         <li>◇ 고립된 경우</li>
@@ -86,7 +86,7 @@ export default function PrevSnowText3() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">＜ 농･어촌, 공장 등 ＞
                     <ul className=" ml-1.5">
                         <li>∙ 쌓인 눈의 무게에 취약한 가설 패널(공장, 시장 비가림시설, 창고 등)을 이용한 구조물, 공사장 주변 등은 접근하지 않습니다.</li>
@@ -99,34 +99,34 @@ export default function PrevSnowText3() {
             </ul>
 
             <div className="flex items-center pt-10 mb-10">
-                <p className="w-[30px] h-[30px] border-4 border-[#132a35] mr-2"></p>
-                <p className="font-bold text-3xl text-[#132a35]">주요기관 연락처</p>
+                <p className="w-[30px] h-[30px] border-4 border-[#132a35] mr-2 bg-[#ffffff]"></p>
+                <p className="font-bold text-[20px] text-[#132a35]">주요기관 연락처</p>
             </div>
 
-            <div className="w-[100%] h-[310px] flex justify-between">
-                <div className="w-[500px] border border-[#cccccc]">
-                    <p className="text-center w-[498px] h-[75px] bg-[#eee] pt-6">1. 위기상황, 긴급상황 시 신고전화</p>
+            <div className="w-[100%] h-[310px] flex justify-between bg-[#ffffff]">
+                <div className="w-[480px] border border-[#cccccc]">
+                    <p className="text-center w-[478px] h-[75px] bg-[#eee] pt-6 text-[17px]">1. 위기상황, 긴급상황 시 신고전화</p>
 
-                    <ul className="p-5">
+                    <ul className="p-5 text-[16px]">
                         <li>- 재난신고 119, 범죄신고 112, 민원 상담 110</li>
                         <li>- 행정안전부 중앙재난안전상황실 044)205-1542~3</li>
                     </ul>
                 </div>
 
-                <div className="w-[500px] border border-[#cccccc] border-l-0 border-r-0">
-                    <p className="text-center w-[500px] h-[75px] bg-[#eee] pt-6">2. 행정안전부 국민행동요령, 임시주거시설 등 안내</p>
+                <div className="w-[480px] border border-[#cccccc] border-l-0 border-r-0">
+                    <p className="text-center w-[480px] h-[75px] bg-[#eee] pt-6 text-[17px]">2. 행정안전부 국민행동요령, 임시주거시설 등 안내</p>
 
-                    <ul className="p-5">
+                    <ul className="p-5 text-[16px]">
                         <li>- 행정안전부 홈페이지 http://www.mois.go.kr</li>
                         <li>- 행정안전부 국민재난안전포털 http://www.safekorea.go.kr</li>
                         <li>- 스마트폰 어플리케이션 '안전디딤돌'</li>
                     </ul>
                 </div>
 
-                <div className="w-[500px] border border-[#cccccc]">
-                    <p className="text-center w-[498px] h-[75px] bg-[#eee] pt-6">3. 유관기관 연락처 및 홈페이지</p>
+                <div className="w-[480px] border border-[#cccccc]">
+                    <p className="text-center w-[478px] h-[75px] bg-[#eee] pt-6 text-[17px]">3. 유관기관 연락처 및 홈페이지</p>
 
-                    <ul className="p-5">
+                    <ul className="p-5 text-[16px]">
                         <li>- 행정안전부 044)205-6366, http://www.mois.go.kr</li>
                         <li>- 기상청 02)2181-0503, http://www.kma.go.kr</li>
                         <li>- 고용노동부 044)202-8895, http://www.moel.go.kr</li>
@@ -141,7 +141,7 @@ export default function PrevSnowText3() {
 
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
-            <p className="font-bold text-[20px]">소관부서 : 자연재난대응과 (044-205-5232)</p>
+            <p className="font-bold text-[18px]">소관부서 : 자연재난대응과 (044-205-5232)</p>
         </>
     )
 }

@@ -1,9 +1,9 @@
 export default function PrevMountainText2() {
     return (
         <>
-            <p className="text-2xl mt-15 mb-10 font-bold">② 산사태 발생이 우려될 때에는 이렇게 대비합니다.</p>
+            <p className="text-[20px] mt-15 mb-10 font-bold">② 산사태 발생이 우려될 때에는 이렇게 대비합니다.</p>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">2.1. 여름철 우기 및 태풍(폭풍) 전에는 이렇게 행동합니다.
                     <ul className=" ml-1.5">
                         <li>○ 산림청에서 알려 주는 산사태 단계별 행동요령을 사전에 숙지합니다.</li>
@@ -14,7 +14,7 @@ export default function PrevMountainText2() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">2.2. 집중호우 및 태풍(폭풍) 시에는 이렇게 행동합니다.
                     <ul className=" ml-1.5">
                         <li>○ 방송, 인터넷, 스마트폰 등을 통해 기상정보 및 위험상황을 지속적으로 확인합니다.</li>
@@ -31,7 +31,7 @@ export default function PrevMountainText2() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">2.3. 지진 발생 시에는 이렇게 행동합니다.
                     <ul className=" ml-1.5">
                         <li>○ 지진이 발생하면 산사태 발생 위험이 있으므로 가급적 산지로부터 떨어진 안전한 곳으로 대피합니다.</li>
@@ -43,7 +43,7 @@ export default function PrevMountainText2() {
             </ul>
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
-            <p className="font-bold text-[20px]">소관부서 : 산림청 산사태방지과 (042-481-1844)</p>
+            <p className="font-bold text-[18px]">소관부서 : 산림청 산사태방지과 (042-481-1844)</p>
         </>
     )
 }

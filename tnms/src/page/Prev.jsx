@@ -36,8 +36,8 @@ export default function Prev() {
     const [selected, setSelected] = useState(tabs[0].key);
 
     return (
-        <div className="max-w-[1500px] mx-auto">
-            <p className="font-bold text-5xl pt-13 pb-10">자연재난행동요령</p>
+        <div className="max-w-[1440px] mx-auto">
+            <p className="font-bold text-[32px] pt-13 pb-10">자연재난행동요령</p>
 
             {/* 버튼 영역 */}
             <div className="flex justify-between">
@@ -45,8 +45,8 @@ export default function Prev() {
                     <button
                         key={tab.key}
                         onClick={() => setSelected(tab.key)}
-                        className={`w-[140px] h-[55px] border transition-all relative shadow-[8px_5px_5px_0px_rgba(0,0,0,0.2)]
-                            ${selected === tab.key ? "border-[#75C1E6] border-2" : "bg-white"}`}
+                        className={`w-[140px] h-[55px] border transition-all relative shadow-[8px_5px_5px_0px_rgba(0,0,0,0.2)] cursor-pointer font-bold text-[20px]
+                            ${selected === tab.key ? "border-[#75C1E6] border-2 bg-white" : "bg-white"}`}
                     >
                         <img src={tab.img} alt={tab.label} className="w-13 h-13 absolute top-0 right-7 " />
                         {tab.label}

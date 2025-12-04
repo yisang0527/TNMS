@@ -6,10 +6,10 @@ export default function PrevRainText3() {
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
 
-            <p className="text-2xl mb-10 font-bold">핵심 행동요령</p>
+            <p className="text-[20px] mb-10 font-bold">핵심 행동요령</p>
 
-            <div className="w-[100%] h-[150px] border-[#cccccc] border-10">
-                <p className="text-center pt-14">호우가 시작된 때에는 신속히 안전한 곳으로 대피하고, 외출을 삼가며 이웃이나 가족과의 연락을 통해 안전 여부를 확인합니다.</p>
+            <div className="w-[100%] h-[150px] border-[#cccccc] border-10 bg-[#ffffff]">
+                <p className="text-center pt-14 text-[18px]">호우가 시작된 때에는 신속히 안전한 곳으로 대피하고, 외출을 삼가며 이웃이나 가족과의 연락을 통해 안전 여부를 확인합니다.</p>
             </div>
 
             <div className="flex mt-11 mb-2">
@@ -17,9 +17,9 @@ export default function PrevRainText3() {
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
 
-            <p className="text-2xl mb-10 font-bold">상세 행동요령</p>
+            <p className="text-[20px] mb-10 font-bold">상세 행동요령</p>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">∙ 외출을 자제하고 수시로 기상상황 및 거주지역 주변 위험상황, 재난정보를 파악합니다.
                     <ul className=" ml-1.5">
                         <li>- 외부에 있는 가족, 지인, 이웃과 연락하여 안전을 확인하고 위험정보 등을 공유합니다.</li>
@@ -28,7 +28,7 @@ export default function PrevRainText3() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">∙ 위험지역에 절대 접근하지 않습니다.
                     <ul className=" ml-1.5">
                         <li>- 침수된 도로, 지하차도, 교량 등은 사람과 차량의 통행을 엄격히 금지하고 주변에 있는 사람들에게 알려 진입하지 않도록 합니다.</li>
@@ -41,7 +41,7 @@ export default function PrevRainText3() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">∙ 건물, 집안에서는 안전수칙을 지킵니다.
                     <ul className=" ml-1.5">
                         <li>- 가스 누출로 2차 피해가 발생할 수 있으므로 사전에 차단하고, 감전 위험이 있는 집 안팎의 전기시설은 만지지 않도록 합니다.</li>
@@ -52,29 +52,29 @@ export default function PrevRainText3() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">∙ 침수, 붕괴 우려, 산사태 위험 등으로 대피가 필요할 시 주변에 대피에 어려움이 있는 약자(어르신, 어린이, 장애인 등)와 함께 대피합니다.</li>
             </ul>
 
             <div className="flex items-center pt-10 mb-10">
-                <p className="w-[30px] h-[30px] border-4 border-[#132a35] mr-2"></p>
-                <p className="font-bold text-3xl text-[#132a35]">주요기관 연락처</p>
+                <p className="w-[30px] h-[30px] border-4 border-[#132a35] mr-2 bg-[#ffffff]"></p>
+                <p className="font-bold text-[20px] text-[#132a35]">주요기관 연락처</p>
             </div>
 
-            <div className="w-[100%] h-[310px] flex justify-between">
+            <div className="w-[100%] h-[310px] flex justify-between bg-[#ffffff]">
                 <div className="w-[500px] border border-[#cccccc]">
-                    <p className="text-center w-[498px] h-[75px] bg-[#eee] pt-6">1. 위기상황, 긴급상황 시 신고전화</p>
+                    <p className="text-center w-[498px] h-[75px] bg-[#eee] pt-6  text-[17px]">1. 위기상황, 긴급상황 시 신고전화</p>
 
-                    <ul className="p-5">
+                    <ul className="p-5 text-[16px]">
                         <li>- 재난신고 119, 범죄신고 112, 민원 상담 110</li>
                         <li>- 행정안전부 중앙재난안전상황실 044)205-1542~3</li>
                     </ul>
                 </div>
 
                 <div className="w-[500px] border border-[#cccccc] border-l-0 border-r-0">
-                    <p className="text-center w-[500px] h-[75px] bg-[#eee] pt-6">2. 행정안전부 국민행동요령, 임시주거시설 등 안내</p>
+                    <p className="text-center w-[500px] h-[75px] bg-[#eee] pt-6 text-[17px]">2. 행정안전부 국민행동요령, 임시주거시설 등 안내</p>
 
-                    <ul className="p-5">
+                    <ul className="p-5 text-[16px]">
                         <li>- 행정안전부 홈페이지 http://www.mois.go.kr</li>
                         <li>- 행정안전부 국민재난안전포털 http://www.safekorea.go.kr</li>
                         <li>- 스마트폰 어플리케이션 '안전디딤돌'</li>
@@ -82,9 +82,9 @@ export default function PrevRainText3() {
                 </div>
 
                 <div className="w-[500px] border border-[#cccccc]">
-                    <p className="text-center w-[498px] h-[75px] bg-[#eee] pt-6">3. 유관기관 연락처 및 홈페이지</p>
+                    <p className="text-center w-[498px] h-[75px] bg-[#eee] pt-6 text-[17px]">3. 유관기관 연락처 및 홈페이지</p>
 
-                    <ul className="p-5">
+                    <ul className="p-5 text-[16px]">
                         <li>- 행정안전부 044)205-6366, http://www.mois.go.kr</li>
                         <li>- 기상청 02)2181-0503, http://www.kma.go.kr</li>
                         <li>- 고용노동부 044)202-8895, http://www.moel.go.kr</li>
@@ -97,16 +97,16 @@ export default function PrevRainText3() {
                 </div>
             </div>
 
-            <p className="font-bold text-2xl mt-15">국민행동요령</p>
+            <p className="font-bold text-[28px] mt-15">국민행동요령</p>
 
             <div className="flex mt-11 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
 
-            <p className="text-2xl mb-10 font-bold">호우</p>
+            <p className="text-[20px] mb-10 font-bold">호우</p>
 
-            <ul className="text-[20px] font-normal text-[#333333] mb-10 ml-1.5">
+            <ul className="text-[18px] font-normal text-[#333333] mb-10 ml-1.5">
                 <li>- 자주 물에 잠기는 지역, 산사태 위험지역 등의 위험한 곳은 피하고, 안전한 곳으로 대피합니다.</li>
                 <li>- 실내에서는 문과 창문을 닫고, 외출을 하지 않으며, TV, 라디오, 인터넷 등을 통해 기상 상황을 확인합니다.</li>
                 <li>- 개울가, 하천변, 해안가 등 침수 위험지역은 급류에 휩쓸릴 수 있으니 가까이 가지 않습니다.</li>
@@ -115,7 +115,7 @@ export default function PrevRainText3() {
                 <li>- 농촌에서는 논둑이나 물꼬의 점검을 위해 나가지 않습니다.</li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333] mb-10  ml-1.5">
+            <ul className="text-[18px] font-normal text-[#333333] mb-10  ml-1.5">
                 <li>하천 급류</li>
                 <li>- 호우·태풍 등으로 하천 수위가 높아지는 경우 하천 주변에 접근하지 않습니다.</li>
                 <li>차량 침수</li>
@@ -130,7 +130,7 @@ export default function PrevRainText3() {
                 <li>- 호우·태풍 특보가 발효된 경우 물꼬를 보러 나가지 않도록 합니다.</li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333] mb-10  ml-1.5">
+            <ul className="text-[18px] font-normal text-[#333333] mb-10  ml-1.5">
                 <li>어린이</li>
                 <li>부모님이나 선생님과 떨어지지 않도록 가까이 이동하고 말씀에 귀 기울여 듣도록 합니다.</li>
                 <li>부모님과 선생님의 말씀에 따라 강한 바람이나 비를 피해 안전한 장소로 질서를 유지하며 이동합니다.</li>
@@ -139,7 +139,7 @@ export default function PrevRainText3() {
                 <li>- 재난 상황에 당황하지 않고 침착한 자세로 어린이를 안전한 장소로 안내합니다.</li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333] mb-10  ml-1.5">
+            <ul className="text-[18px] font-normal text-[#333333] mb-10  ml-1.5">
                 <li>노약자</li>
                 <li>호우·태풍 등 특보가 발효된 경우 밖으로 나가지 않습니다.</li>
                 <li>부득이 하게 야외에 나가야 하는 경우 만일에 사태에 대비해 사전에 자녀·친척·이웃에게 알립니다.</li>
@@ -149,7 +149,7 @@ export default function PrevRainText3() {
             </ul>
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
-            <p className="font-bold text-[20px]">소관부서 : 자연재난대응과 (044-205-5233)</p>
+            <p className="font-bold text-[18px]">소관부서 : 자연재난대응과 (044-205-5233)</p>
         </>
     )
 }

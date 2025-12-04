@@ -1,9 +1,9 @@
 export default function PrevMountainText1() {
     return (
         <>
-            <p className="text-2xl mt-15 mb-10 font-bold">① 평소에는 이렇게 대비합니다.</p>
+            <p className="text-[20px] mt-15 mb-10 font-bold">① 평소에는 이렇게 대비합니다.</p>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">1.1. 산사태 전조 현상을 미리 알아 둡니다.
                     <ul className=" ml-1.5">
                         <li>○ 땅이 울리며 산비탈에서 갑자기 많은 양의 물이 샘솟을 때</li>
@@ -15,7 +15,7 @@ export default function PrevMountainText1() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">1.2. 집(주택, 건물) 주변을 안전하게 관리합니다.
                     <ul className=" ml-1.5">
                         <li>○ 실내의 가스 및 전기 차단기 설치, 작동 여부 등을 미리 점검합니다.</li>
@@ -26,7 +26,7 @@ export default function PrevMountainText1() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">1.3. 위급한 상황에 대비해 둡니다.
                     <ul className=" ml-1.5">
                         <li>○ 가족회의를 통하여 비상 연락망과 각자의 대응 역할을 결정합니다.</li>
@@ -37,7 +37,7 @@ export default function PrevMountainText1() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">1.4. 비상용품을 준비해 둡니다.
                     <ul className=" ml-1.5">
                         <li>○ 비상용품을 미리 준비해 둡니다.</li>
@@ -53,7 +53,7 @@ export default function PrevMountainText1() {
             </ul>
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
-            <p className="font-bold text-[20px]">소관부서 : 산림청 산사태방지과 (042-481-1844)</p>
+            <p className="font-bold text-[18px]">소관부서 : 산림청 산사태방지과 (042-481-1844)</p>
         </>
     )
 }

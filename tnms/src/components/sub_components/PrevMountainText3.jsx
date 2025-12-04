@@ -1,11 +1,11 @@
 export default function PrevMountainText3() {
     return (
         <>
-            <p className="text-2xl mt-15 mb-10 font-bold">③ 산사태 발생 시에는 이렇게 행동합니다.</p>
+            <p className="text-[20px] mt-15 mb-10 font-bold">③ 산사태 발생 시에는 이렇게 행동합니다.</p>
 
-            <p className="text-[20px] mt-15 mb-10 font-bold">3.1. 장소에 따라 이렇게 행동합니다.</p>
+            <p className="text-[18px] mt-15 mb-10 font-bold">3.1. 장소에 따라 이렇게 행동합니다.</p>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">3.1.1. 집(산지 인접 주택, 건물)에서 이렇게 행동합니다.
                     <ul className=" ml-1.5">
                         <li>○ 대피 방송이 안내되지 않은 경우 가급적 집에 머무르며 이웃 주민과 수시로 연락합니다.</li>
@@ -20,7 +20,7 @@ export default function PrevMountainText3() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">3.1.2. 야영(캠핑) 중에는 이렇게 행동합니다.
                     <ul className=" ml-1.5">
                         <li>○ 야영(캠핑)을 멈추고, 마을 회관 등 안전한 곳으로 이동합니다.</li>
@@ -29,7 +29,7 @@ export default function PrevMountainText3() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">3.1.3. 산행 중에는 이렇게 행동합니다.
                     <ul className=" ml-1.5">
                         <li>○ 산행을 멈추고, 산지와 거리가 먼 안전한 곳으로 즉시 대피합니다.</li>
@@ -40,7 +40,7 @@ export default function PrevMountainText3() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">3.1.4. 운전 중에는 이렇게 행동합니다.
                     <ul className=" ml-1.5">
                         <li>○ 운전 중에는 저속 운행하고 안전거리를 확보합니다.</li>
@@ -50,9 +50,9 @@ export default function PrevMountainText3() {
                 </li>
             </ul>
 
-            <p className="text-[20px] mt-15 mb-10 font-bold">3.2. 대상자에 따라 이렇게 행동합니다.</p>
+            <p className="text-[18px] mt-15 mb-10 font-bold">3.2. 대상자에 따라 이렇게 행동합니다.</p>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">3.2.1. 어린이와 함께 있을 때는 이렇게 행동합니다.
                     <ul className=" ml-1.5">
                         <li>○ 아기는 띠를 이용해 안고 손을 자유롭게 하여 아기와 자신의 머리 등을 보호합니다.</li>
@@ -62,7 +62,7 @@ export default function PrevMountainText3() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">3.2.2. 노약자나 몸이 불편하신 분은 이렇게 행동합니다.
                     <ul className=" ml-1.5">
                         <li>○ 평소 준비사항</li>
@@ -83,7 +83,7 @@ export default function PrevMountainText3() {
             </ul>
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
-            <p className="font-bold text-[20px]">소관부서 : 산림청 산사태방지과 (042-481-1844)</p>
+            <p className="font-bold text-[18px]">소관부서 : 산림청 산사태방지과 (042-481-1844)</p>
         </>
     )
 }

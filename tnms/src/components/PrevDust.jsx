@@ -10,13 +10,13 @@ export default function PrevDust() {
     return (
         <>
             <div>
-                <p className="font-bold text-5xl pt-15 pb-11">황사</p>
+                <p className="font-bold text-[28px] pt-15 pb-11">황사</p>
 
                 <div className="m-auto bg-[#ccc] w-[98%] h-[1px]"></div>
 
                 <div className="flex items-center pt-11 mb-11">
-                    <p className="w-[30px] h-[30px] border-4 border-[#132a35] mr-2"></p>
-                    <p className="font-bold text-3xl text-[#132a35]">진행별 행동요령</p>
+                    <p className="w-[30px] h-[30px] border-4 border-[#132a35] mr-2 bg-[#ffffff]"></p>
+                    <p className="font-bold text-[20px] text-[#132a35]">진행별 행동요령</p>
                 </div>
 
                 <div className="flex justify-between">
@@ -28,7 +28,7 @@ export default function PrevDust() {
                         <button
                             key={tab.key}
                             onClick={() => setSelected(tab.key)}
-                            className={`w-[500px] h-[35px] transition-all border border-[#132a35] ${selected === tab.key ? "bg-[#132a35] text-[#ffffff] font-bold" : "bg-white"}`}
+                            className={`w-[500px] h-[35px] transition-all border border-[#132a35] cursor-pointer ${selected === tab.key ? "bg-[#132a35] text-[#ffffff] font-bold" : "bg-white"}`}
                         >
                             {tab.label}
                         </button>

@@ -6,22 +6,22 @@ export default function PrevColdText2() {
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
 
-            <p className="text-2xl mb-10 font-bold">핵심 행동요령</p>
+            <p className="text-[20px] mb-10 font-bold">핵심 행동요령</p>
 
-            <div className="w-[100%] h-[150px] border-[#cccccc] border-10">
-                <p className="text-center pt-10">TV, 라디오, 인터넷 등에서 한파가 예보된 때에는 최대한 야외활동을 자제하고<br />주변의 독거노인 등 건강이 염려되는 분들의 안부를 살펴봅니다.</p>
+            <div className="w-[100%] h-[150px] border-[#cccccc] border-10 bg-[#ffffff]">
+                <p className="text-center pt-10 text-[18px]">TV, 라디오, 인터넷 등에서 한파가 예보된 때에는 최대한 야외활동을 자제하고<br />주변의 독거노인 등 건강이 염려되는 분들의 안부를 살펴봅니다.</p>
             </div>
 
-            <p className="font-bold text-2xl mt-15">국민행동요령</p>
+            <p className="font-bold text-[28px] mt-15">국민행동요령</p>
 
             <div className="flex mt-11 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
 
-            <p className="text-2xl mb-10 font-bold">한파</p>
+            <p className="text-[20px] mb-10 font-bold">한파</p>
 
-            <ul className="text-[20px] font-normal text-[#333333] mb-10 ml-1.5">
+            <ul className="text-[18px] font-normal text-[#333333] mb-10 ml-1.5">
                 <li>노약자, 영유아 등을 위해 난방과 온도관리에 유의합니다.</li>
                 <li>외출 시에는 동상에 걸리지 않도록 보온에 유의합니다.</li>
                 <li>동상에 걸리면, 비비지 말고 따뜻한 물에 30분가량 담그고, 온도를 유지하며 즉시 병원으로 갑니다.</li>
@@ -35,9 +35,9 @@ export default function PrevColdText2() {
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
 
-            <p className="text-2xl mb-10 font-bold">상세 행동요령</p>
+            <p className="text-[20px] mb-10 font-bold">상세 행동요령</p>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">＜ 일반 가정 ＞
                     <ul className=" ml-1.5">
                         <li>◇ 외출(야외활동) 시</li>
@@ -56,7 +56,7 @@ export default function PrevColdText2() {
                 </li>
             </ul>
 
-            <div className="w-[100%] h-[300px] border border-[#cccccc] border-t-[#333333] bg-[#f8f9fb] flex flex-col justify-center pl-15 mb-10">
+            <div className="w-[100%] h-[350px] border border-[#cccccc] border-t-[#333333] bg-[#f8f9fb] flex flex-col justify-center pl-15 mb-10">
                 <p className="m-1 text-center">《 빙판길 낙상사고 줄이는 요령 》</p>
                 <p className="m-1">▪ 보폭을 평소보다 10~20% 줄입니다.</p>
                 <p className="m-1">▪ 굽이 낮은 미끄럼 방지 밑창 신발을 신습니다.</p>
@@ -68,7 +68,7 @@ export default function PrevColdText2() {
                 <p className="m-1">▪ 진정제, 수면제 등 어지럼 유발 약물 복용자는 외출을 삼갑니다.</p>
             </div>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">
                     <ul className=" ml-1.5">
                         <li>◇ 시설물 관리</li>
@@ -83,7 +83,7 @@ export default function PrevColdText2() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">＜ 차량 이용자 ＞
                     <ul className=" ml-1.5">
                         <li>◇ 운전 시</li>
@@ -99,7 +99,7 @@ export default function PrevColdText2() {
                 </li>
             </ul>
 
-            <ul className="text-[20px] font-normal text-[#333333]">
+            <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">＜ 농･어촌 ＞
                     <ul className=" ml-1.5">
                         <li>◇ 농작물 관리</li>
@@ -120,34 +120,34 @@ export default function PrevColdText2() {
             </ul>
 
             <div className="flex items-center pt-10 mb-10">
-                <p className="w-[30px] h-[30px] border-4 border-[#132a35] mr-2"></p>
-                <p className="font-bold text-3xl text-[#132a35]">주요기관 연락처</p>
+                <p className="w-[30px] h-[30px] border-4 border-[#132a35] mr-2 bg-[#ffffff]"></p>
+                <p className="font-bold text-[20px] text-[#132a35]">주요기관 연락처</p>
             </div>
 
-            <div className="w-[100%] h-[310px] flex justify-between">
-                <div className="w-[500px] border border-[#cccccc]">
-                    <p className="text-center w-[498px] h-[75px] bg-[#eee] pt-6">1. 위기상황, 긴급상황 시 신고전화</p>
+            <div className="w-[100%] h-[310px] flex justify-between bg-[#ffffff]">
+                <div className="w-[480px] border border-[#cccccc]">
+                    <p className="text-center w-[478px] h-[75px] bg-[#eee] pt-6 text-[17px]">1. 위기상황, 긴급상황 시 신고전화</p>
 
-                    <ul className="p-5">
+                    <ul className="p-5 text-[16px]">
                         <li>- 재난신고 119, 범죄신고 112, 민원 상담 110</li>
                         <li>- 행정안전부 중앙재난안전상황실 044)205-1542~3</li>
                     </ul>
                 </div>
 
-                <div className="w-[500px] border border-[#cccccc] border-l-0 border-r-0">
-                    <p className="text-center w-[500px] h-[75px] bg-[#eee] pt-6">2. 행정안전부 국민행동요령, 임시주거시설 등 안내</p>
+                <div className="w-[480px] border border-[#cccccc] border-l-0 border-r-0">
+                    <p className="text-center w-[480px] h-[75px] bg-[#eee] pt-6 text-[17px]">2. 행정안전부 국민행동요령, 임시주거시설 등 안내</p>
 
-                    <ul className="p-5">
+                    <ul className="p-5 text-[16px]">
                         <li>- 행정안전부 홈페이지 http://www.mois.go.kr</li>
                         <li>- 행정안전부 국민재난안전포털 http://www.safekorea.go.kr</li>
                         <li>- 스마트폰 어플리케이션 '안전디딤돌'</li>
                     </ul>
                 </div>
 
-                <div className="w-[500px] border border-[#cccccc]">
-                    <p className="text-center w-[498px] h-[75px] bg-[#eee] pt-6">3. 유관기관 연락처 및 홈페이지</p>
+                <div className="w-[480px] border border-[#cccccc]">
+                    <p className="text-center w-[478px] h-[75px] bg-[#eee] pt-6 text-[17px]">3. 유관기관 연락처 및 홈페이지</p>
 
-                    <ul className="p-5">
+                    <ul className="p-5 text-[16px]">
                         <li>- 행정안전부 044)205-6366, http://www.mois.go.kr</li>
                         <li>- 기상청 02)2181-0503, http://www.kma.go.kr</li>
                         <li>- 고용노동부 044)202-8895, http://www.moel.go.kr</li>
@@ -162,7 +162,7 @@ export default function PrevColdText2() {
 
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
-            <p className="font-bold text-[20px]">소관부서 : 자연재난대응과 (044-205-5232)</p>
+            <p className="font-bold text-[18px]">소관부서 : 자연재난대응과 (044-205-5232)</p>
         </>
     )
 }
