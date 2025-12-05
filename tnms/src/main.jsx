@@ -8,8 +8,8 @@ import Footer from './component/Footer.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserMode>
+    <BrowserRouter>
       <Footer />
-    </BrowserMode>
+    </BrowserRouter>
   </StrictMode>,
 )
