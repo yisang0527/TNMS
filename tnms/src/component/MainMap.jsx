@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function MainMap() {
   const KAKAO = useRef(null);
-  const [clickCount, setClickCount] = useState(0);
+  const [selectedRegion, setSelectedRegion] = useState(null); // 선택된 지역
+  const [sideOpen, setSideOpen] = useState(false);           // 사이드탭 열림 여부
 
   // const [
   //   {
@@ -16,6 +17,7 @@ export default function MainMap() {
     window.kakao.maps.load(() => {
       const kakao = window.kakao;
       const container = KAKAO.current;
+      
 
       const options = {
         center: new kakao.maps.LatLng(36.3504, 127.3845), // 대전 중심
@@ -2202,6 +2204,19 @@ export default function MainMap() {
 
     ];
       
+      const regionCenters ={
+        서울: new kakao.maps.LatLng(37.55538654535481, 126.9835765626031),
+        경기: new kakao.maps.LatLng(37.500232760498974, 127.22193537663605),
+        강원: new kakao.maps.LatLng(37.75973674009599, 128.22287567885292),
+        충남: new kakao.maps.LatLng(36.49070077873013, 126.92030471357498),
+        충북: new kakao.maps.LatLng(36.73190428099862, 127.70538441377482),
+        경북: new kakao.maps.LatLng(36.73190428099862, 127.70538441377482),
+        경남: new kakao.maps.LatLng(35.415746139700346, 128.38308398667152),
+        전북: new kakao.maps.LatLng(35.76388057183283, 127.14057487033574),
+        전남: new kakao.maps.LatLng(35.067221811111295, 127.0005766936257),
+        제주: new kakao.maps.LatLng(33.389806138956786, 126.51873917572715),
+
+      }
         // 서울 경계선
       const seoulpolygon = new kakao.maps.Polygon({
         path: seoulpolygonPath,
@@ -2234,8 +2249,11 @@ export default function MainMap() {
         seoulpolygon.setOptions(mouseoutOption);
       });
 
-      kakao.maps.event.addListener(seoulpolygon, 'mousedown', () => {
-        setClickCount(prev => prev + 1);
+      kakao.maps.event.addListener(seoulpolygon, 'click', () => {
+        setSelectedRegion("서울"); // 선택 지역 상태 변경
+        setSideOpen(true); // 사이드탭 열기
+        map.setCenter(regionCenters["서울"]); // 지도 중심 이동
+        map.setLevel(7); // 확대 이건 보고 비교해봐야 함
       });
       
         // 경기도 경계선
@@ -2273,9 +2291,14 @@ export default function MainMap() {
         Gyeonggipolygon.setOptions(mouseoutGyeonggi);
       });
 
-      kakao.maps.event.addListener(Gyeonggipolygon, 'mousedown', () => {
-        setClickCount(prev => prev + 1);
+      kakao.maps.event.addListener(Gyeonggipolygon, 'click', () => {
+        setSelectedRegion("경기"); // 선택 지역 상태 변경
+        setSideOpen(true); // 사이드탭 열기
+        map.setCenter(regionCenters["경기"]); // 지도 중심 이동
+        map.setLevel(7); 
       });
+
+
         // 강원도 경계선
       const Gangwonpolygon = new kakao.maps.Polygon({
         path: GangwonPolygonPath,
@@ -2308,8 +2331,11 @@ export default function MainMap() {
         Gangwonpolygon.setOptions(mouseoutGangwon);
       });
 
-      kakao.maps.event.addListener(Gangwonpolygon, 'mousedown', () => {
-        setClickCount(prev => prev + 1);
+      kakao.maps.event.addListener(Gangwonpolygon, 'click', () => {
+        setSelectedRegion("경기"); // 선택 지역 상태 변경
+        setSideOpen(true); // 사이드탭 열기
+        map.setCenter(regionCenters["경기"]); // 지도 중심 이동
+        map.setLevel(7); 
       });
         // 충남 경계선
       const Chungnampolygon = new kakao.maps.Polygon({
@@ -2343,9 +2369,15 @@ export default function MainMap() {
         Chungnampolygon.setOptions(mouseoutChungnam);
       });
 
-      kakao.maps.event.addListener(Chungnampolygon, 'mousedown', () => {
-        setClickCount(prev => prev + 1);
+      kakao.maps.event.addListener(Chungnampolygon, 'click', () => {
+        setSelectedRegion("충남"); // 선택 지역 상태 변경
+        setSideOpen(true); // 사이드탭 열기
+        map.setCenter(regionCenters["충남"]); // 지도 중심 이동
+        map.setLevel(7); 
       });
+
+
+
         // 충북 경계선
       const Chungbukpolygon = new kakao.maps.Polygon({
         path: ChungbukPolygonPath,
@@ -2378,8 +2410,11 @@ export default function MainMap() {
         Chungbukpolygon.setOptions(mouseoutChungbuk);
       });
 
-      kakao.maps.event.addListener(Chungbukpolygon, 'mousedown', () => {
-        setClickCount(prev => prev + 1);
+     kakao.maps.event.addListener(Chungnampolygon, 'click', () => {
+        setSelectedRegion("충남"); // 선택 지역 상태 변경
+        setSideOpen(true); // 사이드탭 열기
+        map.setCenter(regionCenters["충남"]); // 지도 중심 이동
+        map.setLevel(7); 
       });
         // 경북 경계선
       const Gyeongbukpolygon = new kakao.maps.Polygon({
@@ -2561,6 +2596,7 @@ export default function MainMap() {
 
   return (
     <>
+    
       <div ref={KAKAO} style={{ width: '100%', height: '100%' }}></div>
       
     </>
