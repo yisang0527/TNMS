@@ -1,4 +1,4 @@
-import React from "react";
+
 
 // SideTab 컴포넌트
 // Props:
@@ -17,8 +17,7 @@ export default function SideTab({ open, region, onClose, onOpen }) {
       {!open && (
         <button
           onClick={onOpen}
-          className="fixed right-0 top-1/2 transform -translate-y-1/2 p-2 bg-gray-200 rounded shadow"
-        >
+          className="fixed right-0 top-1/2 transform -translate-y-1/2 p-2 bg-gray-200 rounded shadow z-3">
           {/* 오른쪽 화살표 삼각형 */}
           <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[15px] border-l-black"></div>
         </button>
