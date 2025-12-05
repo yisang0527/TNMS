@@ -3,10 +3,12 @@ import Stats from "./page/Stats/Stats";
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/stats" element={<Stats />} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/stats" element={<Stats />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
