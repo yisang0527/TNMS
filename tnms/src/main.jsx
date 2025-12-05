@@ -5,11 +5,13 @@ import './index.css'
 import App from './App.jsx'
 import Footer from './component/Footer.jsx'
 
+import {BrowserRouter} from "react-router-dom"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Footer />
+      <App />
     </BrowserRouter>
   </StrictMode>,
 )
