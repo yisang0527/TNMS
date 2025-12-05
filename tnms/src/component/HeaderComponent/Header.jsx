@@ -25,7 +25,7 @@ const Header = () => {
     {
       name: "참여와신고",
       subMenu: [
-        { name: "Q&A", link: "/" },
+        { name: "Q&A", link: "/qna" },
         { name: "재난신고하기", link: "https://www.safetyreport.go.kr/#main", external: true },
         { name: "공지사항", link: "/" }]
     }
