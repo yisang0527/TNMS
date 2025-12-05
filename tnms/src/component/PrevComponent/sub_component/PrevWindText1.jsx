@@ -33,7 +33,7 @@ export default function PrevWindText1() {
             </ul>
 
             <div className="flex items-center pt-12 mb-10">
-                <p className="w-[30px] h-[30px] border-4 border-[#132a35] bg-[#ffffff] mr-2"></p>
+                <p className="w-[20px] h-[20px] border-4 border-[#132a35] bg-[#ffffff] mr-2"></p>
                 <p className="font-bold text-[20px] text-[#132a35]">주요기관 연락처</p>
             </div>
 

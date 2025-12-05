@@ -16,7 +16,7 @@ export default function PrevRain1() {
                 <div className="m-auto bg-[#ccc] w-[98%] h-[1px]"></div>
 
                 <div className="flex items-center pt-11 mb-11">
-                    <p className="w-[30px] h-[30px] border-4 border-[#132a35] mr-2 bg-[#ffffff]"></p>
+                    <p className="w-[20px] h-[20px] border-4 border-[#132a35] mr-2 bg-[#ffffff]"></p>
                     <p className="font-bold text-[20px] text-[#132a35]">진행별 행동요령</p>
                 </div>
 

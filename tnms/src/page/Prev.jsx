@@ -1,4 +1,4 @@
-import './Prev.css';
+import styles from "./Prev.module.css";
 import { useState } from "react";
 
 import PrevWind from "../component/PrevComponent/PrevWind";
@@ -36,27 +36,29 @@ export default function Prev() {
     const [selected, setSelected] = useState(tabs[0].key);
 
     return (
-        <div className="max-w-[1440px] mx-auto">
-            <p className="font-bold text-[32px] pt-13 pb-10">자연재난행동요령</p>
+        <div className={styles.wrapper}>
+            <div className="max-w-[1440px] mx-auto">
+                <p className="font-bold text-[32px] pt-13 pb-10">자연재난행동요령</p>
 
-            {/* 버튼 영역 */}
-            <div className="flex justify-between">
-                {tabs.map((tab) => (
-                    <button
-                        key={tab.key}
-                        onClick={() => setSelected(tab.key)}
-                        className={`w-[140px] h-[55px] border transition-all relative shadow-[8px_5px_5px_0px_rgba(0,0,0,0.2)] cursor-pointer font-bold text-[20px]
+                {/* 버튼 영역 */}
+                <div className="flex justify-between">
+                    {tabs.map((tab) => (
+                        <button
+                            key={tab.key}
+                            onClick={() => setSelected(tab.key)}
+                            className={`w-[140px] h-[55px] border transition-all relative shadow-[8px_5px_5px_0px_rgba(0,0,0,0.2)] cursor-pointer font-bold text-[20px]
                             ${selected === tab.key ? "border-[#75C1E6] border-2 bg-white" : "bg-white"}`}
-                    >
-                        <img src={tab.img} alt={tab.label} className="w-13 h-13 absolute top-0 right-7 " />
-                        {tab.label}
-                    </button>
-                ))}
-            </div>
+                        >
+                            <img src={tab.img} alt={tab.label} className="w-13 h-13 absolute top-0 right-7 " />
+                            {tab.label}
+                        </button>
+                    ))}
+                </div>
 
-            {/* 선택된 탭에 맞는 컴포넌트 표시 */}
-            <div className="mt-8">
-                {tabs.find(tab => tab.key === selected)?.component}
+                {/* 선택된 탭에 맞는 컴포넌트 표시 */}
+                <div className="mt-8">
+                    {tabs.find(tab => tab.key === selected)?.component}
+                </div>
             </div>
         </div>
     );
