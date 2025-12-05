@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom"
 import "./footer.css";
+import waLogo from "../../assets/waLogo.png"
 
 function Footer() {
   return (
@@ -50,7 +51,7 @@ function Footer() {
       <p>자연재난관제시스템에서 제공하는 자료는 공익목적으로만 사용해야하며 상업목적으로 사용할 경우 저작권을 침해합니다.</p>
       </footer-left>
       <div className="footer-right">
-      <img src="/waLogo.png"/>
+      <img src={waLogo} alt="웹표준로고"/>
       </div>
       
 

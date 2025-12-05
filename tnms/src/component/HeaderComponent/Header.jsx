@@ -1,6 +1,7 @@
 import './Header.css';
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Logo from "../../assets/logo1.png"
 
 const Header = () => {
   const menuLst = [
@@ -13,7 +14,7 @@ const Header = () => {
       name: "재난예방대비",
       subMenu: [
         { name: "재난대비행동요령", link: "/prev" },
-        { name: "비상연락망", link: "/" }]
+        { name: "비상연락망", link: "/number" }]
     },
     {
       name: "재난심리상담",
@@ -36,7 +37,7 @@ const Header = () => {
 
   return (
     <nav className="nav">
-      <img src="./logo1.png" alt="Logo" className="logo" />
+      <img src={Logo} alt="Logo" className="logo" />
       <ul className="navContainer">
         {menuLst.map((v, idx) => (
           <li
