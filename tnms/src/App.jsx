@@ -1,10 +1,10 @@
 import './App.css';
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './component/HeaderComponent/Header';
 import Prev from './page/Prev';
 import Qna from './page/Qna';
+import Footer from './component/FooterComponent/Footer'
 
 function App() {
   return (
@@ -17,6 +17,8 @@ function App() {
         <Route path='/prev' element={<Prev />} />
         <Route path='/qna' element={<Qna />} />
       </Routes>
+
+      <Footer />
     </>
   )
 }
