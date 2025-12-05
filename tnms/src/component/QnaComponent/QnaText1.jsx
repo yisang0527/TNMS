@@ -19,9 +19,7 @@ export default function QnaText1() {
             </div>
 
             <div className="flex items-center mt-10">
-                <div className="w-[200px] h-[85px] bg-[#4DB1E5] mr-10 flex justify-center">
-                    <button onClick={() => { window.open(url) }} className="font-bold text-[18px] text-[#FFFFFF] leading-[85px] cursor-pointer">국민신문고 바로가기</button>
-                </div>
+                <button onClick={() => { window.open(url) }} className="font-bold text-[18px] text-[#FFFFFF] leading-[85px] cursor-pointer w-[200px] h-[85px] bg-[#4DB1E5] mr-10 flex justify-center">국민신문고 바로가기</button>
 
                 <div>
                     <p className="text-[#555555]">국민재난안전포털 'Q&A'가 행정기관 민원서비스 통합에 따라</p>

@@ -9,7 +9,7 @@ export default function Qna() {
             <div className="max-w-[1500px] mx-auto">
                 <QnaText1 />
 
-                <p className="w-[100%] h-[1px] bg-[#CCCCCC] mt-10 mb-15"></p>
+                <p className="w-[100%] h-[1px] bg-[#333333] mt-10 mb-15"></p>
 
                 <QnaText2 />
             </div>
