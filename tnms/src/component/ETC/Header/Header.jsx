@@ -14,13 +14,13 @@ const Header = () => {
     {
       name: "재난예방대비",
       subMenu: [
-        { name: "재난대비행동요령", link: "/prev" },
+        { name: "재난대비행동요령", link: "/prev" }, 
         { name: "비상연락망", link: "/" }]
     },
     {
       name: "재난심리상담",
       subMenu: [
-        { name: "상담센터소개", link: "/" },
+        { name: "상담센터소개", link: "/help" },
         { name: "재난심리상담", link: "https://www.redcross.or.kr/recovery/recovery_support.do", external: true },
         { name: "재난심리 자가진단", link: "https://www.safekorea.go.kr/idsiSFK/neo/sfk/cs/pcm/cyb/SelfDgnssForm.jsp?menuSeq=566", external: true }]
     },
