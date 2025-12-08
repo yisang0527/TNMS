@@ -7,7 +7,7 @@ export default function QnaText1() {
 
     return (
         <>
-            <p className="font-bold text-[32px] pt-13 pb-10">Q&A</p>
+            <p className="font-bold text-[32px] pb-10">Q&A</p>
 
             <div className="border w-[100%] h-[300px]">
                 <p className="p-10">

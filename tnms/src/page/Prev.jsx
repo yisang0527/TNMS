@@ -37,8 +37,8 @@ export default function Prev() {
 
     return (
         <div className={styles.wrapper}>
-            <div className="max-w-[1440px] mx-auto">
-                <p className="font-bold text-[32px] pt-13 pb-10">자연재난행동요령</p>
+            <div className="max-w-[1440px] mx-auto pt-[100px] pb-[150px]">
+                <p className="font-bold text-[32px] pb-10">자연재난행동요령</p>
 
                 {/* 버튼 영역 */}
                 <div className="flex justify-between">
