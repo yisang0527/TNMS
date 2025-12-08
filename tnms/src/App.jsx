@@ -4,6 +4,7 @@ import Header from './component/HeaderComponent/Header';
 import Stats from "./page/Stats";
 import Prev from './page/Prev';
 import Qna from './page/Qna';
+import Notice from './page/Notice';
 import Footer from './component/FooterComponent/Footer'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/stats' element={<Stats />} />
         <Route path='/prev' element={<Prev />} />
         <Route path='/qna' element={<Qna />} />
+        <Route path='/notice' element={<Notice />} />
       </Routes>
 
       <Footer />
