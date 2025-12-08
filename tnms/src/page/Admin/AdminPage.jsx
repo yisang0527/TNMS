@@ -1,12 +1,13 @@
-// page/Admin/AdminPage.jsx
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../component/Admin/Authcontext";
 import AdminGraph from "../../component/Admin/AdminGraph";
 import AdminNotice from "../../component/Admin/AdminNotice";
-import { useLegends } from "../../component/Admin/LegendContext";
-
 
 export default function AdminPage() {
+    const { signout } = useAuth();
+    const nav = useNavigate();
     const [activeMenu, setActiveMenu] = useState("범례설정");
 
     const menuItems = [
@@ -17,9 +18,11 @@ export default function AdminPage() {
         { id: "adminpopup", label: "팝업창 관리" },
     ];
 
-    const handleLogout = () => {
-        console.log("로그아웃");
-    };
+    // 로그아웃 함수 수정
+    async function handleLogout() {
+        await signout();
+        nav("/"); // 메인페이지로 이동
+    }
 
     // 현재 선택된 메뉴에 따라 컴포넌트 렌더링
     const renderContent = () => {
