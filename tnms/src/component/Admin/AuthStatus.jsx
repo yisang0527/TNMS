@@ -1,4 +1,4 @@
-// AuthStatus.jsx
+// src/Admin/AuthStatus.jsx
 
 import { Link } from "react-router-dom";
 import { useAuth } from "./Authcontext";
@@ -14,7 +14,6 @@ export default function AuthStatus() {
 
     return (
         <header>
-            <Link to="/">HOME</Link>
             {
                 user ? ( // 로그인상태일때 보여줄내용
                     <div>

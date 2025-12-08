@@ -1,23 +1,21 @@
-
-
-//  로그인 여부는 리액트프로젝트 전체에서 필요하기에 state가 아닌
+// src/Admin/Authcontext.jsx
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { auth } from "../firebase/config";
-import { onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { auth } from "../../firebaes/config";
+import { onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
-// 인증에 필요한객체 생성
+// 인증에 필요한 객체 생성
 const AuthContext = createContext(null)
 
-//  어디서든 가져다 쓰도록 내보내기
+// 어디서든 가져다 쓰도록 내보내기
 export function useAuth() {
     return useContext(AuthContext);
 }
 
-//  로그인, 회원가입을 위한 컴포넌트
+// 로그인을 위한 컴포넌트
 export function AuthProvider({ children }) {
-    const [user, setUser] = useState(null) //로그인한 사용자넣기
-    const [loading, setLoading] = useState(true); //  인증상태 확인을위한
+    const [user, setUser] = useState(null) // 로그인한 사용자 넣기
+    const [loading, setLoading] = useState(true); // 인증상태 확인을 위한
 
     useEffect(
         () => {
@@ -29,12 +27,6 @@ export function AuthProvider({ children }) {
         }, []
     );
 
-    // 회원가입
-    async function signup(email, password) {
-        const u = await createUserWithEmailAndPassword(auth, email, password);
-        return u.user;
-    }
-
     // 로그인
     async function signin(email, password) {
         const u = await signInWithEmailAndPassword(auth, email, password);
@@ -43,10 +35,10 @@ export function AuthProvider({ children }) {
 
     // 로그아웃
     async function signout() {
-        await signOut(auth);
+        await auth.signOut();
     }
 
-    const value = { user, loading, signup, signin, signout };
+    const value = { user, loading, signin, signout }; // signup 제거
 
     return (
         <AuthContext.Provider value={value}>
