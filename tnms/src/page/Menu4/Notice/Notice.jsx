@@ -1,8 +1,8 @@
 // Notice.jsx
 
-import styles from "./Notice.module.css";
+import styles from "../../../css/Menu4/Notice/Notice.module.css";
 
-import NoticeText from "../component/NoticeComponent/NoticeText";
+import NoticeText from "../../../component/Menu4/Notice/NoticeText";
 
 export default function Notice() {
     return (

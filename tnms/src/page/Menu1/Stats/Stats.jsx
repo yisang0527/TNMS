@@ -1,6 +1,6 @@
-import styles from "./Stats.module.css"
+import styles from "../../../css/Menu1/Stats/Stats.module.css"
 
-import StatsFilter from "../component/StatsComponent/StatsFilter";
+import StatsFilter from "../../../component/Menu1/Stats/StatsFilter";
 
 export default function Stats() {
   return (

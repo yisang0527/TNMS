@@ -1,23 +1,23 @@
-import styles from "./Prev.module.css";
+import styles from "../../../css/Menu2/Prev/Prev.module.css";
 import { useState } from "react";
 
-import PrevWind from "../component/PrevComponent/PrevWind";
-import PrevDust from "../component/PrevComponent/PrevDust";
-import PrevRain1 from "../component/PrevComponent/PrevRain1";
-import PrevMountain from "../component/PrevComponent/PrevMountain";
-import PrevRain2 from "../component/PrevComponent/PrevRain2";
-import PrevFire from "../component/PrevComponent/PrevFire";
-import PrevSnow from "../component/PrevComponent/PrevSnow";
-import PrevCold from "../component/PrevComponent/PrevCold";
+import PrevWind from "../../../component/Menu2/Prev/PrevWind";
+import PrevDust from "../../../component/Menu2/Prev/PrevDust";
+import PrevRain1 from "../../../component/Menu2/Prev/PrevRain1";
+import PrevMountain from "../../../component/Menu2/Prev/PrevMountain";
+import PrevRain2 from "../../../component/Menu2/Prev/PrevRain2";
+import PrevFire from "../../../component/Menu2/Prev/PrevFire";
+import PrevSnow from "../../../component/Menu2/Prev/PrevSnow";
+import PrevCold from "../../../component/Menu2/Prev/PrevCold";
 
-import windImg from "../assets/windLogo.png";
-import dustImg from "../assets/dustLogo.png";
-import rain1Img from "../assets/rain1Logo.png";
-import mountainImg from "../assets/mountainLogo.png";
-import rain2Img from "../assets/rain2Logo.png";
-import fireImg from "../assets/fireLogo.png";
-import snowImg from "../assets/snowLogo.png";
-import coldImg from "../assets/coldLogo.png";
+import windImg from "../../../../public/windLogo.png";
+import dustImg from "../../../../public/dustLogo.png";
+import rain1Img from "../../../../public/rain1Logo.png";
+import mountainImg from "../../../../public/mountainLogo.png";
+import rain2Img from "../../../../public/rain2Logo.png";
+import fireImg from "../../../../public/fireLogo.png";
+import snowImg from "../../../../public/snowLogo.png";
+import coldImg from "../../../../public/coldLogo.png";
 
 export default function Prev() {
 

@@ -1,7 +1,7 @@
-import styles from "./Qna.module.css"
+import styles from "../../../css/Menu4/Qna/Qna.module.css"
 
-import QnaText1 from "../component/QnaComponent/QnaText1"
-import QnaText2 from "../component/QnaComponent/QnaText2"
+import QnaText1 from "../../../component/Menu4/Qna/QnaText1"
+import QnaText2 from "../../../component/Menu4/Qna/QnaText2"
 
 export default function Qna() {
     return (

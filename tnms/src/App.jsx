@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Header from './component/HeaderComponent/Header';
-import Stats from "./page/Stats";
-import Prev from './page/Prev';
-import Qna from './page/Qna';
-import Notice from './page/Notice';
-import Footer from './component/FooterComponent/Footer'
+import Header from './component/ETC/Header/Header';
+import Stats from "./page/Menu1/Stats/Stats";
+import Prev from './page/Menu2/Prev/Prev';
+import Qna from './page/Menu4/Qna/Qna';
+import Notice from './page/Menu4/Notice/Notice';
+import Footer from './component/ETC/Footer/Footer'
 
 function App() {
   return (
