@@ -29,7 +29,7 @@ export default function QnaText1() {
             </div>
 
             <button onClick={() => window.open("http://www.epeople.go.kr")}
-                className="font-bold text-[18px] text-white w-[200px] h-[85px] bg-[#4DB1E5] mt-10">
+                className="font-bold text-[18px] text-white w-[200px] h-[85px] bg-[#4DB1E5] mt-10 cursor-pointer">
                 국민신문고 바로가기
             </button>
         </>

@@ -31,7 +31,8 @@ export default function AdminPage() {
             case "범례설정":
                 return <AdminGraph />;
             case "Q&A":
-            return <AdminQna />;
+                return <div>QNA 컴포넌트</div>;
+            // return <AdminQna />;
             case "공지사항":
                 return <AdminNotice />;
             case "팝업창 관리":
