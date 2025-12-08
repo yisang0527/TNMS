@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import "./footer.css";
+import "../../../css/ETC/Footer/Footer.css";
 
-import footerImg from "../../assets/waLogo.png";
+import footerImg from "../../../../public/waLogo.png";
 
 function Footer() {
   return (

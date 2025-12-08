@@ -1,8 +1,8 @@
-import './Header.css';
+import '../../../css/ETC/Header/Header.css';
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import headerImg from "../../assets/logo1.png"
+import headerImg from "../../../../public/logo1.png"
 
 const Header = () => {
   const menuLst = [
