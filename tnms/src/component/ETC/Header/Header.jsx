@@ -15,7 +15,7 @@ const Header = () => {
       name: "재난예방대비",
       subMenu: [
         { name: "재난대비행동요령", link: "/prev" },
-        { name: "비상연락망", link: "/" }]
+        { name: "비상연락망", link: "/number" }]
     },
     {
       name: "재난심리상담",
