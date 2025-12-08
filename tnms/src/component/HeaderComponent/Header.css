@@ -61,7 +61,7 @@
 .detailMenu {
   position: absolute;
   top: 100px;
-  left: -5px;
+  left: 5px;
   transform: none;
   width: 100%;
   height: 250px;

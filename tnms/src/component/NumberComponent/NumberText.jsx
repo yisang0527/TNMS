@@ -16,6 +16,8 @@ import jeollanamdo from "../../assets/logo_jeollanamdo.gif"
 import sejong from "../../assets/logo_sejong.gif"
 import ulsan from "../../assets/logo_ulsan.gif"
 import resize from "../../assets/resize.png"
+import "./NumberText.css";
+import background from "../../assets/background1.png";
 
 const emergencyLinks = [
   {
@@ -124,30 +126,41 @@ const emergencyLinks = [
 
 export default function NumberText() {
   return (
-    <div className="p-6 grid grid-cols-6 gap-6
-                    max-xl:grid-cols-4
-                    max-lg:grid-cols-3
-                    max-sm:grid-cols-2">
-      {emergencyLinks.map((item, index) => (
-        <a
-          key={index}
-          href={item.url}
-          target="_blank"
-          rel="noreferrer"
-          className="bg-white rounded-xl p-4 shadow-md flex flex-col items-center 
-                     transition-transform hover:-translate-y-1 hover:shadow-lg"
-        >
-          <img
-            src={item.img}
-            alt={item.name}
-            className="w-16 h-16 object-contain mb-3"
-          />
-          <div className="text-sm font-semibold mb-1 text-gray-800">
-            {item.name}
-          </div>
-          <img src={item.icon} alt="아이콘" className="w-6 h-6 opacity-70"/>
-        </a>
-      ))}
+    <div style={{ backgroundImage: `url(${background})` }}>
+    <div
+    className="w-[1500px] mx-auto bg-cover bg-center"
+    >
+      <h2 className="text-[32px] font-bold mb-6 ml-[30px] mt-[80px]">
+          비상연락망
+      </h2><br/>
+      <div className="p-6 grid grid-cols-6 gap-6
+                      max-xl:grid-cols-4
+                      max-lg:grid-cols-3
+                      max-sm:grid-cols-2
+                      ">
+        {emergencyLinks.map((item, index) => (
+          <a
+            key={index}
+            href={item.url}
+            target="_blank"
+            rel="noreferrer"
+            className="w-[200px] mb-[80px]"
+          >
+            <img
+              src={item.img}
+              alt={item.name}
+              className="w-[200px] h-[80px] object-contain mb-3 border border-[#E0E0E0] rounded bg-white"
+            />
+            <div className="flex flex-row items-center justify-end gap-2">
+              <div className="text-sm font-semibold mb-1 text-gray-800">
+                {item.name}
+              </div>
+              <img src={item.icon} alt="아이콘" className="w-6 h-6 opacity-70"/>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
     </div>
   );
 }
