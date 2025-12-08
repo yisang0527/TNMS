@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
+import SideTab from './SideTab';
+import "./MainMap.css";
  
 
-export default function MainMap() {
+export default function MainMap({ selectedRegion, setSelectedRegion, setSideOpen }) {
   const KAKAO = useRef(null);
-  const [selectedRegion, setSelectedRegion] = useState(null); // 선택된 지역
-  const [sideOpen, setSideOpen] = useState(false);           // 사이드탭 열림 여부
+  const mapRef = useRef(null);
+  
 
   // const [
   //   {
@@ -25,9 +27,10 @@ export default function MainMap() {
         level: 13, // 지도 레벨
       };
 
-      const map = new kakao.maps.Map(container, options);
+       const map = new kakao.maps.Map(container, options);
+      mapRef.current = map;
 
-      // -------------------- 서울 전체 폴리곤 --------------------
+      // -------------------- 서울 전체 폴리곤 -------------------- 
       const seoulpolygonPath = [
         new kakao.maps.LatLng(37.65816987992781, 126.94784561524153),
         new kakao.maps.LatLng(37.64117784630861, 126.9121456608064),
@@ -2205,395 +2208,67 @@ export default function MainMap() {
 
     ];
       
-      const regionCenters ={
+      const regionCenters ={ // 이건 지역 중심 조ㅓㅏ표임 케케
         서울: new kakao.maps.LatLng(37.55538654535481, 126.9835765626031),
         경기: new kakao.maps.LatLng(37.500232760498974, 127.22193537663605),
         강원: new kakao.maps.LatLng(37.75973674009599, 128.22287567885292),
         충남: new kakao.maps.LatLng(36.49070077873013, 126.92030471357498),
         충북: new kakao.maps.LatLng(36.73190428099862, 127.70538441377482),
-        경북: new kakao.maps.LatLng(36.73190428099862, 127.70538441377482),
+        경북: new kakao.maps.LatLng(36.37145412453759, 128.7384757276954),
         경남: new kakao.maps.LatLng(35.415746139700346, 128.38308398667152),
         전북: new kakao.maps.LatLng(35.76388057183283, 127.14057487033574),
         전남: new kakao.maps.LatLng(35.067221811111295, 127.0005766936257),
         제주: new kakao.maps.LatLng(33.389806138956786, 126.51873917572715),
 
       }
-        // 서울 경계선
-      const seoulpolygon = new kakao.maps.Polygon({
-        path: seoulpolygonPath,
-        strokeWeight: 4, // 선 굵기
-        strokeColor: '#39DE2A', // 선색?
-        strokeOpacity: 0.8, // 선 투명도
-        strokeStyle: 'solid',
-        fillColor: '#A2FF99', // 내부 전체 채우기 색
-        fillOpacity: 0.2, // 투명도
-        zIndex: 4
-      });
-
-      seoulpolygon.setMap(map);
-
-      const mouseoverOption = {
-        fillColor: '#A2FF99',
-        fillOpacity: 0.9
-      };
-
-      const mouseoutOption = {
-        fillColor: '#A2FF99',
-        fillOpacity: 0.2
-      };
-
-      kakao.maps.event.addListener(seoulpolygon, 'mouseover', () => {
-        seoulpolygon.setOptions(mouseoverOption);
-      });
-
-      kakao.maps.event.addListener(seoulpolygon, 'mouseout', () => {
-        seoulpolygon.setOptions(mouseoutOption);
-      });
-
-      kakao.maps.event.addListener(seoulpolygon, 'click', () => {
-        setSelectedRegion("서울"); // 선택 지역 상태 변경
-        setSideOpen(true); // 사이드탭 열기
-        map.setCenter(regionCenters["서울"]); // 지도 중심 이동
-        map.setLevel(7); // 확대 이건 보고 비교해봐야 함
-      });
-      
-        // 경기도 경계선
-      const Gyeonggipolygon = new kakao.maps.Polygon({
-        path: [
-          GyeonggiPolygonPath, 
-          seoulpolygonPath
-        ],
-        strokeWeight: 4, // 선 굵기
-        strokeColor: '#F7D32D', // 선색
-        strokeOpacity: 0.8, // 선 투명도
-        strokeStyle: 'solid',
-        fillColor: '#FFF59D', // 내부 전체 채우기 색
-        fillOpacity: 0.2, // 투명도
-        zIndex: 3
-      });
-
-      Gyeonggipolygon.setMap(map);
-
-      const mouseoverGyeonggi = {
-        fillColor: '#FFF59D',
-        fillOpacity: 0.9
-      };
-
-      const mouseoutGyeonggi = {
-        fillColor: '#FFF59D',
-        fillOpacity: 0.2
-      };
-
-      kakao.maps.event.addListener(Gyeonggipolygon, 'mouseover', () => {
-        Gyeonggipolygon.setOptions(mouseoverGyeonggi);
-      });
-
-      kakao.maps.event.addListener(Gyeonggipolygon, 'mouseout', () => {
-        Gyeonggipolygon.setOptions(mouseoutGyeonggi);
-      });
-
-      kakao.maps.event.addListener(Gyeonggipolygon, 'click', () => {
-        setSelectedRegion("경기"); // 선택 지역 상태 변경
-        setSideOpen(true); // 사이드탭 열기
-        map.setCenter(regionCenters["경기"]); // 지도 중심 이동
-        map.setLevel(7); 
-      });
-
-
-        // 강원도 경계선
-      const Gangwonpolygon = new kakao.maps.Polygon({
-        path: GangwonPolygonPath,
-        strokeWeight: 4, // 선 굵기
-        strokeColor: '#64B5F6', // 선색
-        strokeOpacity: 0.8, // 선 투명도
-        strokeStyle: 'solid',
-        fillColor: '#BBDEFB', // 내부 전체 채우기 색
-        fillOpacity: 0.2, // 투명도
-        zIndex: 2
-      });
-
-      Gangwonpolygon.setMap(map);
-
-      const mouseoverGangwon = {
-        fillColor: '#BBDEFB',
-        fillOpacity: 0.9
-      };
-
-      const mouseoutGangwon = {
-        fillColor: '#BBDEFB',
-        fillOpacity: 0.2
-      };
-
-      kakao.maps.event.addListener(Gangwonpolygon, 'mouseover', () => {
-        Gangwonpolygon.setOptions(mouseoverGangwon);
-      });
-
-      kakao.maps.event.addListener(Gangwonpolygon, 'mouseout', () => {
-        Gangwonpolygon.setOptions(mouseoutGangwon);
-      });
-
-      kakao.maps.event.addListener(Gangwonpolygon, 'click', () => {
-        setSelectedRegion("경기"); // 선택 지역 상태 변경
-        setSideOpen(true); // 사이드탭 열기
-        map.setCenter(regionCenters["경기"]); // 지도 중심 이동
-        map.setLevel(7); 
-      });
-        // 충남 경계선
-      const Chungnampolygon = new kakao.maps.Polygon({
-        path: ChungnamPolygonPath,
-        strokeWeight: 4, // 선 굵기
-        strokeColor: '#F48FB1', // 선색
-        strokeOpacity: 0.8, // 선 투명도
-        strokeStyle: 'solid',
-        fillColor: '#F8BBD0', // 내부 전체 채우기 색
-        fillOpacity: 0.2, // 투명도
-        zIndex: 4
-      });
-
-      Chungnampolygon.setMap(map);
-
-      const mouseoverChungnam = {
-        fillColor: '#F8BBD0',
-        fillOpacity: 0.9
-      };
-
-      const mouseoutChungnam = {
-        fillColor: '#F8BBD0',
-        fillOpacity: 0.2
-      };
-
-      kakao.maps.event.addListener(Chungnampolygon, 'mouseover', () => {
-        Chungnampolygon.setOptions(mouseoverChungnam);
-      });
-
-      kakao.maps.event.addListener(Chungnampolygon, 'mouseout', () => {
-        Chungnampolygon.setOptions(mouseoutChungnam);
-      });
-
-      kakao.maps.event.addListener(Chungnampolygon, 'click', () => {
-        setSelectedRegion("충남"); // 선택 지역 상태 변경
-        setSideOpen(true); // 사이드탭 열기
-        map.setCenter(regionCenters["충남"]); // 지도 중심 이동
-        map.setLevel(7); 
-      });
-
-
-
-        // 충북 경계선
-      const Chungbukpolygon = new kakao.maps.Polygon({
-        path: ChungbukPolygonPath,
-        strokeWeight: 4, // 선 굵기
-        strokeColor: '#FF8A80', // 선색
-        strokeOpacity: 0.8, // 선 투명도
-        strokeStyle: 'solid',
-        fillColor: '#FFCDD2', // 내부 전체 채우기 색
-        fillOpacity: 0.2, // 투명도
-        zIndex: 4
-      });
-
-      Chungbukpolygon.setMap(map);
-
-      const mouseoverChungbuk = {
-        fillColor: '#FFCDD2',
-        fillOpacity: 0.9
-      };
-
-      const mouseoutChungbuk = {
-        fillColor: '#FFCDD2',
-        fillOpacity: 0.2
-      };
-
-      kakao.maps.event.addListener(Chungbukpolygon, 'mouseover', () => {
-        Chungbukpolygon.setOptions(mouseoverChungbuk);
-      });
-
-      kakao.maps.event.addListener(Chungbukpolygon, 'mouseout', () => {
-        Chungbukpolygon.setOptions(mouseoutChungbuk);
-      });
-
-     kakao.maps.event.addListener(Chungnampolygon, 'click', () => {
-        setSelectedRegion("충남"); // 선택 지역 상태 변경
-        setSideOpen(true); // 사이드탭 열기
-        map.setCenter(regionCenters["충남"]); // 지도 중심 이동
-        map.setLevel(7); 
-      });
-        // 경북 경계선
-      const Gyeongbukpolygon = new kakao.maps.Polygon({
-        path: GyeongbukPolygonPath,
-        strokeWeight: 4, // 선 굵기
-        strokeColor: '#B49CF3', // 선색
-        strokeOpacity: 0.8, // 선 투명도
-        strokeStyle: 'solid',
-        fillColor: '#E3D5FF', // 내부 전체 채우기 색
-        fillOpacity: 0.2, // 투명도
-        zIndex: 4
-      });
-
-      Gyeongbukpolygon.setMap(map);
-
-      const mouseoverGyeongbuk = {
-        fillColor: '#E3D5FF',
-        fillOpacity: 0.9
-      };
-
-      const mouseoutGyeongbuk = {
-        fillColor: '#E3D5FF',
-        fillOpacity: 0.2
-      };
-
-      kakao.maps.event.addListener(Gyeongbukpolygon, 'mouseover', () => {
-        Gyeongbukpolygon.setOptions(mouseoverGyeongbuk);
-      });
-
-      kakao.maps.event.addListener(Gyeongbukpolygon, 'mouseout', () => {
-        Gyeongbukpolygon.setOptions(mouseoutGyeongbuk);
-      });
-
-      kakao.maps.event.addListener(Gyeongbukpolygon, 'mousedown', () => {
-        setClickCount(prev => prev + 1);
-      });
-        // 경남 경계선
-      const Gyeongnampolygon = new kakao.maps.Polygon({
-        path: GyeongnamPolygonPath,
-        strokeWeight: 4, // 선 굵기
-        strokeColor: '#FFB74D', // 선색
-        strokeOpacity: 0.8, // 선 투명도
-        strokeStyle: 'solid',
-        fillColor: '#FFE0B2', // 내부 전체 채우기 색
-        fillOpacity: 0.2, // 투명도
-        zIndex: 4
-      });
-
-      Gyeongnampolygon.setMap(map);
-
-      const mouseoverGyeongnam = {
-        fillColor: '#FFE0B2',
-        fillOpacity: 0.9
-      };
-
-      const mouseoutGyeongnam = {
-        fillColor: '#FFE0B2',
-        fillOpacity: 0.2
-      };
-
-      kakao.maps.event.addListener(Gyeongnampolygon, 'mouseover', () => {
-        Gyeongnampolygon.setOptions(mouseoverGyeongnam);
-      });
-
-      kakao.maps.event.addListener(Gyeongnampolygon, 'mouseout', () => {
-        Gyeongnampolygon.setOptions(mouseoutGyeongnam);
-      });
-
-      kakao.maps.event.addListener(Gyeongnampolygon, 'mousedown', () => {
-        setClickCount(prev => prev + 1);
-      });
-        // 전북 경계선
-      const Jeonbukpolygon = new kakao.maps.Polygon({
-        path: JeonbukPolygonPath,
-        strokeWeight: 4, // 선 굵기
-        strokeColor: '#4DD0E1', // 선색
-        strokeOpacity: 0.8, // 선 투명도
-        strokeStyle: 'solid',
-        fillColor: '#B2EBF2', // 내부 전체 채우기 색
-        fillOpacity: 0.2, // 투명도
-        zIndex: 999
-      });
-
-      Jeonbukpolygon.setMap(map);
-
-      const mouseoverJeonbuk = {
-        fillColor: '#B2EBF2',
-        fillOpacity: 0.9
-      };
-
-      const mouseoutJeonbuk = {
-        fillColor: '#B2EBF2',
-        fillOpacity: 0.2
-      };
-
-      kakao.maps.event.addListener(Jeonbukpolygon, 'mouseover', () => {
-        Jeonbukpolygon.setOptions(mouseoverJeonbuk);
-      });
-
-      kakao.maps.event.addListener(Jeonbukpolygon, 'mouseout', () => {
-        Jeonbukpolygon.setOptions(mouseoutJeonbuk);
-      });
-
-      kakao.maps.event.addListener(Jeonbukpolygon, 'mousedown', () => {
-        setClickCount(prev => prev + 1);
-      });
-        // 전남 경계선
-      const Jeonnampolygon = new kakao.maps.Polygon({
-        path: JeonnamPolygonPath,
-        strokeWeight: 4, // 선 굵기
-        strokeColor: '#B0BEC5', // 선색
-        strokeOpacity: 0.8, // 선 투명도
-        strokeStyle: 'solid',
-        fillColor: '#CFD8DC', // 내부 전체 채우기 색
-        fillOpacity: 0.2, // 투명도
-        zIndex: 999
-      });
-
-      Jeonnampolygon.setMap(map);
-
-      const mouseoverJeonnam = {
-        fillColor: '#CFD8DC',
-        fillOpacity: 0.9
-      };
-
-      const mouseoutJeonnam = {
-        fillColor: '#CFD8DC',
-        fillOpacity: 0.2
-      };
-
-      kakao.maps.event.addListener(Jeonnampolygon, 'mouseover', () => {
-        Jeonnampolygon.setOptions(mouseoverJeonnam);
-      });
-
-      kakao.maps.event.addListener(Jeonnampolygon, 'mouseout', () => {
-        Jeonnampolygon.setOptions(mouseoutJeonnam);
-      });
-
-      kakao.maps.event.addListener(Jeonnampolygon, 'mousedown', () => {
-        setClickCount(prev => prev + 1);
-      });
-        // 제주 경계선
-      const jejupolygon = new kakao.maps.Polygon({
-        path: jejuPolygonPath,
-        strokeWeight: 4, // 선 굵기
-        strokeColor: '#FFCCB0', // 선색
-        strokeOpacity: 0.8, // 선 투명도
-        strokeStyle: 'solid',
-        fillColor: '#FFF1E9', // 내부 전체 채우기 색
-        fillOpacity: 0.2, // 투명도
-        zIndex: 999
-      });
-
-      jejupolygon.setMap(map);
-
-      const mouseoverjeju = {
-        fillColor: '#FFF1E9',
-        fillOpacity: 0.9
-      };
-
-      const mouseoutjeju = {
-        fillColor: '#FFF1E9',
-        fillOpacity: 0.2
-      };
-
-      kakao.maps.event.addListener(jejupolygon, 'mouseover', () => {
-        jejupolygon.setOptions(mouseoverjeju);
-      });
-
-      kakao.maps.event.addListener(jejupolygon, 'mouseout', () => {
-        jejupolygon.setOptions(mouseoutjeju);
-      });
-
-      kakao.maps.event.addListener(jejupolygon, 'mousedown', () => {
-        setClickCount(prev => prev + 1);
-      });
+         const regions = [
+    { name: "서울", path: seoulpolygonPath, fill: "#A2FF99", stroke: "#39DE2A", zIndex: 10 },
+    { name: "경기", path: [GyeonggiPolygonPath,seoulpolygonPath], fill: "#FFF59D", stroke: "#F7D32D", zIndex: 9 },
+    { name: "강원", path: GangwonPolygonPath, fill: "#BBDEFB", stroke: "#64B5F6", zIndex: 8 },
+    { name: "충남", path: ChungnamPolygonPath, fill: "#F8BBD0", stroke: "#F48FB1", zIndex: 7 },
+    { name: "충북", path: ChungbukPolygonPath, fill: "#FFCDD2", stroke: "#FF8A80", zIndex: 6 },
+    { name: "경남", path: GyeongnamPolygonPath, fill: "#FFE0B2", stroke: "#FFB74D", zIndex: 5 },
+    { name: "경북", path: GyeongbukPolygonPath, fill: "#E3D5FF", stroke: "#B49CF3", zIndex: 4 },
+    { name: "전남", path: JeonnamPolygonPath, fill: "#CFD8DC", stroke: "#B0BEC5", zIndex: 3 },
+    { name: "전북", path: JeonbukPolygonPath, fill: "#B2EBF2", stroke: "#4DD0E1", zIndex: 2 },
+    { name: "제주", path: jejuPolygonPath, fill: "#FFF1E9", stroke: "#FFCCB0", zIndex: 1 }
+  ];
+
+  regions.forEach((region) => {
+    const polygon = new kakao.maps.Polygon({
+      path: region.path,
+      strokeWeight: 4,
+      strokeColor: region.stroke,
+      strokeOpacity: 0.8,
+      strokeStyle: "solid",
+      fillColor: region.fill,
+      fillOpacity: 0.2,
+      zIndex: region.zIndex
     });
-  }, []);
+
+    polygon.setMap(map);
+
+    // 마우스 오버
+    kakao.maps.event.addListener(polygon, "mouseover", () => {
+      polygon.setOptions({ fillOpacity: 0.9 });
+    });
+
+    // 마우스 아웃
+    kakao.maps.event.addListener(polygon, "mouseout", () => {
+      polygon.setOptions({ fillOpacity: 0.2 });
+    });
+
+    // 클릭 이벤트
+    kakao.maps.event.addListener(polygon, "click", () => {
+      setSelectedRegion(region.name);  // 지역 선택
+      setSideOpen(true);               // 사이드탭 열기
+      map.setCenter(regionCenters[region.name]);
+      map.setLevel(11);
+        
+  });
+  });
+  });
+}, []);
 
   return (
     <>
