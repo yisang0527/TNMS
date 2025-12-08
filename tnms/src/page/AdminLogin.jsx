@@ -1,7 +1,7 @@
 // src/page/Admin/AdminLogin.jsx
 
 import { useState } from "react"
-import { useAuth } from "../../component/Admin/Authcontext"
+import { useAuth } from "../component/Admin/Authcontext"
 import { useNavigate } from "react-router-dom"
 
 export default function AdminLogin() {
@@ -11,7 +11,7 @@ export default function AdminLogin() {
     const [email, setEmail] = useState("");
     const [pw, setPw] = useState("");
     const [loading, setLoading] = useState(false)
-    
+
     async function handleSubmit() {
         if (!email || !pw) {
             alert("이메일과 비밀번호를 입력해주세요");
@@ -54,30 +54,30 @@ export default function AdminLogin() {
                     <div className="w-[320px] space-y-6">
                         <div>
                             <label className="block text-[14px] text-gray-600 mb-1">아이디</label>
-                            <input 
-                                type="email" 
+                            <input
+                                type="email"
                                 value={email}
-                                onChange={(e) => setEmail(e.target.value)} 
+                                onChange={(e) => setEmail(e.target.value)}
                                 onKeyPress={handleKeyPress}
-                                className="w-full h-[45px] px-3 border-2 border-gray-300 rounded bg-white" 
+                                className="w-full h-[45px] px-3 border-2 border-gray-300 rounded bg-white"
                             />
                         </div>
                         <div>
                             <label className="block text-[14px] text-gray-600 mb-1">비밀번호</label>
-                            <input 
+                            <input
                                 type="password"
                                 value={pw}
-                                onChange={(e) => setPw(e.target.value)} 
+                                onChange={(e) => setPw(e.target.value)}
                                 onKeyPress={handleKeyPress}
-                                className="w-full h-[45px] px-3 border-2 border-gray-300 rounded bg-white" 
+                                className="w-full h-[45px] px-3 border-2 border-gray-300 rounded bg-white"
                             />
                         </div>
                     </div>
 
                     {/* 오른쪽: 로그인 버튼 */}
-                    <button 
+                    <button
                         onClick={handleSubmit}
-                        disabled={loading} 
+                        disabled={loading}
                         className="w-[150px] h-[150px] text-white text-[28px] mt-4 font-bold rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
                         style={{ backgroundColor: '#400058' }}
                     >

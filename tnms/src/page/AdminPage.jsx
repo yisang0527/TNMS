@@ -1,6 +1,11 @@
+// page/Admin/AdminPage.jsx
+
 import { useState } from "react";
 
 // 각 메뉴별 컴포넌트 import
+import AdminGraph from "../component/Admin/AdminGraph";
+import { useLegends } from "../component/Admin/LegendContext";
+
 
 export default function AdminPage() {
     const [activeMenu, setActiveMenu] = useState("범례설정");
@@ -22,8 +27,7 @@ export default function AdminPage() {
     const renderContent = () => {
         switch (activeMenu) {
             case "범례설정":
-                return <div>범례설정 컴포넌트</div>;
-            // return <AdminGraphSettings />;
+                return <AdminGraph />;
             case "Q&A":
                 return <div>Q&A 컴포넌트</div>;
             // return <AdminQna />;
@@ -56,7 +60,7 @@ export default function AdminPage() {
 
             <div className="flex">
                 {/* 왼쪽 사이드바 */}
-                <div className="w-[240px] bg-purple-100 min-h-[calc(100vh-100px)] p-6">
+                <div className="w-[240px] bg-purple-100 min-h-[calc(100vh-120px)] p-6 sticky top-[20px]">
                     {/* 메인 메뉴 제목 */}
                     <div className="mb-6">
                         <h2 className="text-lg font-bold px-2">메인 메뉴</h2>
