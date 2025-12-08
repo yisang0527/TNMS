@@ -1,7 +1,7 @@
 // src/Admin/Authcontext.jsx
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { auth } from "../../firebaes/config";
+import { auth } from "../../firebase/config";
 import { onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 // 인증에 필요한 객체 생성

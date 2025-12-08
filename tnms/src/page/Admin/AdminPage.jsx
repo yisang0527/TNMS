@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../component/Admin/Authcontext";
 import AdminGraph from "../../component/Admin/AdminGraph";
 import AdminNotice from "../../component/Admin/AdminNotice";
+import AdminQna from "../../component/Admin/AdminQna";
 
 export default function AdminPage() {
     const { signout } = useAuth();
@@ -30,8 +31,7 @@ export default function AdminPage() {
             case "범례설정":
                 return <AdminGraph />;
             case "Q&A":
-                return <div>Q&A 컴포넌트</div>;
-            // return <AdminQna />;
+            return <AdminQna />;
             case "공지사항":
                 return <AdminNotice />;
             case "팝업창 관리":
