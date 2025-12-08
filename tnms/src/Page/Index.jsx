@@ -20,12 +20,13 @@ export default function Index() {
       setSelectedRegion={setSelectedRegion}
       setSideOpen={setSideOpen}
     />
-      <SideTab
+    <SideTab
         isOpen={sideOpen}
         region={selectedRegion}
         onClose={() => setSideOpen(false)}
         onOpen={() => setSideOpen(true)}
       />
+      
     </div>
   );
 }
