@@ -9,7 +9,7 @@ const Header = () => {
     {
       name: "지난재난통계",
       subMenu: [
-        { name: "지난재난통계", link: "/" }]
+        { name: "지난재난통계", link: "/stats" }]
     },
     {
       name: "재난예방대비",

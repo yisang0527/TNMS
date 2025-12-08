@@ -1,4 +1,4 @@
-import StatsFilter from "../../component/Stats/StatsFilter";
+import StatsFilter from "../component/StatsComponent/StatsFilter";
 
 export default function Stats() {
   return (
