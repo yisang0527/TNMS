@@ -3,22 +3,11 @@
 import { useState, useEffect } from "react";
 import { Line, Bar } from "react-chartjs-2";
 import "chart.js/auto"
-import { weatherDataByYear } from "../../../public/data/weatherData";
-
-const defaultLegends = [
-    { id: "wind", name: "강풍", color: "#4BC0C0", unit: "m/s", enabled: true },
-    { id: "dust", name: "황사", color: "#DECC96", unit: "㎍/㎥", enabled: true },
-    { id: "rain1", name: "장마", color: "#9966FF", unit: "mm", enabled: true },
-    { id: "mauntain", name: "산사태", color: "#8B7355", unit: "ha", enabled: true },
-    { id: "rain2", name: "호우", color: "#FF9F40", unit: "mm", enabled: true },
-    { id: "fire", name: "산불", color: "#DC3C1E", unit: "발생수", enabled: true },
-    { id: "snow", name: "폭설", color: "#C9CBCF", unit: "cm", enabled: true },
-    { id: "cold", name: "한파", color: "#36A2EB", unit: "℃", enabled: true },
-    { id: "heat", name: "폭염", color: "#FF6384", unit: "℃", enabled: true }
-];
+import { weatherDataByYear } from "../../../../../public/data/weatherData";
+import { useLegends } from "../../../Admin/LegendContext"
 
 export default function StatsChart() {
-    const legends = defaultLegends;
+    const { legends } = useLegends();
 
     const hexToRgb = (hex) => {
         const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);

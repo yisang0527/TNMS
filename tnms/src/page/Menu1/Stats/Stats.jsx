@@ -1,4 +1,5 @@
-import StatsFilter from "../component/Stats/StatsFilter";
+
+import StatsFilter from "../../../component/Menu1/Stats/Stats/StatsFilter";
 
 export default function Stats() {
   return (

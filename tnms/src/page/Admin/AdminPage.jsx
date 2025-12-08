@@ -1,10 +1,9 @@
 // page/Admin/AdminPage.jsx
 
 import { useState } from "react";
-
-// 각 메뉴별 컴포넌트 import
-import AdminGraph from "../component/Admin/AdminGraph";
-import { useLegends } from "../component/Admin/LegendContext";
+import AdminGraph from "../../component/Admin/AdminGraph";
+import AdminNotice from "../../component/Admin/AdminNotice";
+import { useLegends } from "../../component/Admin/LegendContext";
 
 
 export default function AdminPage() {
@@ -14,8 +13,7 @@ export default function AdminPage() {
         { id: "main", label: "메인 메뉴" },
         { id: "admingraph", label: "범례설정" },
         { id: "adminqna", label: "Q&A" },
-        { id: "adminnotice1", label: "공지사항 등록" },
-        { id: "adminnotice2", label: "공지사항 관리" },
+        { id: "adminnotice1", label: "공지사항" },
         { id: "adminpopup", label: "팝업창 관리" },
     ];
 
@@ -31,12 +29,8 @@ export default function AdminPage() {
             case "Q&A":
                 return <div>Q&A 컴포넌트</div>;
             // return <AdminQna />;
-            case "공지사항 등록":
-                return <div>공지사항 등록 컴포넌트</div>;
-            // return <AdminNotice1 />;
-            case "공지사항 관리":
-                return <div>공지사항 관리 컴포넌트</div>;
-            // return <AdminNotice2 />;
+            case "공지사항":
+                return <AdminNotice />;
             case "팝업창 관리":
                 return <div>팝업창 관리 컴포넌트</div>;
             // return <AdminPopup />;
@@ -60,7 +54,7 @@ export default function AdminPage() {
 
             <div className="flex">
                 {/* 왼쪽 사이드바 */}
-                <div className="w-[240px] bg-purple-100 min-h-[calc(100vh-120px)] p-6 sticky top-[20px]">
+                <div className="w-[240px] bg-purple-100 min-h-[calc(100vh-100px)] p-6">
                     {/* 메인 메뉴 제목 */}
                     <div className="mb-6">
                         <h2 className="text-lg font-bold px-2">메인 메뉴</h2>

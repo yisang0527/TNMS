@@ -2,11 +2,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { LegendProvider } from "./component/Admin/LegendContext";
 import { AuthProvider } from "./component/Admin/Authcontext";
 import ProtectedRoute from "./component/Admin/ProtectedRoute";
-import Stats from "./page/Stats";
-import AdminLogin from "./page/AdminLogin";
-import AdminPage from "./page/AdminPage";
-import Notice from "./page/Notice";
-import Qna from "./page/Qna";
+import Stats from "./page/Menu1/Stats/Stats";
+import AdminLogin from "./page/Admin/AdminLogin";
+import AdminPage from "./page/Admin/AdminPage";
+import Notice from "./page/Menu4/Notice";
+import Qna from "./page/Menu4/Qna";
 
 export default function App() {
   return (
