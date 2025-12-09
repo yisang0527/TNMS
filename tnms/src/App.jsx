@@ -1,3 +1,15 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Index from "./Page/Index";
+
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Index />} />
+      </Routes>
+    </BrowserRouter>
+  );
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './component/ETC/Header/Header';
@@ -27,5 +39,3 @@ function App() {
     </>
   )
 }
-
-export default App
