@@ -20,7 +20,7 @@ const Header = () => {
     {
       name: "재난심리상담",
       subMenu: [
-        { name: "상담센터소개", link: "/help" },
+        { name: "상담센터소개", link: "/" },
         { name: "재난심리상담", link: "https://www.redcross.or.kr/recovery/recovery_support.do", external: true },
         { name: "재난심리 자가진단", link: "https://www.safekorea.go.kr/idsiSFK/neo/sfk/cs/pcm/cyb/SelfDgnssForm.jsp?menuSeq=566", external: true }]
     },
