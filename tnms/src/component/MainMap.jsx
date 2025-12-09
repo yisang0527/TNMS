@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";;
 import SideTab from "./SideTab";
 import "./MainMap.css";
 
-export default function MainMap({ selectedRegion, setSelectedRegion, setSideOpen }) {
+export default function MainMap({ setSelectedRegion, setSideOpen, setMapObj }) {
   const KAKAO = useRef(null);
   const mapRef = useRef(null);
   const selectedPolygon = useRef(null); // 클릭된 폴리곤 유지
@@ -12,12 +12,32 @@ export default function MainMap({ selectedRegion, setSelectedRegion, setSideOpen
 
     window.kakao.maps.load(async () => {
       const kakao = window.kakao;
+      
       const map = new kakao.maps.Map(KAKAO.current, {
         center: new kakao.maps.LatLng(36.3504, 127.3845),
         level: 13,
       });
+      
       mapRef.current = map;
+      setMapObj(map); // ⭐ 추가
+      //map.setDraggable(false); // 이건 드래그 안 되게 하는 건데 이거하면 전부 다 안 돼서 우선 오류
+      kakao.maps.event.addListener(map, "zoom_changed", () => {
+        if (map.getLevel() > 13) map.setLevel(13); // 이거 축소 13이상 안 되게 하는 거
+      });
+      const bounds = new kakao.maps.LatLngBounds(
+        new kakao.maps.LatLng(33, 124),   // 남서쪽
+        new kakao.maps.LatLng(39, 132)    // 북동쪽
+      );
 
+      kakao.maps.event.addListener(map, "dragend", () => {
+        const center = map.getCenter();
+        const lat = Math.min(Math.max(center.getLat(), 33), 39);
+        const lng = Math.min(Math.max(center.getLng(), 124), 132);
+        if (lat !== center.getLat() || lng !== center.getLng()) {
+          map.setCenter(new kakao.maps.LatLng(lat, lng));
+        }
+      });// 이건 이동
+      
       const regionCenters = {
         서울: new kakao.maps.LatLng(37.55538654535481, 126.9835765626031),
         경기도: new kakao.maps.LatLng(37.500232760498974, 127.22193537663605),
@@ -49,8 +69,18 @@ export default function MainMap({ selectedRegion, setSelectedRegion, setSideOpen
         const res = await fetch(`/JSON/${file}`);
         const data = await res.json();
 
-        const path = data.path.map(([lat, lng]) => new kakao.maps.LatLng(lat, lng));
+       // 1️⃣ path 생성
+      let path = data.path.map(([lat, lng]) => new kakao.maps.LatLng(lat, lng));
 
+      // 2️⃣ 경기도만 서울 구멍 추가
+      if (data.name === "경기도") {
+        const seoulData = await fetch("/JSON/Seoul.json").then(r => r.json());
+        const seoulPath = seoulData.path.map(([lat, lng]) => new kakao.maps.LatLng(lat, lng));
+        path = [path, seoulPath];
+      }
+
+        
+        
         const polygon = new kakao.maps.Polygon({
         path,
         strokeWeight: 4,
