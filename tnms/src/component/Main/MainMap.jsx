@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";;
 import SideTab from "./SideTab";
-import "./MainMap.css";
+import "../../css/Main/MainMap.css";
 
 export default function MainMap({ selectedRegion, setSelectedRegion, setSideOpen }) {
   const KAKAO = useRef(null);

@@ -1,7 +1,7 @@
 // Index.jsx
 import { useState } from "react";
-import MainMap from "../component/mainMap";
-import SideTab from "../component/SideTab";
+import MainMap from "../../component/Main/MainMap";
+import SideTab from "../../component/Main/SideTab";
 
 export default function Index() {
   // ⭐ 메인 상태 2개
