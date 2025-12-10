@@ -10,29 +10,33 @@ import JeonbukChart from "./Chart/JeonbukChart";
 import JejuChart from "./Chart/JejuChart";
 
 
-export default function SideTab({ isOpen, region, onClose, onOpen }) {
+export default function SideTab({ isOpen, region, onClose, onOpen, mapObj, setSelectedRegion}) {
   return (
     <>
       {/* 열기 버튼 */}
       {!isOpen && (
        <button
-  onClick={() => {
-    onOpen(); // 사이드탭 열기
+        onClick={() => {
+          onOpen(); // 사이드탭 열기
+          setSelectedRegion("서울")
 
-    const moveToSeoul = () => {
-      if (mapObj && window.kakao) {
-        const kakao = window.kakao;
-        const seoulCenter = new kakao.maps.LatLng(37.55538654535481, 126.9835765626031);
-        mapObj.setCenter(seoulCenter); // 서울 중심으로 이동
-        mapObj.setLevel(11);           // 줌 레벨
-      } else {
-        // mapObj 아직 준비 안 됐으면 100ms 후 다시 시도
-        setTimeout(moveToSeoul, 100);
-      }
-    };
+          const moveToSeoul = () => {
+            if (mapObj && window.kakao) {
+              const kakao = window.kakao;
+              const seoulCenter = new kakao.maps.LatLng(
+                37.55538654535481,
+                126.9835765626031
+              );
 
-    moveToSeoul();
-  }}
+              mapObj.setCenter(seoulCenter);
+              mapObj.setLevel(11);
+            } else {
+              setTimeout(moveToSeoul, 100); // 지도 준비될 때까지 반복
+            }
+          };
+
+          moveToSeoul();
+        }}
   className="fixed right-0 top-[calc(100px+430px)] transform -translate-y-1/2 p-2 bg-gray-200 rounded shadow z-1600"
 >
           <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[15px] border-r-black"></div>
@@ -42,15 +46,15 @@ export default function SideTab({ isOpen, region, onClose, onOpen }) {
       <button
         onClick={onClose}
         className={`
-    fixed 
-    top-[calc(100px+430px)] 
-    p-2 bg-gray-200 rounded shadow z-[1500]
-    transform -translate-y-1/2
-    transition-transform duration-300
-    ${isOpen 
-      ? "right-0 translate-x-[-720px]"   // 열릴 때 → 오른쪽 0에서 시작해서 +720px 이동
-      : "right-0 translate-x-0"}        // 닫혔을 때 → 오른쪽 0 위치
-  `}
+          fixed 
+          top-[calc(100px+430px)] 
+          p-2 bg-gray-200 rounded shadow z-[1500]
+          transform -translate-y-1/2
+          transition-transform duration-300
+          ${isOpen 
+            ? "right-0 translate-x-[-720px]"   // 열릴 때 → 오른쪽 0에서 시작해서 +720px 이동
+            : "right-0 translate-x-0"}        // 닫혔을 때 → 오른쪽 0 위치
+        `}
       >
         <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[15px] border-l-black"></div>
       </button>

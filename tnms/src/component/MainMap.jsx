@@ -128,6 +128,8 @@ kakao.maps.event.addListener(polygon, "mouseout", () => {
   if (selectedPolygon.current !== polygon) polygon.setOptions({ fillOpacity: 0.2 });
 });
       }
+
+      
     });
   }, [setSelectedRegion, setSideOpen]);
 
