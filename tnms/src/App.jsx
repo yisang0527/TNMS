@@ -5,7 +5,7 @@ import Header from './component/HeaderComponent/Header';
 import Prev from './page/Prev';
 import Qna from './page/Qna';
 import Footer from './component/FooterComponent/Footer'
-import Issues from './component/New/Issuse'
+import Issues from './page/New/Issues'
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
 
         <Route path='/prev' element={<Prev />} />
         <Route path='/qna' element={<Qna />} />
-        <Route path='/issue' element={<Issues/>}/>
+        <Route path='/issues' element={<Issues/>}/>
       </Routes>
 
       <Footer />

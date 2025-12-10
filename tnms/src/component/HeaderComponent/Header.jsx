@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const menuLst = [
     {
+      name: "재난이슈",
+      subMenu: [
+        { name: "재난이슈", link: "/issues" }]
+    },
+    {
       name: "지난재난통계",
       subMenu: [
         { name: "지난재난통계", link: "/" }]
