@@ -74,8 +74,8 @@ export default function PrevSnowText1() {
             </div>
 
             <div className="w-[100%] h-[310px] flex justify-between bg-[#ffffff]">
-                <div className="w-[480px] border border-[#cccccc]">
-                    <p className="text-center w-[478px] h-[75px] bg-[#eee] pt-6 text-[17px]">1. 위기상황, 긴급상황 시 신고전화</p>
+                <div className="w-[385px] border border-[#cccccc]">
+                    <p className="text-center w-[383px] h-[75px] bg-[#eee] pt-6 text-[16px]">1. 위기상황, 긴급상황 시 신고전화</p>
 
                     <ul className="p-5 text-[16px]">
                         <li>- 재난신고 119, 범죄신고 112, 민원 상담 110</li>
@@ -83,8 +83,8 @@ export default function PrevSnowText1() {
                     </ul>
                 </div>
 
-                <div className="w-[480px] border border-[#cccccc] border-l-0 border-r-0">
-                    <p className="text-center w-[480px] h-[75px] bg-[#eee] pt-6 text-[17px]">2. 행정안전부 국민행동요령, 임시주거시설 등 안내</p>
+                <div className="w-[385px] border border-[#cccccc] border-l-0 border-r-0">
+                    <p className="text-center w-[383px] h-[75px] bg-[#eee] pt-7 text-[15px]">2. 행정안전부 국민행동요령, 임시주거시설 등 안내</p>
 
                     <ul className="p-5 text-[16px]">
                         <li>- 행정안전부 홈페이지 http://www.mois.go.kr</li>
@@ -93,8 +93,8 @@ export default function PrevSnowText1() {
                     </ul>
                 </div>
 
-                <div className="w-[480px] border border-[#cccccc]">
-                    <p className="text-center w-[478px] h-[75px] bg-[#eee] pt-6 text-[17px]">3. 유관기관 연락처 및 홈페이지</p>
+                <div className="w-[385px] border border-[#cccccc]">
+                    <p className="text-center w-[383px] h-[75px] bg-[#eee] pt-6 text-[16px]">3. 유관기관 연락처 및 홈페이지</p>
 
                     <ul className="p-5 text-[16px]">
                         <li>- 행정안전부 044)205-6366, http://www.mois.go.kr</li>

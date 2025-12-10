@@ -11,15 +11,15 @@ export default function PrevWindText1() {
             <p className="text-[20px] mb-10 font-bold">핵심 행동요령</p>
 
             <div className="w-[100%] h-[150px] border-[#cccccc] border-10 bg-[#ffffff]">
-                <p className="text-center pt-10 text-[18px]">강풍으로 간판, 조립식 지붕, 도로변 가로수, 전신주, 신호기 등의 옥외 시설물이 추락하거나 도로변 가로수가 쓰러질 경우 인명피해가 발생할 수 있습니다.<br />다음 사항을 숙지하여 가족이나 이웃과 주변에 있는 사람들과 함께 피해를 사전에 예방할 수 있도록 미리 준비합니다.</p>
+                <p className="text-center p-6 text-[18px]">강풍으로 간판, 조립식 지붕, 도로변 가로수, 전신주, 신호기 등의 옥외 시설물이 추락하거나<br />도로변 가로수가 쓰러질 경우 인명피해가 발생할 수 있습니다.<br />다음 사항을 숙지하여 가족이나 이웃과 주변에 있는 사람들과 함께 피해를 사전에 예방할 수 있도록 미리 준비합니다.</p>
             </div>
 
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-15 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
 
-            <p className="text-[20px] mb-10 font-bold">사전준비</p>
+            <p className="text-[20px] mb-5 font-bold">사전준비</p>
 
             <ul className="text-[18px] font-normal text-[#333333] ml-1.5">
                 <li>- 문과 창문을 잘 닫아 움직이지 않도록 하고 안전을 위해 집 안에서 머무르도록 합니다.</li>
@@ -34,14 +34,14 @@ export default function PrevWindText1() {
                 <li>- 강풍에 노출되는 전선들은 누전이나 감전사고가 발생하지 않도록 전선 연결 부위를 사전에 점검하고 필요할 경우 교체 합니다. </li>
             </ul>
 
-            <div className="flex items-center pt-12 mb-10">
+            <div className="flex items-center pt-15 mb-10">
                 <p className="w-[20px] h-[20px] border-4 border-[#132a35] bg-[#ffffff] mr-2"></p>
                 <p className="font-bold text-[20px] text-[#132a35]">주요기관 연락처</p>
             </div>
 
             <div className="w-[100%] h-[250px] flex justify-between bg-[#ffffff]">
-                <div className="w-[480px] border border-[#cccccc]">
-                    <p className="text-center w-[478px] h-[75px] bg-[#eee] pt-6 text-[17px]">1. 위기상황, 긴급상황 시 신고전화</p>
+                <div className="w-[385px] border border-[#cccccc]">
+                    <p className="text-center w-[383px] h-[75px] bg-[#eee] pt-6 text-[16px]">1. 위기상황, 긴급상황 시 신고전화</p>
 
                     <ul className="p-5 text-[16px]">
                         <li>- 재난신고 119, 범죄신고 112, 민원 상담 110</li>
@@ -49,8 +49,8 @@ export default function PrevWindText1() {
                     </ul>
                 </div>
 
-                <div className="w-[480px] border border-[#cccccc] border-l-0 border-r-0">
-                    <p className="text-center w-[480px] h-[75px] bg-[#eee] pt-6 text-[17px]">2. 행정안전부 국민행동요령, 임시피난시설 등 안내</p>
+                <div className="w-[385px] border border-[#cccccc] border-l-0 border-r-0">
+                    <p className="text-center w-[383px] h-[75px] bg-[#eee] pt-7 text-[15px]">2. 행정안전부 국민행동요령, 임시피난시설 등 안내</p>
 
                     <ul className="p-5 text-[16px]">
                         <li>- 행정안전부 홈페이지 http://www.mois.go.kr</li>
@@ -59,8 +59,8 @@ export default function PrevWindText1() {
                     </ul>
                 </div>
 
-                <div className="w-[480px] border border-[#cccccc]">
-                    <p className="text-center w-[478px] h-[75px] bg-[#eee] pt-6 text-[17px]">3. 유관기관 연락처 및 홈페이지</p>
+                <div className="w-[385px] border border-[#cccccc]">
+                    <p className="text-center w-[383px] h-[75px] bg-[#eee] pt-6 text-[16px]">3. 유관기관 연락처 및 홈페이지</p>
 
                     <ul className="p-5 text-[16px]">
                         <li>- 기상청 02)2181-0503, http://www.kma.go.kr</li>

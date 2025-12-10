@@ -5,7 +5,7 @@ import NoticeText from "../../component/Menu4/Notice/NoticeText"
 export default function Notice() {
     return (
         <div>
-            <div className="max-w-[1500px] mx-auto pt-[100px] pb-[200px]">
+            <div className="max-w-[1250px] bg-[#FFFFFF] border-x border-[#333333] mx-auto p-[100px_50px_150px]">
                 <NoticeText />
             </div>
         </div>

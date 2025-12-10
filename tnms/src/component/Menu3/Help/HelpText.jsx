@@ -3,43 +3,44 @@
 export default function HelpText() {
     return (
 
-        <div className="w-[1500px]] mx-auto h-[2200px] bg-cover bg-center" style={{ backgroundImage: "url('/background1.png')" }}>
-            <h2 className="text-[48px] font-bold mb-[-10px] pl-[200px] pt-[80px]">
+        <div className="max-w-[1250px] bg-[#FFFFFF] border-x border-[#333333] mx-auto p-[100px_50px_150px]">
+            <h2 className="text-[32px] font-bold mb-[-10px]">
                 센터소개
             </h2><br />
-            <div className="w-[1500px] h-[200px] border-t-3 border-black mx-auto 
-        grid place-items-center text-[24px] text-[#333333]"
+
+            <div className="w-[1150px] h-[200px] border-t-3 border-black mx-auto grid place-items-center text-[18px] text-[#333333]"
                 style={{ backgroundColor: "#F5FCFE" }}>
                 크고 작은 재난을 경험하여 발생한 심리적 충격을 완화하고 재난을 경험하기 전 일상으로<br />
                 빠르게 복귀하실 수 있도록 여러 가지 재난심리회복지원 활동을 진행하고 있습니다.
             </div>
-            <div className="pt-20 ml-50 mb-20">
-                <h4 className="text-[28px] text-[#333333] font-bold pb-5">재난심리회복지원센터는 어떤 일을 하나요?</h4>
+
+            <div className="pt-20 mb-20">
+                <h4 className="text-[24px] text-[#333333] font-bold pb-8">재난심리회복지원센터는 어떤 일을 하나요?</h4>
                 <div>
-                    <p className="flex items-center mb-2 text-[24px]">
+                    <p className="flex items-center mb-4 text-[18px]">
                         <span
-                            className="w-5 h-5 rounded-full mr-2"
+                            className="w-5 h-5 rounded-full mr-5"
                             style={{ backgroundColor: "#259EDA" }}
                         ></span>
                         갑작스러운 재난으로 불안과 충격을 겪은 분들에게 신속한 심리적 도움을 제공해 마음의 안정을 돕습니다.
                     </p>
-                    <p className="flex items-center mb-2 text-[24px]">
+                    <p className="flex items-center mb-4 text-[18px]">
                         <span
-                            className="w-5 h-5 rounded-full mr-2"
+                            className="w-5 h-5 rounded-full mr-5"
                             style={{ backgroundColor: "#259EDA" }}
                         ></span>
                         개인·집단 상담과 심리검사를 통해 감정을 다루고 일상을 되찾을 수 있도록 체계적으로 지원합니다.
                     </p>
-                    <p className="flex items-center mb-2 text-[24px]">
+                    <p className="flex items-center mb-4 text-[18px]">
                         <span
-                            className="w-5 h-5 rounded-full mr-2"
+                            className="w-5 h-5 rounded-full mr-5"
                             style={{ backgroundColor: "#259EDA" }}
                         ></span>
                         더 깊은 치료가 필요한 경우 정신건강복지센터 등 전문기관과 연결해 지속적인 도움을 받을 수 있도록 안내합니다.
                     </p>
-                    <p className="flex items-center mb-2 text-[24px]">
+                    <p className="flex items-center mb-4 text-[18px]">
                         <span
-                            className="w-5 h-5 rounded-full mr-2"
+                            className="w-5 h-5 rounded-full mr-5"
                             style={{ backgroundColor: "#259EDA" }}
                         ></span>
                         교육과 프로그램을 통해 지역사회가 함께 회복하고 심리적 회복력을 높일 수 있도록 돕습니다.

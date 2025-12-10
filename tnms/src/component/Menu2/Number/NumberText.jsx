@@ -1,6 +1,5 @@
 // NumberText.jsx
 
-import background from "../../../../public/background1.jpg";
 import resize from "../../../../public/resize.png"
 
 import seoul from "../../../../public/numberLogo1.gif"
@@ -128,11 +127,11 @@ const emergencyLinks = [
 
 export default function NumberText() {
   return (
-    <div style={{ backgroundImage: `url(${background})` }}>
+    <div>
       <div
-        className="w-[1500px] mx-auto bg-cover bg-center"
+        className="max-w-[1250px] bg-[#FFFFFF] border-x border-[#333333] mx-auto p-[100px_50px_150px] "
       >
-        <h2 className="text-[32px] font-bold mb-6 ml-[30px] pt-[80px]">
+        <h2 className="text-[32px] font-bold mb-6 ml-[30px]">
           비상연락망
         </h2><br />
         <div className="p-6 grid grid-cols-6 gap-6
@@ -146,7 +145,7 @@ export default function NumberText() {
               href={item.url}
               target="_blank"
               rel="noreferrer"
-              className="w-[200px] mb-[80px]"
+              className="w-[170px] mb-[50px]"
             >
               <img
                 src={item.img}
