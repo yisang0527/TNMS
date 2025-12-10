@@ -5,6 +5,7 @@ import { useAuth } from "../../component/Admin/Authcontext";
 import AdminGraph from "../../component/Admin/AdminGraph";
 import AdminNotice from "../../component/Admin/AdminNotice";
 import AdminQna from "../../component/Admin/AdminQna";
+import AdminPopup from "../../component/Admin/AdminPopup";
 
 export default function AdminPage() {
     const { signout } = useAuth();
@@ -35,8 +36,7 @@ export default function AdminPage() {
             case "공지사항":
                 return <AdminNotice />;
             case "팝업창 관리":
-                return <div>팝업창 관리 컴포넌트</div>;
-            // return <AdminPopup />;
+            return <AdminPopup />;
             default:
                 return <div>메뉴를 선택하세요</div>;
         }

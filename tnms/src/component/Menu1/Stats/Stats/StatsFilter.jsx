@@ -36,13 +36,9 @@ export default function StatsChart() {
     }, [selectedYear]);
 
     const parseWeatherData = () => {
-        // weatherData.js에서 import한 데이터 사용
         const rawData = weatherDataByYear[selectedYear] || weatherDataByYear["2020"];
-
-        // 줄바꿈으로 분리
         const lines = rawData.trim().split("\n");
 
-        // 객체 변환
         const parsed = lines.map(line => {
             const parts = line.trim().split(/\s+/);
             if (parts.length < 50) return null;
@@ -51,13 +47,13 @@ export default function StatsChart() {
             const month = parseInt(date.substring(4, 6));
             const day = parseInt(date.substring(6, 8));
 
-            const wsMax = parseFloat(parts[5]); // 최대풍속
-            const taAvg = parseFloat(parts[10]); // 평균기온
-            const rnDay = parseFloat(parts[38]); // 일 강수량
-            const rnD99 = parseFloat(parts[39]); // 9-9 강수량
-            const rnDur = parseFloat(parts[40]); // 강수계속시간
-            const sdMax = parseFloat(parts[49]); // 최심 적설
-            const ta10 = parseFloat(parts[parts.length - 1]); // 미세먼지
+            const wsMax = parseFloat(parts[5]);
+            const taAvg = parseFloat(parts[10]);
+            const rnDay = parseFloat(parts[38]);
+            const rnD99 = parseFloat(parts[39]);
+            const rnDur = parseFloat(parts[40]);
+            const sdMax = parseFloat(parts[49]);
+            const ta10 = parseFloat(parts[parts.length - 1]);
 
             const isRain1Season = (month >= 6 && month <= 7);
 
@@ -99,9 +95,26 @@ export default function StatsChart() {
                 {
                     label: '피해물량 (ha)',
                     data: values,
-                    backgroundColor: 'rgba(139, 115, 85, 0.8)',
-                    borderColor: 'rgb(139, 115, 85)',
-                    borderWidth: 2
+                    backgroundColor: values.map(v => {
+                        if (v > 1000) return 'rgba(220, 38, 38, 0.8)';
+                        if (v > 300) return 'rgba(251, 146, 60, 0.8)';
+                        if (v > 100) return 'rgba(250, 204, 21, 0.8)';
+                        return 'rgba(34, 197, 94, 0.8)';
+                    }),
+                    borderColor: values.map(v => {
+                        if (v > 1000) return 'rgb(220, 38, 38)';
+                        if (v > 300) return 'rgb(251, 146, 60)';
+                        if (v > 100) return 'rgb(250, 204, 21)';
+                        return 'rgb(34, 197, 94)';
+                    }),
+                    borderWidth: 2,
+                    borderRadius: 6,
+                    hoverBackgroundColor: values.map(v => {
+                        if (v > 1000) return 'rgba(220, 38, 38, 1)';
+                        if (v > 300) return 'rgba(251, 146, 60, 1)';
+                        if (v > 100) return 'rgba(250, 204, 21, 1)';
+                        return 'rgba(34, 197, 94, 1)';
+                    }),
                 }
             ]
         };
@@ -119,6 +132,7 @@ export default function StatsChart() {
 
         const monthlyData = fireDataByYear[selectedYear] || fireDataByYear['2020'];
         const months = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
+        const maxValue = Math.max(...monthlyData);
 
         return {
             labels: months,
@@ -126,9 +140,29 @@ export default function StatsChart() {
                 {
                     label: '산불 발생 건수',
                     data: monthlyData,
-                    backgroundColor: 'rgba(220, 60, 30, 0.8)',
-                    borderColor: 'rgb(220, 60, 30)',
-                    borderWidth: 2
+                    backgroundColor: monthlyData.map(v => {
+                        const intensity = v / maxValue;
+                        if (intensity > 0.7) return 'rgba(220, 38, 38, 0.85)';
+                        if (intensity > 0.4) return 'rgba(251, 146, 60, 0.85)';
+                        if (intensity > 0.2) return 'rgba(250, 204, 21, 0.85)';
+                        return 'rgba(203, 213, 225, 0.85)';
+                    }),
+                    borderColor: monthlyData.map(v => {
+                        const intensity = v / maxValue;
+                        if (intensity > 0.7) return 'rgb(220, 38, 38)';
+                        if (intensity > 0.4) return 'rgb(251, 146, 60)';
+                        if (intensity > 0.2) return 'rgb(250, 204, 21)';
+                        return 'rgb(148, 163, 184)';
+                    }),
+                    borderWidth: 2,
+                    borderRadius: 6,
+                    hoverBackgroundColor: monthlyData.map(v => {
+                        const intensity = v / maxValue;
+                        if (intensity > 0.7) return 'rgba(220, 38, 38, 1)';
+                        if (intensity > 0.4) return 'rgba(251, 146, 60, 1)';
+                        if (intensity > 0.2) return 'rgba(250, 204, 21, 1)';
+                        return 'rgba(203, 213, 225, 1)';
+                    }),
                 }
             ]
         };
@@ -189,7 +223,7 @@ export default function StatsChart() {
                 break;
             default:
                 data = filteredData.map(d => d.taAvg);
-                warningData = filteredData.map(d => null)
+                warningData = filteredData.map(() => null)
                 label = "평균기온";
         }
 
@@ -200,30 +234,40 @@ export default function StatsChart() {
                     label: label,
                     data: data,
                     borderColor: currentTab.color,
-                    backgroundColor: currentTab.color.replace('rgb', 'rgba').replace(')', ', 0.5)'),
+                    backgroundColor: (context) => {
+                        const ctx = context.chart.ctx;
+                        const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+                        const baseColor = currentTab.color;
+                        gradient.addColorStop(0, baseColor.replace('rgb', 'rgba').replace(')', ', 0.4)'));
+                        gradient.addColorStop(1, baseColor.replace('rgb', 'rgba').replace(')', ', 0.05)'));
+                        return gradient;
+                    },
+                    fill: true,
                     pointBackgroundColor: currentTab.color,
-                    pointBorderColor: currentTab.color,
-                    tension: 0.1,
-                    pointRadius: 3,
-                    pointHoverRadius: 6,
+                    pointBorderColor: '#fff',
+                    tension: 0.4,
+                    pointRadius: 2,
+                    pointHoverRadius: 7,
                     pointHoverBackgroundColor: currentTab.color,
-                    pointBorderWidth: 1,
-                    pointHoverBorderWidth: 2,
+                    pointBorderWidth: 2,
+                    pointHoverBorderWidth: 3,
                     pointHoverBorderColor: '#fff',
+                    borderWidth: 2.5,
                     order: 2
                 },
                 {
                     label: '경보 발생',
                     data: warningData,
                     borderColor: 'transparent',
-                    backgroundColor: 'rgb(255, 0, 0)',
-                    pointRadius: 6,
-                    pointHoverRadius: 8,
-                    pointHoverBackgroundColor: 'rgb(255, 0, 0)',
-                    pointBorderWidth: 2,
+                    backgroundColor: 'rgb(239, 68, 68)',
+                    pointRadius: 7,
+                    pointHoverRadius: 10,
+                    pointHoverBackgroundColor: 'rgb(220, 38, 38)',
+                    pointBorderWidth: 3,
                     pointBorderColor: '#fff',
-                    pointHoverBorderWidth: 3,
+                    pointHoverBorderWidth: 4,
                     pointHoverBorderColor: '#fff',
+                    pointStyle: 'triangle',
                     showLine: false,
                     order: 1
                 }
@@ -363,10 +407,20 @@ export default function StatsChart() {
     const options = {
         responsive: true,
         maintainAspectRatio: false,
+        interaction: {
+            mode: 'index',
+            intersect: false,
+        },
         plugins: {
             legend: {
                 position: "top",
                 labels: {
+                    usePointStyle: true,
+                    padding: 15,
+                    font: {
+                        size: 13,
+                        weight: '500'
+                    },
                     filter: function (legendItem, chartData) {
                         if (legendItem.text === "경보 발생") {
                             const warningDataset = chartData.datasets[1];
@@ -385,7 +439,39 @@ export default function StatsChart() {
                         ? `${selectedYear}년 산불 발생 건수 (월별)`
                         : `${selectedYear}년 ${tabs.find(t => t.id === selectedTab)?.name} 데이터${selectedMonth !== "all" ? ` (${selectedMonth}월)` : ""}`,
                 font: {
-                    size: 18
+                    size: 18,
+                    weight: 'bold'
+                },
+                padding: {
+                    bottom: 20
+                }
+            },
+            tooltip: {
+                backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                padding: 12,
+                titleFont: {
+                    size: 14,
+                    weight: 'bold'
+                },
+                bodyFont: {
+                    size: 13
+                },
+                borderColor: 'rgba(255, 255, 255, 0.1)',
+                borderWidth: 1,
+                displayColors: true,
+                callbacks: {
+                    label: function (context) {
+                        let label = context.dataset.label || '';
+                        if (label) {
+                            label += ': ';
+                        }
+                        if (context.parsed.y !== null) {
+                            label += context.parsed.y.toFixed(1);
+                            const unit = getYAxisLabel();
+                            if (unit) label += ' ' + unit;
+                        }
+                        return label;
+                    }
                 }
             }
         },
@@ -393,24 +479,79 @@ export default function StatsChart() {
             y: {
                 title: {
                     display: true,
-                    text: getYAxisLabel()
+                    text: getYAxisLabel(),
+                    font: {
+                        size: 14,
+                        weight: 'bold'
+                    }
                 },
-                beginAtZero: true
+                beginAtZero: true,
+                grid: {
+                    color: 'rgba(0, 0, 0, 0.05)',
+                    drawBorder: false
+                },
+                ticks: {
+                    font: {
+                        size: 12
+                    }
+                }
+            },
+            x: {
+                grid: {
+                    display: false
+                },
+                ticks: {
+                    font: {
+                        size: 12,
+                        weight: '500'
+                    }
+                }
             }
         } : selectedTab === "fire" ? {
             y: {
                 title: {
                     display: true,
-                    text: getYAxisLabel()
+                    text: getYAxisLabel(),
+                    font: {
+                        size: 14,
+                        weight: 'bold'
+                    }
                 },
-                beginAtZero: true
+                beginAtZero: true,
+                grid: {
+                    color: 'rgba(0, 0, 0, 0.05)',
+                    drawBorder: false
+                },
+                ticks: {
+                    font: {
+                        size: 12
+                    }
+                }
+            },
+            x: {
+                grid: {
+                    display: false
+                },
+                ticks: {
+                    font: {
+                        size: 12,
+                        weight: '500'
+                    }
+                }
             }
         } : {
             x: {
+                grid: {
+                    color: 'rgba(0, 0, 0, 0.03)',
+                    drawBorder: false
+                },
                 ticks: {
                     autoSkip: false,
                     maxRotation: 0,
-                    callback: function (value, index) {
+                    font: {
+                        size: 11
+                    },
+                    callback: function (value) {
                         const label = this.getLabelForValue(value);
                         if (selectedMonth === 'all') {
                             if (label.endsWith('/1')) {
@@ -429,7 +570,20 @@ export default function StatsChart() {
             y: {
                 title: {
                     display: true,
-                    text: getYAxisLabel()
+                    text: getYAxisLabel(),
+                    font: {
+                        size: 14,
+                        weight: 'bold'
+                    }
+                },
+                grid: {
+                    color: 'rgba(0, 0, 0, 0.05)',
+                    drawBorder: false
+                },
+                ticks: {
+                    font: {
+                        size: 12
+                    }
                 }
             }
         }
@@ -437,8 +591,11 @@ export default function StatsChart() {
 
     if (loading) {
         return (
-            <div className="flex items-center justify-center h-screen">
-                <div className="text-xl">데이터 가져오는 중...</div>
+            <div className="flex items-center justify-center h-screen bg-gray-50">
+                <div className="text-center">
+                    <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
+                    <div className="text-xl text-gray-700">데이터 가져오는 중...</div>
+                </div>
             </div>
         );
     }
@@ -448,10 +605,11 @@ export default function StatsChart() {
     const unit = currentTab ? currentTab.unit : "";
 
     return (
-        <div className="w-full h-screen p-8 bg-gray-50">
-            <div className="bg-white rounded-lg shadow-lg p-6 h-full flex flex-col">
+        <div className="w-full h-screen p-8 bg-gradient-to-br from-gray-50 to-gray-100">
+            <div className="bg-white rounded-2xl shadow-xl p-6 h-full flex flex-col border border-gray-100">
                 <div className="mb-4 flex items-center justify-between flex-wrap gap-4">
-                    <h2 className="text-2xl font-bold text-gray-800">
+                    <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                        <span className="inline-block w-1 h-8 bg-blue-600 rounded-full"></span>
                         {selectedTab === "mauntain" ? "산사태 피해물량 통계" : selectedTab === "fire" ? `${selectedYear}년 산불 발생 통계` : `${selectedYear}년 데이터`}
                     </h2>
 
@@ -462,7 +620,7 @@ export default function StatsChart() {
                                 <select
                                     value={selectedYear}
                                     onChange={(e) => setSelectedYear(e.target.value)}
-                                    className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hover:border-gray-400 transition-colors cursor-pointer"
                                 >
                                     <option value="2020">2020년</option>
                                     <option value="2021">2021년</option>
@@ -479,7 +637,7 @@ export default function StatsChart() {
                                     <select
                                         value={selectedMonth}
                                         onChange={(e) => setSelectedMonth(e.target.value)}
-                                        className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hover:border-gray-400 transition-colors cursor-pointer"
                                     >
                                         <option value="all">전체</option>
                                         <option value="1">1월</option>
@@ -501,14 +659,14 @@ export default function StatsChart() {
                     )}
                 </div>
 
-                <div className="flex gap-2 mb-6 border-b overflow-x-auto">
+                <div className="flex gap-2 mb-6 border-b overflow-x-auto pb-1">
                     {tabs.map(tab => (
                         <button
                             key={tab.id}
                             onClick={() => setSelectedTab(tab.id)}
-                            className={`px-6 py-3 font-medium transition-colors whitespace-nowrap ${selectedTab === tab.id
-                                ? "border-b-2 border-blue-500 text-blue-600"
-                                : "text-gray-600 hover:text-gray-900"
+                            className={`px-6 py-3 font-medium transition-all whitespace-nowrap rounded-t-lg ${selectedTab === tab.id
+                                ? "border-b-3 border-blue-500 text-blue-600 bg-blue-50"
+                                : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                                 }`}
                         >
                             {tab.name}
@@ -516,7 +674,7 @@ export default function StatsChart() {
                     ))}
                 </div>
 
-                <div className="flex-1 mb-4">
+                <div className="flex-1 mb-4 bg-gradient-to-b from-white to-gray-50 rounded-lg p-4 border border-gray-100">
                     {selectedTab === "mauntain" || selectedTab === "fire" ? (
                         <Bar data={getChartData()} options={options} />
                     ) : (
@@ -525,64 +683,77 @@ export default function StatsChart() {
                 </div>
 
                 {selectedTab === "mauntain" ? (
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 bg-gray-50 rounded-lg">
-                        <div className="text-center">
-                            <div className="text-sm text-gray-600">분석 기간</div>
-                            <div className="text-xl font-bold text-gray-800">2020~2025년 ({stats.yearCount}년)</div>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200">
+                        <div className="text-center p-3 rounded-lg bg-white shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div className="text-sm text-gray-500 mb-1 font-medium">분석 기간</div>
+                            <div className="text-xl font-bold text-gray-800">2020~2025년</div>
+                            <div className="text-xs text-gray-500 mt-1">({stats.yearCount}년)</div>
                         </div>
-                        <div className="text-center">
-                            <div className="text-sm text-gray-600">최대 피해</div>
+                        <div className="text-center p-3 rounded-lg bg-red-50 shadow-sm border border-red-100 hover:shadow-md transition-shadow">
+                            <div className="text-sm text-gray-500 mb-1 font-medium">최대 피해</div>
                             <div className="text-xl font-bold text-red-600">{stats.max} ha</div>
+                            <div className="text-xs text-red-500 mt-1">2020년</div>
                         </div>
-                        <div className="text-center">
-                            <div className="text-sm text-gray-600">평균 피해</div>
+                        <div className="text-center p-3 rounded-lg bg-purple-50 shadow-sm border border-purple-100 hover:shadow-md transition-shadow">
+                            <div className="text-sm text-gray-500 mb-1 font-medium">평균 피해</div>
                             <div className="text-xl font-bold text-purple-600">{stats.avg} ha</div>
+                            <div className="text-xs text-purple-500 mt-1">연평균</div>
                         </div>
-                        <div className="text-center">
-                            <div className="text-sm text-gray-600">총 피해물량</div>
+                        <div className="text-center p-3 rounded-lg bg-orange-50 shadow-sm border border-orange-100 hover:shadow-md transition-shadow">
+                            <div className="text-sm text-gray-500 mb-1 font-medium">총 피해물량</div>
                             <div className="text-xl font-bold text-orange-600">{stats.total} ha</div>
+                            <div className="text-xs text-orange-500 mt-1">누적</div>
                         </div>
                     </div>
                 ) : selectedTab === "fire" ? (
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 bg-gray-50 rounded-lg">
-                        <div className="text-center">
-                            <div className="text-sm text-gray-600">분석 연도</div>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200">
+                        <div className="text-center p-3 rounded-lg bg-white shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div className="text-sm text-gray-500 mb-1 font-medium">분석 연도</div>
                             <div className="text-xl font-bold text-gray-800">{selectedYear}년</div>
+                            <div className="text-xs text-gray-500 mt-1">12개월</div>
                         </div>
-                        <div className="text-center">
-                            <div className="text-sm text-gray-600">최다 발생 (월)</div>
+                        <div className="text-center p-3 rounded-lg bg-red-50 shadow-sm border border-red-100 hover:shadow-md transition-shadow">
+                            <div className="text-sm text-gray-500 mb-1 font-medium">최다 발생 (월)</div>
                             <div className="text-xl font-bold text-red-600">{stats.max} 건</div>
+                            <div className="text-xs text-red-500 mt-1">월간 최대</div>
                         </div>
-                        <div className="text-center">
-                            <div className="text-sm text-gray-600">월평균 발생</div>
+                        <div className="text-center p-3 rounded-lg bg-purple-50 shadow-sm border border-purple-100 hover:shadow-md transition-shadow">
+                            <div className="text-sm text-gray-500 mb-1 font-medium">월평균 발생</div>
                             <div className="text-xl font-bold text-purple-600">{stats.avg} 건</div>
+                            <div className="text-xs text-purple-500 mt-1">평균</div>
                         </div>
-                        <div className="text-center">
-                            <div className="text-sm text-gray-600">연간 총 발생</div>
+                        <div className="text-center p-3 rounded-lg bg-orange-50 shadow-sm border border-orange-100 hover:shadow-md transition-shadow">
+                            <div className="text-sm text-gray-500 mb-1 font-medium">연간 총 발생</div>
                             <div className="text-xl font-bold text-orange-600">{stats.total} 건</div>
+                            <div className="text-xs text-orange-500 mt-1">누적</div>
                         </div>
                     </div>
                 ) : (
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 p-4 bg-gray-50 rounded-lg">
-                        <div className="text-center">
-                            <div className="text-sm text-gray-600">분석 기간</div>
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 p-5 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200">
+                        <div className="text-center p-3 rounded-lg bg-white shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div className="text-sm text-gray-500 mb-1 font-medium">분석 기간</div>
                             <div className="text-xl font-bold text-gray-800">{stats.totalDays}일</div>
+                            <div className="text-xs text-gray-500 mt-1">{selectedMonth === "all" ? "연간" : `${selectedMonth}월`}</div>
                         </div>
-                        <div className="text-center">
-                            <div className="text-sm text-gray-600">최댓값</div>
+                        <div className="text-center p-3 rounded-lg bg-blue-50 shadow-sm border border-blue-100 hover:shadow-md transition-shadow">
+                            <div className="text-sm text-gray-500 mb-1 font-medium">최댓값</div>
                             <div className="text-xl font-bold text-blue-600">{stats.max} {unit}</div>
+                            <div className="text-xs text-blue-500 mt-1">최고</div>
                         </div>
-                        <div className="text-center">
-                            <div className="text-sm text-gray-600">최솟값</div>
+                        <div className="text-center p-3 rounded-lg bg-green-50 shadow-sm border border-green-100 hover:shadow-md transition-shadow">
+                            <div className="text-sm text-gray-500 mb-1 font-medium">최솟값</div>
                             <div className="text-xl font-bold text-green-600">{stats.min} {unit}</div>
+                            <div className="text-xs text-green-500 mt-1">최저</div>
                         </div>
-                        <div className="text-center">
-                            <div className="text-sm text-gray-600">평균값</div>
+                        <div className="text-center p-3 rounded-lg bg-purple-50 shadow-sm border border-purple-100 hover:shadow-md transition-shadow">
+                            <div className="text-sm text-gray-500 mb-1 font-medium">평균값</div>
                             <div className="text-xl font-bold text-purple-600">{stats.avg} {unit}</div>
+                            <div className="text-xs text-purple-500 mt-1">평균</div>
                         </div>
-                        <div className="text-center">
-                            <div className="text-sm text-gray-600">경보 발생 ({stats.warningThreshold})</div>
+                        <div className="text-center p-3 rounded-lg bg-red-50 shadow-sm border border-red-100 hover:shadow-md transition-shadow">
+                            <div className="text-sm text-gray-500 mb-1 font-medium">경보 발생</div>
                             <div className="text-xl font-bold text-red-600">{stats.warningCount}일</div>
+                            <div className="text-xs text-red-500 mt-1">{stats.warningThreshold}</div>
                         </div>
                     </div>
                 )}

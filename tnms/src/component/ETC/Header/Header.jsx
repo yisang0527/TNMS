@@ -9,9 +9,14 @@ import headerImg from "../../../../public/logo1.png"
 const Header = () => {
   const menuLst = [
     {
-      name: "지난재난통계",
+      name: "재난 이슈",
       subMenu: [
-        { name: "지난재난통계", link: "/stats" }]
+        { name: "재난 이슈", link: "/*" }]
+    },
+    {
+      name: "재난 통계",
+      subMenu: [
+        { name: "재난 통계", link: "/stats" }]
     },
     {
       name: "재난예방대비",
@@ -40,49 +45,51 @@ const Header = () => {
 
   return (
     <nav className="nav">
-      <Link to="/">
-        <img src={headerImg} alt="Logo" className="logo" />
-      </Link>
+      <div className="nav-inner">
+        <Link to="/">
+          <img src={headerImg} alt="Logo" className="logo" />
+        </Link>
 
-      <ul className="navContainer">
-        {menuLst.map((v, idx) => (
-          <li
-            key={idx}
-            className={hoverMenu === v.name ? "active" : ""}
-            onMouseEnter={() => setHoverMenu(v.name)}
-            onMouseLeave={() => setHoverMenu(null)}
-          >
-            {v.name}
-          </li>
-        ))}
-      </ul>
+        <ul className="navContainer">
+          {menuLst.map((v, idx) => (
+            <li
+              key={idx}
+              className={hoverMenu === v.name ? "active" : ""}
+              onMouseEnter={() => setHoverMenu(v.name)}
+              onMouseLeave={() => setHoverMenu(null)}
+            >
+              {v.name}
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <div className="detailMenu">
-        {menuLst.map((v, idx) => (
-          <ul
-            key={idx}
-            onMouseEnter={() => setHoverMenu(v.name)}
-            onMouseLeave={() => setHoverMenu(null)}
-            className={hoverMenu === v.name ? "show" : "hide"}
-          >
-            {v.subMenu.map((sub, subIdx) => (
-              <li key={subIdx}>
-                {sub.external ? (
-                  <a href={sub.link} target="_blank" rel="noopener noreferrer">
-                    {sub.name}
-                  </a>
-                ) : (
-                  <Link to={sub.link}>{sub.name}</Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        ))}
+        <div className="sub-nap">
+          {menuLst.map((v, idx) => (
+            <ul
+              key={idx}
+              onMouseEnter={() => setHoverMenu(v.name)}
+              onMouseLeave={() => setHoverMenu(null)}
+              className={hoverMenu === v.name ? "show" : "hide"}
+            >
+              {v.subMenu.map((sub, subIdx) => (
+                <li key={subIdx}>
+                  {sub.external ? (
+                    <a href={sub.link} target="_blank" rel="noopener noreferrer">
+                      {sub.name}
+                    </a>
+                  ) : (
+                    <Link to={sub.link}>{sub.name}</Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          ))}
+        </div>
       </div>
-      <Link to="/adminlogin">
-        <button className="login">관리자 로그인</button>
-      </Link>
     </nav>
+
   );
 };
 

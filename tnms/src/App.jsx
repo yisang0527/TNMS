@@ -16,11 +16,13 @@ import Notice from './page/Menu4/Notice';
 
 import AdminLogin from "./page/Admin/AdminLogin";
 import AdminPage from "./page/Admin/AdminPage";
+import MainPopup from "./component/Popup/MainPopup";
 
 
 // 일반 레이아웃
 const UserLayout = () => (
   <>
+    <MainPopup />
     <Header />
     <Outlet />
     <Footer />
