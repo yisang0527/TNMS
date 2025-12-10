@@ -1,11 +1,12 @@
 import { useEffect, useRef } from "react";;
-import SideTab from "./SideTab";
+
 import "./MainMap.css";
 
 export default function MainMap({ setSelectedRegion, setSideOpen, setMapObj }) {
   const KAKAO = useRef(null);
   const mapRef = useRef(null);
   const selectedPolygon = useRef(null); // 클릭된 폴리곤 유지
+  const polygons = useRef([]);
 
   useEffect(() => {
     if (!window.kakao) return;
@@ -94,6 +95,8 @@ export default function MainMap({ setSelectedRegion, setSideOpen, setMapObj }) {
 
       polygon.setMap(map);
 
+      polygons.current.push({ polygon, name: data.name });
+
       // 이벤트는 kakao.maps.event.addListener로 붙이기
       kakao.maps.event.addListener(polygon, "click", () => {
         const map = mapRef.current;
@@ -104,10 +107,11 @@ export default function MainMap({ setSelectedRegion, setSideOpen, setMapObj }) {
           selectedPolygon.current.setOptions({ fillOpacity: 0.2 });
         }
 
-        selectedPolygon.current = polygon;
-        polygon.setOptions({ fillOpacity: 0.9 });
-        setSelectedRegion(data.name);
-        setSideOpen(true);
+        selectedPolygon.current = polygon;  // 현재 선택 폴리곤 설정
+          polygon.setOptions({ fillOpacity: 0.9 }); // 선택 색 채우기
+
+          setSelectedRegion(data.name);  // Index.jsx에 선택 지역 전달
+          setSideOpen(true);             // 사이드탭 열기
 
         // 센터와 줌 이동
         const center = regionCenters[data.name];
@@ -129,7 +133,9 @@ kakao.maps.event.addListener(polygon, "mouseout", () => {
 });
       }
 
-      
+      // ⭐ SideTab에서 참조 가능하도록 전역 저장
+      window.polygonsRef = polygons;
+      window.selectedPolygonRef = selectedPolygon;
     });
   }, [setSelectedRegion, setSideOpen]);
 

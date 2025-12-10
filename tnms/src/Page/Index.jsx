@@ -25,28 +25,17 @@ export default function Index() {
         - 클릭하면 sideOpen(true)
       -------------------------------------- */}
       <MainMap 
-      selectedRegion={selectedRegion}
+      // selectedRegion={selectedRegion}
       setSelectedRegion={setSelectedRegion}
       setSideOpen={setSideOpen}
       setMapObj={setMapObj}   // ⭐ 추가
       />
       <SideTab
         isOpen={sideOpen}
-        region={selectedRegion}  // 선택된 지역 전달
-       onClose={() => {
-        setSideOpen(false);
-        setSelectedRegion("서울");
-
-        // ⭐ 지도도 초기 위치로 이동시키기
-        if (mapObj && window.kakao) {
-          const kakao = window.kakao;
-          const initialCenter = new kakao.maps.LatLng(36.3504, 127.3845); // 대전 중심 (초기값)
-          mapObj.setCenter(initialCenter);
-          mapObj.setLevel(13); // 초기 줌
-        }
-      }}
-        onOpen={() => setSideOpen(true)}  // 사이드탭 열기
-        mapObj={mapObj}  // ⭐ 추가
+        region={selectedRegion}
+        onClose={() => setSideOpen(false)}
+        onOpen={() => setSideOpen(true)}
+        mapObj={mapObj}
         setSelectedRegion={setSelectedRegion}
       />
       

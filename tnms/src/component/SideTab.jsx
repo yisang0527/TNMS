@@ -11,6 +11,28 @@ import JejuChart from "./Chart/JejuChart";
 
 
 export default function SideTab({ isOpen, region, onClose, onOpen, mapObj, setSelectedRegion}) {
+
+  const fillSeoul = () => {
+    if (window.polygonsRef) {
+      window.polygonsRef.current.forEach(({ polygon, name }) => {
+        if (name === "서울") {
+          polygon.setOptions({ fillOpacity: 0.9 });
+          window.selectedPolygonRef.current = polygon;
+        } else {
+          polygon.setOptions({ fillOpacity: 0.2 });
+        }
+      });
+    }
+  };
+
+  const resetPolygons = () => {
+    if (window.polygonsRef) {
+      window.polygonsRef.current.forEach(({ polygon }) => {
+        polygon.setOptions({ fillOpacity: 0.2 });
+      });
+      if (window.selectedPolygonRef) window.selectedPolygonRef.current = null;
+    }
+  };
   return (
     <>
       {/* 열기 버튼 */}
@@ -19,24 +41,16 @@ export default function SideTab({ isOpen, region, onClose, onOpen, mapObj, setSe
         onClick={() => {
           onOpen(); // 사이드탭 열기
           setSelectedRegion("서울")
+          fillSeoul();
 
-          const moveToSeoul = () => {
+          // 지도 서울 이동
             if (mapObj && window.kakao) {
               const kakao = window.kakao;
-              const seoulCenter = new kakao.maps.LatLng(
-                37.55538654535481,
-                126.9835765626031
-              );
-
+              const seoulCenter = new kakao.maps.LatLng(37.55538654535481, 126.9835765626031);
               mapObj.setCenter(seoulCenter);
               mapObj.setLevel(11);
-            } else {
-              setTimeout(moveToSeoul, 100); // 지도 준비될 때까지 반복
             }
-          };
-
-          moveToSeoul();
-        }}
+          }}
   className="fixed right-0 top-[calc(100px+430px)] transform -translate-y-1/2 p-2 bg-gray-200 rounded shadow z-1600"
 >
           <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[15px] border-r-black"></div>
@@ -44,17 +58,29 @@ export default function SideTab({ isOpen, region, onClose, onOpen, mapObj, setSe
       )}
       {/* 닫기 버튼 */}
       <button
-        onClick={onClose}
+        onClick={() => {
+          onClose();
+          setSelectedRegion(null); // 기본 지역 해제
+          resetPolygons();         // 모든 폴리곤 색 초기화
+
+          // 지도 초기 위치로 이동
+          if (mapObj && window.kakao) {
+            const kakao = window.kakao;
+            const initialCenter = new kakao.maps.LatLng(36.3504, 127.3845);
+            mapObj.setCenter(initialCenter);
+            mapObj.setLevel(13);
+          }
+        }}
         className={`
-          fixed 
-          top-[calc(100px+430px)] 
-          p-2 bg-gray-200 rounded shadow z-[1500]
-          transform -translate-y-1/2
-          transition-transform duration-300
-          ${isOpen 
-            ? "right-0 translate-x-[-720px]"   // 열릴 때 → 오른쪽 0에서 시작해서 +720px 이동
-            : "right-0 translate-x-0"}        // 닫혔을 때 → 오른쪽 0 위치
-        `}
+        fixed 
+        top-[calc(100px+430px)] 
+        p-2 bg-gray-200 rounded shadow z-[1500]
+        transform -translate-y-1/2
+        transition-transform duration-300
+        ${isOpen 
+          ? "right-0 translate-x-[-720px]"   // 열릴 때 → 오른쪽 0에서 시작해서 +720px 이동
+          : "right-0 translate-x-0"}        // 닫혔을 때 → 오른쪽 0 위치
+      `}
       >
         <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[15px] border-l-black"></div>
       </button>
