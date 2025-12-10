@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Count from "../../component/New/Count";          // Bar 그래프(기본)
-import AreaScale from "../../component/New/AreaScale"; // 다른 그래프
+import Scale from "../../component/New/Scale"; // 다른 그래프
 
 export default function Issues() {
     const [selectedTab, setSelectedTab] = useState("bar"); 
@@ -43,7 +43,7 @@ export default function Issues() {
 
             {/* 그래프 변경 */}
             {selectedTab === "bar" && <Count />}
-            {selectedTab === "scale" && <AreaScale />}
+            {selectedTab === "scale" && <Scale />}
         </div>
     );
 }
