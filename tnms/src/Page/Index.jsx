@@ -8,6 +8,7 @@ export default function Index() {
   const [selectedRegion, setSelectedRegion] = useState(null); // 클릭된 지역 이름
   const [sideOpen, setSideOpen] = useState(false); // 사이드탭 열림 여부
   const [mapObj, setMapObj] = useState(null); // MainMap에서 전달받은 지도 객체
+  
 
 
   // 사이드탭이 열릴 때, selectedRegion이 없다면 기본값으로 서울로 설정

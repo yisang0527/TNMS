@@ -21,14 +21,14 @@ export default function MainMap({ setSelectedRegion, setSideOpen, setMapObj }) {
       
       mapRef.current = map;
       setMapObj(map); // ⭐ 추가
-      //map.setDraggable(false); // 이건 드래그 안 되게 하는 건데 이거하면 전부 다 안 돼서 우선 오류
+      map.setDraggable(false); // 이건 드래그 안 되게 하는 건데 이거하면 전부 다 안 돼서 우선 오류
       kakao.maps.event.addListener(map, "zoom_changed", () => {
         if (map.getLevel() > 13) map.setLevel(13); // 이거 축소 13이상 안 되게 하는 거
       });
-      const bounds = new kakao.maps.LatLngBounds(
-        new kakao.maps.LatLng(33, 124),   // 남서쪽
-        new kakao.maps.LatLng(39, 132)    // 북동쪽
-      );
+      // const bounds = new kakao.maps.LatLngBounds(
+      //   new kakao.maps.LatLng(33, 124),   // 남서쪽
+      //   new kakao.maps.LatLng(39, 132)    // 북동쪽
+      // );
 
       kakao.maps.event.addListener(map, "dragend", () => {
         const center = map.getCenter();
@@ -124,20 +124,21 @@ export default function MainMap({ setSelectedRegion, setSideOpen, setMapObj }) {
       });
 
 
-// 마우스 이벤트
-kakao.maps.event.addListener(polygon, "mouseover", () => {
-  if (selectedPolygon.current !== polygon) polygon.setOptions({ fillOpacity: 0.9 });
-});
-kakao.maps.event.addListener(polygon, "mouseout", () => {
-  if (selectedPolygon.current !== polygon) polygon.setOptions({ fillOpacity: 0.2 });
-});
-      }
+          // 마우스 이벤트
+          kakao.maps.event.addListener(polygon, "mouseover", () => {
+            if (selectedPolygon.current !== polygon) polygon.setOptions({ fillOpacity: 0.9 });
+          });
+          kakao.maps.event.addListener(polygon, "mouseout", () => {
+            if (selectedPolygon.current !== polygon) polygon.setOptions({ fillOpacity: 0.2 });
+          });
+                }
 
-      // ⭐ SideTab에서 참조 가능하도록 전역 저장
-      window.polygonsRef = polygons;
-      window.selectedPolygonRef = selectedPolygon;
-    });
-  }, [setSelectedRegion, setSideOpen]);
+                // ⭐ SideTab에서 참조 가능하도록 전역 저장
+                window.polygonsRef = polygons;
+                window.selectedPolygonRef = selectedPolygon;
+              });
+              
+            }, [setSelectedRegion, setSideOpen]);
 
-  return <div ref={KAKAO} style={{ width: "100%", height: "100%" }}></div>;
+            return <div ref={KAKAO} style={{ width: "100%", height: "100%" }}></div>;
 }
