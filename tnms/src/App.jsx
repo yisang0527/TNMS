@@ -5,16 +5,17 @@ import ProtectedRoute from "./component/Admin/ProtectedRoute";
 
 import "./App.css"
 
-import Header from './component/ETC/Header/Header';
-import Footer from './component/ETC/Footer/Footer';
+import Header from './component/Layout/Header/Header';
+import Footer from './component/Layout/Footer/Footer';
 
 import Index from './page/Main/Index';
-import Stats from './page/Menu1/Stats/Stats';
-import Prev from './page/Menu2/Prev/Prev';
-import Number from './page/Menu2/Number/Number';
-import Help from './page/Menu3/Help/Help';
-import Qna from './page/Menu4/Qna';
-import Notice from './page/Menu4/Notice';
+import Issues from './page/Issues/Issues';
+import Stats from './page/Stats/Stats/Stats';
+import Prev from './page/Prevs/Prev/Prev';
+import Number from './page/Prevs/Number/Number';
+import Help from './page/Helps/Help/Help';
+import Qna from './page/Q&a/Qna';
+import Notice from './page/Q&a/Notice';
 
 import AdminLogin from "./page/Admin/AdminLogin";
 import AdminPage from "./page/Admin/AdminPage";
@@ -46,7 +47,8 @@ export default function App() {
             {/* 일반 레이아웃 */}
             <Route element={<UserLayout />}>
               <Route path="/" element={<Index />} />
-              <Route path="/stats" element={<Stats />} />  {/* 정상 작동 */}
+              <Route path="/issues" element={<Issues />} />
+              <Route path="/stats" element={<Stats />} />
               <Route path="/prev" element={<Prev />} />
               <Route path="/number" element={<Number />} />
               <Route path="/help" element={<Help />} />

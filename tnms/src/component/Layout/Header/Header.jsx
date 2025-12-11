@@ -1,6 +1,6 @@
 // Header.jsx
 
-import '../../../css/ETC/Header.css';
+import '../../../css/Layout/Header.css';
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,7 @@ const Header = () => {
     {
       name: "재난 이슈",
       subMenu: [
-        { name: "재난 이슈", link: "/*" }]
+        { name: "재난 이슈", link: "/issues" }]
     },
     {
       name: "재난 통계",

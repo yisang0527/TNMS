@@ -1,6 +1,6 @@
 // page/Menu4/Notice.jsx
 
-import NoticeText from "../../component/Menu4/Notice/NoticeText"
+import NoticeText from "../../component/Q&a/Notice/NoticeText"
 
 export default function Notice() {
     return (

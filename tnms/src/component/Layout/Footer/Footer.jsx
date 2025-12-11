@@ -1,5 +1,5 @@
 // Footer.jsx
-import "../../../css/ETC/Footer.css";
+import "../../../css/Layout/Footer.css";
 import footerImg from "../../../../public/waLogo.png";
 
 function Footer() {

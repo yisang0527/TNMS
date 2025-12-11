@@ -1,7 +1,7 @@
 // page/Qna.jsx
 
-import QnaText1 from "../../component/Menu4/Qna/QnaText1"
-import QnaText2 from "../../component/Menu4/Qna/QnaText2"
+import QnaText1 from "../../component/Q&a/Qna/QnaText1"
+import QnaText2 from "../../component/Q&a/Qna/QnaText2"
 
 export default function Qna() {
     return (

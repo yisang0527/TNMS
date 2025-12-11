@@ -1,14 +1,14 @@
 // Prev.jsx
 import { useState } from "react";
 
-import PrevWind from "../../../component/Menu2/Prev/PrevWind";
-import PrevDust from "../../../component/Menu2/Prev/PrevDust";
-import PrevRain1 from "../../../component/Menu2/Prev/PrevRain1";
-import PrevMountain from "../../../component/Menu2/Prev/PrevMountain";
-import PrevRain2 from "../../../component/Menu2/Prev/PrevRain2";
-import PrevFire from "../../../component/Menu2/Prev/PrevFire";
-import PrevSnow from "../../../component/Menu2/Prev/PrevSnow";
-import PrevCold from "../../../component/Menu2/Prev/PrevCold";
+import PrevWind from "../../../component/Prevs/Prev/PrevWind";
+import PrevDust from "../../../component/Prevs/Prev/PrevDust";
+import PrevRain1 from "../../../component/Prevs/Prev/PrevRain1";
+import PrevMountain from "../../../component/Prevs/Prev/PrevMountain";
+import PrevRain2 from "../../../component/Prevs/Prev/PrevRain2";
+import PrevFire from "../../../component/Prevs/Prev/PrevFire";
+import PrevSnow from "../../../component/Prevs/Prev/PrevSnow";
+import PrevCold from "../../../component/Prevs/Prev/PrevCold";
 
 import windImg from "../../../../public/windLogo.png";
 import dustImg from "../../../../public/dustLogo.png";

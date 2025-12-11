@@ -1,6 +1,6 @@
 // Help.jsx
 
-import HelpText from "../../../component/Menu3/Help/HelpText";
+import HelpText from "../../../component/Helps/Help/HelpText";
 
 export default function Help() {
   return (
