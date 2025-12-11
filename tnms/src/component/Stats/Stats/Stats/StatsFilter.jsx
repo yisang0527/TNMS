@@ -257,7 +257,7 @@ export default function StatsChart() {
             case "dust":
                 field = "ta10";
                 data = aggregateData(filteredData, field).map(d => d.ta10);
-                warningData = filteredData.map(d => (d.ta10 >= 500) ? d.ta10 : null);
+                warningData = filteredData.map(d => (d.ta10 >= 200) ? d.ta10 : null);
                 label = "미세먼지";
                 break;
             default:
@@ -428,8 +428,8 @@ export default function StatsChart() {
                 break;
             case "dust":
                 values = filteredData.map(d => d.ta10).filter(v => v > 0);
-                warningCount = values.filter(v => v >= 500).length;
-                warningThreshold = "500㎍/m3 이상";
+                warningCount = values.filter(v => v >= 200).length;
+                warningThreshold = "200㎍/m3 이상";
                 break;
         }
 
@@ -719,8 +719,8 @@ export default function StatsChart() {
                 break;
             case "dust":
                 field = "ta10";
-                threshold = "500㎍/m3 이상";
-                checkCondition = (v) => v >= 500;
+                threshold = "200㎍/m3 이상";
+                checkCondition = (v) => v >= 200;
                 break;
             default:
                 field = "taAvg";
