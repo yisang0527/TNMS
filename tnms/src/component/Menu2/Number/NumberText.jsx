@@ -128,17 +128,12 @@ const emergencyLinks = [
 export default function NumberText() {
   return (
     <div>
-      <div
-        className="max-w-[1250px] bg-[#FFFFFF] border-x border-[#333333] mx-auto p-[100px_50px_150px] "
-      >
+      <div className="max-w-[1250px] bg-[#FFFFFF] border-x border-[#333333] mx-auto p-[100px_50px_150px] pb-60">
         <h2 className="text-[32px] font-bold mb-6 ml-[30px]">
           비상연락망
-        </h2><br />
-        <div className="p-6 grid grid-cols-6 gap-6
-                      max-xl:grid-cols-4
-                      max-lg:grid-cols-3
-                      max-sm:grid-cols-2
-                      ">
+        </h2>
+
+        <div className="p-6 grid grid-cols-6 gap-6 max-xl:grid-cols-4 max-lg:grid-cols-3 max-sm:grid-cols-2">
           {emergencyLinks.map((item, index) => (
             <a
               key={index}
@@ -147,15 +142,18 @@ export default function NumberText() {
               rel="noreferrer"
               className="w-[170px] mb-[50px]"
             >
+
               <img
                 src={item.img}
                 alt={item.name}
                 className="w-[200px] h-[80px] object-contain mb-3 border border-[#E0E0E0] rounded bg-white"
               />
+
               <div className="flex flex-row items-center justify-end gap-2">
                 <div className="text-sm font-semibold mb-1 text-gray-800">
                   {item.name}
                 </div>
+
                 <img src={item.icon} alt="아이콘" className="w-6 h-6 opacity-70" />
               </div>
             </a>
