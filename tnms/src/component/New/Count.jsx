@@ -5,13 +5,13 @@ import { Bar } from "react-chartjs-2";
 
 export default function ChartBasic1(){
     const data ={
-        labels: ["수도권", "강원", "충청", "전라","경상"] ,
+        labels: ["수도권", "강원", "충청", "전라","경상","제주"] ,
         datasets:[
             { 
-                label : "매출",
-                data: [100, 50, 200],
-                backgroundColor: "rgba(99,102,241, 0.5)",
-                borderColor:"rgba(99,102,241,1)",
+                label : "횟수",
+                data: [46, 71, 75, 152, 522, 68],
+                backgroundColor: "rgba(153, 215, 245, 0.5)",
+                borderColor:"rgba(153,215,245,1)",
                 borderWidth:1
             }
         ] 
@@ -27,10 +27,10 @@ export default function ChartBasic1(){
             y:{
                 beginAtZero:true,
                 ticks:{
-                    stepSize:5, //눈금간격
+                    stepSize:100, //눈금간격
                 },
-                suggestedMax:20, // 최대값
-                suggestedMin:5, // 최소값
+                suggestedMax:600, // 최대값
+                suggestedMin:0, // 최소값
             }
         }
     };

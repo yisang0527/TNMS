@@ -7,7 +7,7 @@ const Header = () => {
     {
       name: "재난이슈",
       subMenu: [
-        { name: "재난이슈", link: "/issues" }]
+        { name: "재난이슈", link: "/" }]
     },
     {
       name: "지난재난통계",

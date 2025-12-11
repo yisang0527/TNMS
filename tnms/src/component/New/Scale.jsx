@@ -9,23 +9,56 @@ import {
 } from "recharts";
 
 const rawData = [
-  { date: "2004-05-29", value: 5.2 },
-  { date: "2016-09-12", value: 5.8 },
-  { date: "2017-11-15", value: 5.4 },
-  { date: "2022-10-29", value: 4.1 },
-  { date: "2025-02-07", value: 4.8 },
-  { date: "2021-09-18", value: 3.9 },
-  { date: "2022-04-27", value: 5.6 },
-  { date: "2023-12-01", value: 2.9 },
-  { date: "2024-06-15", value: 6.0 }
+  { date: "2016-09-12", value: 5.8, name: "경주 지진" },
+  { date: "2017-11-15", value: 5.4, name: "포항 지진" },
+  { date: "2016-07-05", value: 5.0, name: "울산 동구 해역 지진" },
+  { date: "1548", value: 7.0, name: "산둥반도 해역 지진" },
+  { date: "1668", value: 8.5, name: "탄청 대지진" },
+  { date: "1700", value: 7.0, name: "대마도 지진" },
+  { date: "1707", value: 8.9, name: "호에이 대지진" }
 ];
 
-// 날짜 → 숫자(timestamp) 변환
+// 날짜 → timestamp 변환
 const data = rawData.map(item => ({
   x: new Date(item.date).getTime(),
   y: item.value,
-  date: item.date
+  date: item.date,
+  name: item.name
 }));
+
+// ✨ Custom Tooltip
+const CustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    const item = payload[0].payload;
+
+    // 1️⃣ 날짜 처리 (YYYY → YYYY년 , YYYY-MM-DD는 그대로)
+    let formattedDate = item.date;
+    if (/^\d{4}$/.test(item.date)) {
+      formattedDate = `${item.date}년`;
+    }
+
+    // 2️⃣ 규모 처리 (정수라도 소수점 1자리 강제)
+    const formattedScale = item.y.toFixed(1);
+
+    return (
+      <div
+        style={{
+          background: "white",
+          padding: "8px 12px",
+          border: "1px solid #ccc",
+          borderRadius: "6px",
+          lineHeight: "1.4",
+        }}
+      >
+        <div>{formattedDate}</div>
+        <div>{item.name}</div>
+        <div>{formattedScale}</div>
+      </div>
+    );
+  }
+  return null;
+};
+
 
 export default function ExampleScatter() {
   return (
@@ -38,7 +71,7 @@ export default function ExampleScatter() {
       >
         <CartesianGrid />
 
-        {/* X축: 날짜 기반 → 연도만 표시 */}
+        {/* X축 */}
         <XAxis 
           dataKey="x"
           type="number"
@@ -46,31 +79,29 @@ export default function ExampleScatter() {
           tickFormatter={(t) => new Date(t).getFullYear()}
         />
 
-        {/* Y축: 눈금 2~6, 점 위치는 소수점 가능 */}
+        {/* Y축 */}
         <YAxis 
           dataKey="y" 
           name="규모"
-          domain={[2, 6]}
-          ticks={[2.0, 3.0, 4.0, 5.0, 6.0]}
-          tickFormatter={(tick) => tick.toFixed(1)} // 소수점 1자리 표시
+          domain={[4, 9]}
+          ticks={[4.0, 5.0, 6.0, 7.0, 8.0, 9.0]}
+          tickFormatter={(tick) => tick.toFixed(1)}
         />
 
-        {/* Tooltip: 날짜 전체 표시 */}
-        <Tooltip 
-          labelFormatter={(t) => new Date(t).toLocaleDateString()} 
-        />
+        {/* ✨ Tooltip 변경: 날짜 / 지진명 / 규모 */}
+        <Tooltip content={<CustomTooltip />} />
 
         <Legend />
 
-        {/* 점 크기 동적 적용 */}
+        {/* 점 크기 동적 */}
         <Scatter 
-          name="산점도 데이터" 
+          name="국내 이슈된 지진"
           data={data} 
-          fill="#8884d8"
+          fill="#12A2F0"
           shape={(props) => {
             const { cx, cy, payload } = props;
-            const radius = 5 + (payload.y - 2) * 2.5; // y값 따라 크기 조절
-            return <circle cx={cx} cy={cy} r={radius} fill="#8884d8" />;
+            const radius = 5 + (payload.y - 2) * 2.5;
+            return <circle cx={cx} cy={cy} r={radius} fill="#12A2F0" />;
           }}
         />
       </ScatterChart>

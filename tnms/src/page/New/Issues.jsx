@@ -44,6 +44,8 @@ export default function Issues() {
             {/* 그래프 변경 */}
             {selectedTab === "bar" && <Count />}
             {selectedTab === "scale" && <Scale />}
+
+            <p className="mt-[10px]"><span className="font-bold">Tip</span> 그래프 위에 마우스를 올리면 정확한 값을 확인할 수 있습니다.</p>
         </div>
     );
 }
