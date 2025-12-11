@@ -3,7 +3,7 @@
 export default function HelpText() {
     return (
 
-        <div className="max-w-[1250px] bg-[#FFFFFF] border-x border-[#333333] mx-auto p-[100px_50px_150px] pb-75">
+        <div className="max-w-[1250px] bg-[#FFFFFF] border border-[#333333] mx-auto p-[100px_50px_150px] pb-75 mt-20 mb-20">
             <h2 className="text-[32px] font-bold mb-[-10px]">
                 센터소개
             </h2>

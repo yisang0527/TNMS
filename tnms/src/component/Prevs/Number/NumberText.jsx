@@ -23,103 +23,103 @@ import ulsan from "../../../../public/numberLogo17.gif"
 const emergencyLinks = [
   {
     name: "서울특별시",
-    url: "https://www.police.go.kr",
+    url: "https://org.seoul.go.kr/org/orgChart.do",
     img: seoul,
     icon: resize
   },
   {
     name: "부산광역시",
-    url: "https://www.nfa.go.kr",
+    url: "https://www.busan.go.kr/bhorganization01",
     img: busan,
     icon: resize
   },
   {
     name: "대구광역시",
-    url: "https://www.police.go.kr",
+    url: "https://www.daegu.go.kr/index.do?menu_id=00000248",
     img: degu,
     icon: resize
   },
   {
     name: "인천광역시",
-    url: "https://www.nfa.go.kr",
+    url: "https://www.incheon.go.kr/IC040221",
     img: inchun,
     icon: resize
   },
   {
     name: "광주광역시",
-    url: "https://www.police.go.kr",
+    url: "https://www.gwangju.go.kr/contentsView.do?pageId=www147",
     img: gwangju,
     icon: resize
   },
   {
     name: "대전광역시",
-    url: "https://www.nfa.go.kr",
+    url: "https://www.daejeon.go.kr/drh/drhOrganization.do?menuSeq=6376",
     img: daejeon,
     icon: resize
   },
   {
     name: "울산광역시",
-    url: "https://www.police.go.kr",
+    url: "https://www.ulsan.go.kr/u/rep/contents.ulsan?mId=001005007001001000",
     img: ulsan,
     icon: resize
   },
   {
     name: "세종특별자치시",
-    url: "https://www.nfa.go.kr",
+    url: "https://www.sejong.go.kr/kor/sub01_010101.do#sub01_010101",
     img: sejong,
     icon: resize
   },
   {
     name: "경기도",
-    url: "https://www.police.go.kr",
+    url: "https://www.gg.go.kr/org/orgChart.do?menuId=1808",
     img: gyeonggi,
     icon: resize
   },
   {
     name: "강원특별자치도",
-    url: "https://www.nfa.go.kr",
+    url: "https://state.gwd.go.kr/portal/introduce/guidance/organization",
     img: ganwon,
     icon: resize
   },
   {
     name: "충청북도",
-    url: "https://www.police.go.kr",
+    url: "https://www.chungbuk.go.kr/www/contents.do?key=478",
     img: chungbuk,
     icon: resize
   },
   {
     name: "충청남도",
-    url: "https://www.nfa.go.kr",
+    url: "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500984",
     img: chungnam,
     icon: resize
   },
   {
     name: "전북특별자치도",
-    url: "https://www.police.go.kr",
+    url: "https://www.jeonbuk.go.kr/index.jeonbuk?menuCd=DOM_000000101003001000",
     img: jeollabukdo,
     icon: resize
   },
   {
     name: "전라남도",
-    url: "https://www.nfa.go.kr",
+    url: "https://www.jeonnam.go.kr/contentsView.do?menuId=jeonnam0601010000",
     img: jeollanamdo,
     icon: resize
   },
   {
     name: "경상북도",
-    url: "https://www.police.go.kr",
+    url: "https://www.gb.go.kr/Main/page.do?mnu_uid=6851&LARGE_CODE=720&MEDIUM_CODE=60&SMALL_CODE=40&SMALL_CODE2=20",
     img: gyeonsangbukdo,
     icon: resize
   },
   {
     name: "경상남도",
-    url: "https://www.nfa.go.kr",
+    url: "https://www.gyeongnam.go.kr/index.gyeong?menuCd=DOM_000000137001001000",
     img: gyeongnam,
     icon: resize
   },
   {
     name: "제주특별자치도",
-    url: "https://www.police.go.kr",
+    url: "https://www.jeju.go.kr/jeju/jeju/org/organization.htm",
     img: jeju,
     icon: resize
   },
@@ -128,7 +128,7 @@ const emergencyLinks = [
 export default function NumberText() {
   return (
     <div>
-      <div className="max-w-[1250px] bg-[#FFFFFF] border-x border-[#333333] mx-auto p-[100px_50px_150px] pb-60">
+      <div className="max-w-[1250px] bg-[#FFFFFF] border border-[#333333] mx-auto p-[100px_50px_150px] pb-60 mt-20 mb-20">
         <h2 className="text-[32px] font-bold mb-6 ml-[30px]">
           비상연락망
         </h2>
