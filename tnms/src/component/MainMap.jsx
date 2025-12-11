@@ -28,8 +28,12 @@ export default function MainMap({ setSelectedRegion, setSideOpen, setMapObj }) {
 
       // 줌 변경 시 레벨 고정 + 중심 유지
       kakao.maps.event.addListener(map, "zoom_changed", () => {
-        if (map.getLevel() > initialLevel) map.setLevel(initialLevel);
-      });
+  const currentLevel = map.getLevel();
+  if (currentLevel > initialLevel) {
+    map.setLevel(initialLevel);        // 줌 제한
+    map.setCenter(initialCenter);      // 축소 시 초기 중심으로 복원
+  }
+});
 
       // 드래그 제한: 화면 범위를 벗어나지 않도록 중심 조정
       kakao.maps.event.addListener(map, "drag", () => {
@@ -50,7 +54,7 @@ export default function MainMap({ setSelectedRegion, setSideOpen, setMapObj }) {
       });
 
       const regionCenters = {
-        서울: new kakao.maps.LatLng(37.717813669600986, 127.76405855389828),
+        서울: new kakao.maps.LatLng(37.62808571674803, 127.25024225297835),
         경기도: new kakao.maps.LatLng(37.724067190773965, 128.03813624738643),
         강원도: new kakao.maps.LatLng(37.97324920193215, 129.36419005377905),
         충청남도: new kakao.maps.LatLng(36.63961, 127.69228709909288),
@@ -105,7 +109,7 @@ export default function MainMap({ setSelectedRegion, setSideOpen, setMapObj }) {
           const center = regionCenters[data.name];
         if (center) {
           const regionZoom = {
-
+            서울:9,
             default: 11
           };
 

@@ -51,9 +51,9 @@ export default function SideTab({ isOpen, region, onClose, onOpen, mapObj, setSe
 
           if (mapObj && window.kakao) {
             const kakao = window.kakao;
-            const seoulCenter = new kakao.maps.LatLng(37.59523719584169, 127.9350760222037);
+            const seoulCenter = new kakao.maps.LatLng(37.62808571674803, 127.25024225297835);
             mapObj.setCenter(seoulCenter);
-            mapObj.setLevel(11);
+            mapObj.setLevel(9);
             }
           }}
   className="fixed right-0 top-[calc(100px+430px)] w-[30px] h-[100px] transform -translate-y-1/2 p-2 bg-[#D4EBF7] rounded shadow z-1600"
