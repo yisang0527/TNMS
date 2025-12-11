@@ -444,7 +444,7 @@ export default function StatsChart() {
         return {
             max: max.toFixed(1),
             min: min.toFixed(1),
-            avg: avg.toFixed(1),
+            avg: avg.toFixed(0),
             warningCount,
             warningThreshold,
             totalDays: filteredData.length
