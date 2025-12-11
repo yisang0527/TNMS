@@ -9,7 +9,6 @@ import Header from './component/ETC/Header/Header';
 import Footer from './component/ETC/Footer/Footer';
 
 import Index from './page/Main/Index';
-import Issues from './page/New/Issues'
 import Stats from './page/Menu1/Stats/Stats';
 import Prev from './page/Menu2/Prev/Prev';
 import Number from './page/Menu2/Number/Number';
@@ -27,7 +26,6 @@ const UserLayout = () => {
   const location = useLocation();
   const isMain = location.pathname === "/";  // 메인 페이지 여부 체크
 
-function App() {
   return (
     <>
       <MainPopup />
@@ -48,7 +46,6 @@ export default function App() {
             {/* 일반 레이아웃 */}
             <Route element={<UserLayout />}>
               <Route path="/" element={<Index />} />
-              <Route path='/issues' element={<Issues/>}/>
               <Route path="/stats" element={<Stats />} />  {/* 정상 작동 */}
               <Route path="/prev" element={<Prev />} />
               <Route path="/number" element={<Number />} />
