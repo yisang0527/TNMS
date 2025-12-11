@@ -7,10 +7,11 @@ export default function Issues() {
     // 기본: bar 그래프
 
     return (
-        <div className="w-[1250px] h-[1500px] mx-auto">
-            <h3 className="text-[32px] font-bold text-[#333333] mb-[70px] mt-[100px]">재난 이슈</h3>
+        <div className="max-w-[1250px] mx-auto mt-20 mb-20 py-[100px] px-[50px] pb-[150px] bg-white border border-gray-100 rounded-2xl shadow-xl">
+            <h3 className="text-[32px] font-bold text-[#333333] mb-[70px]">재난 이슈</h3>
             <h4 className="text-[24px] font-bold text-[#333333] mb-[10px]">지역별 그래프</h4>
-            <p className="text-[18px] font-bold text-[#333333] mb-[40px]">최근 이슈인 재난에 대한 지역별 상세 그래프</p>
+            <p className="text-[18px] text-[#333333]">최근 이슈되는 재난에 대한 지역별 상세 그래프</p>
+            <p className="text-[18px] text-[#333333] mb-[40px]">현재 이슈되는 재난은 <span className="font-bold">지진</span>입니다</p>
 
             <div className="mb-5">
 

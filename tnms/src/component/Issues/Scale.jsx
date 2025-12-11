@@ -74,12 +74,12 @@ const CustomTooltip = ({ active, payload }) => {
 
 export default function ExampleScatter() {
   return (
-    <div className="w-[1250px] h-[700px] mx-auto border border-[#DFDFDF] 
+    <div className="w-[1150px] h-[700px] mx-auto border border-[#DFDFDF] 
     px-[20px] py-[30px] flex justify-center items-center">
       <ScatterChart
         width={1200}
         height={650}
-        margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+        margin={{ top: 50, right: 20, bottom: 20, left: 20 }}
       >
         <CartesianGrid vertical={false} horizontal={true}/>
 
