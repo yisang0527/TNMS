@@ -40,16 +40,16 @@ export default function MainMap({ setSelectedRegion, setSideOpen, setMapObj }) {
       });// 이건 이동
       
       const regionCenters = {
-        서울: new kakao.maps.LatLng(37.55538654535481, 126.9835765626031),
-        경기도: new kakao.maps.LatLng(37.500232760498974, 127.22193537663605),
-        강원도: new kakao.maps.LatLng(37.75973674009599, 128.22287567885292),
-        충청남도: new kakao.maps.LatLng(36.49070077873013, 126.92030471357498),
-        충청북도: new kakao.maps.LatLng(36.73190428099862, 127.70538441377482),
-        경상북도: new kakao.maps.LatLng(36.37145412453759, 128.7384757276954),
-        경상남도: new kakao.maps.LatLng(35.415746139700346, 128.38308398667152),
-        전라북도: new kakao.maps.LatLng(35.76388057183283, 127.14057487033574),
-        전라남도: new kakao.maps.LatLng(35.067221811111295, 127.0005766936257),
-        제주도: new kakao.maps.LatLng(33.389806138956786, 126.51873917572715),
+        서울: new kakao.maps.LatLng( 37.568420201077174, 127.25074789394824),
+        경기도: new kakao.maps.LatLng(37.711962550489204, 128.37067897898055),
+        강원도: new kakao.maps.LatLng(37.77311716291588, 130.24379625910632),
+        충청남도: new kakao.maps.LatLng(36.639614564196194, 128.12980334245134),
+        충청북도: new kakao.maps.LatLng(36.6993804826957, 129.05466597294622),
+        경상북도: new kakao.maps.LatLng(36.53988507198923, 130.20837433876534),
+        경상남도: new kakao.maps.LatLng(35.541178401552486, 130.25804185225263),
+        전라북도: new kakao.maps.LatLng(35.66819050392036, 127.84584135005389),
+        전라남도: new kakao.maps.LatLng(34.83599944688994, 127.7109967077605),
+        제주도: new kakao.maps.LatLng(33.461895955466204, 127.07398148043245),
       };
 
       
