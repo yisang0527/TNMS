@@ -101,7 +101,7 @@ export default function QnaText2() {
 
                         <button 
                             onClick={handleSubmit}
-                            className="font-bold text-[21px] text-white w-[125px] h-[66px] bg-[#0A2F43] float-right hover:bg-[#0d3a52] transition-colors"
+                            className="font-bold text-[21px] text-white w-[125px] h-[66px] bg-[#0A2F43] float-right hover:bg-[#0d3a52] transition-colors cursor-pointer"
                         >
                             전송
                         </button>
@@ -124,7 +124,7 @@ export default function QnaText2() {
 
                     <button
                         onClick={() => setShowMyInquiry(true)}
-                        className="font-bold text-[18px] text-[#0A2F43] border-2 border-[#0A2F43] w-[200px] h-[50px] mt-5 hover:bg-[#0A2F43] hover:text-white transition-colors"
+                        className="font-bold text-[18px] text-[#0A2F43] border-2 border-[#0A2F43] w-[200px] h-[50px] mt-5 hover:bg-[#0A2F43] hover:text-white transition-colors cursor-pointer"
                     >
                         내 문의 확인하기
                     </button>
