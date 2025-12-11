@@ -34,7 +34,8 @@ export default function ChartBasic1(){
         }
     };
     return(
-        <div className="w-[1000px] h-[500px] mx-auto border border-[#DFDFDF] px-[20px] py-[30px]">
+        <div className="w-[1250px] h-[700px] mx-auto border border-[#DFDFDF] px-[20px] py-[30px]">
+            <h3 className="text-xl font-bold ml-[120px] mb-[20px]">2016년 이후 국내 지진 발생 횟수</h3>
             <Bar data={data}  options={options}/>
         </div>
     );
