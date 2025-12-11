@@ -39,16 +39,21 @@ export default function SideTab({ isOpen, region, onClose, onOpen, mapObj, setSe
       {!isOpen && (
        <button
         onClick={() => {
-          onOpen(); // 사이드탭 열기
-          setSelectedRegion("서울")
-          fillSeoul();
+          onOpen();                 // 사이드탭 열기
+          setSelectedRegion("서울"); // 선택 지역 이름
 
-          // 지도 서울 이동
-            if (mapObj && window.kakao) {
-              const kakao = window.kakao;
-              const seoulCenter = new kakao.maps.LatLng(37.55538654535481, 126.9835765626031);
-              mapObj.setCenter(seoulCenter);
-              mapObj.setLevel(11);
+          if (window.polygonsRef) {
+            window.polygonsRef.current.forEach(({ polygon, name }) => {
+              polygon.setOptions({ fillOpacity: name === "서울" ? 0.9 : 0.2 });
+            });
+            window.selectedPolygonRef.current = window.polygonsRef.current.find(p => p.name === "서울")?.polygon;
+          }
+
+          if (mapObj && window.kakao) {
+            const kakao = window.kakao;
+            const seoulCenter = new kakao.maps.LatLng(37.59523719584169, 127.9350760222037);
+            mapObj.setCenter(seoulCenter);
+            mapObj.setLevel(11);
             }
           }}
   className="fixed right-0 top-[calc(100px+430px)] w-[30px] h-[100px] transform -translate-y-1/2 p-2 bg-[#D4EBF7] rounded shadow z-1600"
@@ -87,7 +92,7 @@ export default function SideTab({ isOpen, region, onClose, onOpen, mapObj, setSe
 
       {/* 사이드탭 */}
       <div
-        className={`fixed right-0 top-[100px] bg-[#D4EBF7]  transition-all duration-300 overflow-hidden z-1700 
+        className={`fixed right-0 top-[100px] bg-[#D4EBF7]  transition-all duration-300 overflow-hidden z-1700
           ${isOpen ? "w-[720px] p-5" : "w-0 p-0"}`}
         style={{ height: "calc(100vh - 100px)" }} // 화면 높이에 맞춤
       >
