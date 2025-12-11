@@ -1,28 +1,76 @@
-import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet, useLocation } from "react-router-dom";
+import { LegendProvider } from "./component/Admin/LegendContext";
+import { AuthProvider } from "./component/Admin/Authcontext";
+import ProtectedRoute from "./component/Admin/ProtectedRoute";
 
-import Header from './component/HeaderComponent/Header';
-import Prev from './page/Prev';
-import Qna from './page/Qna';
-import Footer from './component/FooterComponent/Footer'
+import "./App.css"
+
+import Header from './component/ETC/Header/Header';
+import Footer from './component/ETC/Footer/Footer';
+
+import Index from './page/Main/Index';
 import Issues from './page/New/Issues'
+import Stats from './page/Menu1/Stats/Stats';
+import Prev from './page/Menu2/Prev/Prev';
+import Number from './page/Menu2/Number/Number';
+import Help from './page/Menu3/Help/Help';
+import Qna from './page/Menu4/Qna';
+import Notice from './page/Menu4/Notice';
+
+import AdminLogin from "./page/Admin/AdminLogin";
+import AdminPage from "./page/Admin/AdminPage";
+import MainPopup from "./component/Popup/MainPopup";
+
+
+// 일반 레이아웃
+const UserLayout = () => {
+  const location = useLocation();
+  const isMain = location.pathname === "/";  // 메인 페이지 여부 체크
 
 function App() {
   return (
     <>
+      <MainPopup />
       <Header />
-
-      <Routes>
-        {/* 이곳에 link 주소를 라우트, path와 element로 넣으면 됩니다. */}
-
-        <Route path='/prev' element={<Prev />} />
-        <Route path='/qna' element={<Qna />} />
-        <Route path='/issues' element={<Issues/>}/>
-      </Routes>
-
-      <Footer />
+      <Outlet />
+      {!isMain && <Footer />}  {/* 메인 페이지가 아닐 때만 Footer 출력 */}
     </>
-  )
-}
+  );
+};
 
-export default App
+export default function App() {
+  return (
+    <AuthProvider>
+      <LegendProvider>  {/* ★ Stats에 필요함 */}
+        <Router>
+          <Routes>
+
+            {/* 일반 레이아웃 */}
+            <Route element={<UserLayout />}>
+              <Route path="/" element={<Index />} />
+              <Route path='/issues' element={<Issues/>}/>
+              <Route path="/stats" element={<Stats />} />  {/* 정상 작동 */}
+              <Route path="/prev" element={<Prev />} />
+              <Route path="/number" element={<Number />} />
+              <Route path="/help" element={<Help />} />
+              <Route path="/qna" element={<Qna />} />
+              <Route path="/notice" element={<Notice />} />
+            </Route>
+
+            {/* 관리자 (레이아웃 X) */}
+            <Route path="/adminlogin" element={<AdminLogin />} />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute>
+                  <AdminPage />
+                </ProtectedRoute>
+              }
+            />
+
+          </Routes>
+        </Router>
+      </LegendProvider>
+    </AuthProvider>
+  );
+}
