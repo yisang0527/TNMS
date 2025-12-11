@@ -3,7 +3,7 @@
 export default function PrevRainText3() {
     return (
         <>
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -14,7 +14,7 @@ export default function PrevRainText3() {
                 <p className="text-center pt-14 text-[18px]">호우가 시작된 때에는 신속히 안전한 곳으로 대피하고, 외출을 삼가며 이웃이나 가족과의 연락을 통해 안전 여부를 확인합니다.</p>
             </div>
 
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -58,7 +58,7 @@ export default function PrevRainText3() {
                 <li className=" mb-10">∙ 침수, 붕괴 우려, 산사태 위험 등으로 대피가 필요할 시 주변에 대피에 어려움이 있는 약자(어르신, 어린이, 장애인 등)와 함께 대피합니다.</li>
             </ul>
 
-            <div className="flex items-center pt-10 mb-10">
+            <div className="flex items-center pt-25 mb-10">
                 <p className="w-[20px] h-[20px] border-4 border-[#132a35] mr-2 bg-[#ffffff]"></p>
                 <p className="font-bold text-[20px] text-[#132a35]">주요기관 연락처</p>
             </div>
@@ -99,7 +99,7 @@ export default function PrevRainText3() {
                 </div>
             </div>
 
-            <p className="font-bold text-[28px] mt-15">국민행동요령</p>
+            <p className="font-bold text-[28px] mt-25">국민행동요령</p>
 
             <div className="flex mt-11 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
@@ -151,7 +151,7 @@ export default function PrevRainText3() {
             </ul>
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
-            <p className="font-bold text-[18px]">소관부서 : 자연재난대응과 (044-205-5233)</p>
+            <p className="font-bold text-[18px] mb-25">소관부서 : 자연재난대응과 (044-205-5233)</p>
         </>
     )
 }

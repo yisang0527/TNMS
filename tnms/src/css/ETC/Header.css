@@ -128,38 +128,38 @@
 
 .detailMenu ul:nth-child(1) {
   position: absolute;
-  left: -5px;
+  left: 24px;
   display: flex;
-  align-items: center;
+  align-items: left;
   flex-direction: column;
 }
 .detailMenu ul:nth-child(2) {
   position: absolute;
-  left: 200px;
+  left: 228px;
   display: flex;
-  align-items: center;
+  align-items: left;
   flex-direction: column;
 }
 
 .detailMenu ul:nth-child(3) {
   position: absolute;
-  left: 415px;
+  left: 435px;
   display: flex;
-  align-items: center;
+  align-items: left;
   flex-direction: column;
 }
 .detailMenu ul:nth-child(4) {
   position: absolute;
-  left: 655px;
+  left: 668px;
   display: flex;
-  align-items: center;
+  align-items: left;
   flex-direction: column;
 }
 .detailMenu ul:nth-child(5) {
   position: absolute;
-  left: 875px;
+  left: 902px;
   display: flex;
-  align-items: center;
+  align-items: left;
   flex-direction: column;
 }
 

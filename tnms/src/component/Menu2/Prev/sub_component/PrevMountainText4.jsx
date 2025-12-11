@@ -3,7 +3,7 @@
 export default function PrevMountainText4() {
     return (
         <>
-            <p className="text-[20px] mt-15 mb-10 font-bold">④ 산사태 발생 후에는 이렇게 행동합니다.</p>
+            <p className="text-[20px] mt-25 mb-10 font-bold">④ 산사태 발생 후에는 이렇게 행동합니다.</p>
 
             <ul className="text-[18px] font-normal text-[#333333]">
                 <li className=" mb-10">4.1. 매몰자나 부상자가 있는지 살펴봅니다.
@@ -53,7 +53,7 @@ export default function PrevMountainText4() {
             </ul>
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
-            <p className="font-bold text-[18px]">소관부서 : 산림청 산사태방지과 (042-481-1844)</p>
+            <p className="font-bold text-[18px] mb-25">소관부서 : 산림청 산사태방지과 (042-481-1844)</p>
         </>
     )
 }

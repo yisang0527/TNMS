@@ -3,7 +3,7 @@
 export default function PrevFire() {
     return (
         <>
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -199,7 +199,7 @@ export default function PrevFire() {
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
             <p className="font-bold text-[18px]">소관부서 : 환경산림재난대응과 (044-205-6171), (044-205-6173)</p>
-            <p className="font-bold text-[18px]">소관부서 : 산림청 산불방지과 (042-281-4251)</p>
+            <p className="font-bold text-[18px] mb-25">소관부서 : 산림청 산불방지과 (042-281-4251)</p>
         </>
     )
 }

@@ -3,7 +3,7 @@
 export default function PrevRainText2() {
     return (
         <>
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -14,7 +14,7 @@ export default function PrevRainText2() {
                 <p className="text-center pt-10 text-[18px]">TV, 라디오, 인터넷 등에서 호우특보가 예보된 때에는 거주 지역에 영향을 주는 시기를 미리 파악하고,<br />호우가 발생하기 전에 가족이나 지역주민과 함께 피해를 예방하기 위해 필요한 조치를 합니다.</p>
             </div>
 
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -61,7 +61,7 @@ export default function PrevRainText2() {
                 <li className=" mb-10">∙ 어르신, 어린이, 장애인 등 주변의 대피약자 안부를 수시로 확인하고, 비상시 대피방법을 미리 전달합니다.</li>
             </ul>
 
-            <div className="flex items-center pt-10 mb-10">
+            <div className="flex items-center pt-25 mb-10">
                 <p className="w-[20px] h-[20px] border-4 border-[#132a35] mr-2 bg-[#ffffff]"></p>
                 <p className="font-bold text-[20px] text-[#132a35]">주요기관 연락처</p>
             </div>
@@ -102,7 +102,7 @@ export default function PrevRainText2() {
                 </div>
             </div>
 
-            <p className="font-bold text-[28px] mt-15">국민행동요령</p>
+            <p className="font-bold text-[28px] mt-25">국민행동요령</p>
 
             <div className="flex mt-11 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
@@ -154,7 +154,7 @@ export default function PrevRainText2() {
             </ul>
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
-            <p className="font-bold text-[18px]">소관부서 : 자연재난대응과 (044-205-5233)</p>
+            <p className="font-bold text-[18px] mb-25">소관부서 : 자연재난대응과 (044-205-5233)</p>
         </>
     )
 }

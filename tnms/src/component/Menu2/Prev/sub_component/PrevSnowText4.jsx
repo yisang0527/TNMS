@@ -3,7 +3,7 @@
 export default function PrevSnowText4() {
     return (
         <>
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -14,7 +14,7 @@ export default function PrevSnowText4() {
                 <p className="text-center pt-13 text-[18px]">큰눈이 멈춘 후에는 주변의 피해를 확인하고, 가까운 행정복지센터(주민센터) 등에 신고하여 보수·보강을 하도록 합니다.</p>
             </div>
 
-            <p className="font-bold text-[20px] mt-15">국민행동요령</p>
+            <p className="font-bold text-[20px] mt-25">국민행동요령</p>
 
             <div className="flex mt-11 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
@@ -32,7 +32,7 @@ export default function PrevSnowText4() {
                 <li>- 차량이 고립될 때는 119에 신고하고 차 안에서 TV, 라디오, 인터넷 등을 통해 기상 상황을 확인하며 구조를 기다립니다.</li>
             </ul>
 
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -72,7 +72,7 @@ export default function PrevSnowText4() {
                 </li>
             </ul>
 
-            <div className="flex items-center pt-10 mb-10">
+            <div className="flex items-center pt-25 mb-10">
                 <p className="w-[20px] h-[20px] border-4 border-[#132a35] mr-2 bg-[#ffffff]"></p>
                 <p className="font-bold text-[20px] text-[#132a35]">주요기관 연락처</p>
             </div>
@@ -115,7 +115,7 @@ export default function PrevSnowText4() {
 
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
-            <p className="font-bold text-[18px]">소관부서 : 자연재난대응과 (044-205-5232)</p>
+            <p className="font-bold text-[18px] mb-25">소관부서 : 자연재난대응과 (044-205-5232)</p>
         </>
     )
 }

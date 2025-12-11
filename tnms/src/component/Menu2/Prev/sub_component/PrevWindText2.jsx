@@ -3,7 +3,7 @@
 export default function PrevWindText2() {
     return (
         <>
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -14,12 +14,12 @@ export default function PrevWindText2() {
                 <p className="text-center pt-13 text-[18px]">야외활동을 자제하고 주변의 독거노인 등 건강이 염려되는 분들의 안부를 살피고 가족이나 이웃과 주변에 있는 사람들과 함께 강풍에 대처합니다.</p>
             </div>
 
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
 
-            <p className="text-[20px] mb-10 font-bold">사전준비</p>
+            <p className="text-[20px] mb-5 font-bold">사전준비</p>
 
             <ul className="text-[18px] font-normal text-[#333333] ml-1.5">
                 <li>- 노약자, 장애인 등이 거주하는 가정의 경우에는 비상시 대피 방법과 연락 방법을 가족 또는 이웃 등과 사전에 의논합니다.</li>
@@ -37,7 +37,7 @@ export default function PrevWindText2() {
                 <li>- 강풍 발생으로 전력선이 차량에 닿는 경우, 차 안에 머무르면서 차의 금속 부분에 닿지 않도록 주의하고 주위 사람들에게 위험을 알리고 119에 연락하여 조치를 취하도록 합니다.</li>
             </ul>
 
-            <div className="flex items-center pt-12 mb-10">
+            <div className="flex items-center pt-25 mb-10">
                 <p className="w-[20px] h-[20px] border-4 border-[#132a35] mr-2 bg-[#ffffff]"></p>
                 <p className="font-bold text-[20px] text-[#132a35]">주요기관 연락처</p>
             </div>
@@ -72,7 +72,7 @@ export default function PrevWindText2() {
             </div>
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
-            <p className="font-bold text-[18px]">소관부서 : 자연재난대응과 (044-205-5232)</p>
+            <p className="font-bold text-[18px] mb-30">소관부서 : 자연재난대응과 (044-205-5232)</p>
         </>
     )
 }

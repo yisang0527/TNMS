@@ -3,7 +3,7 @@
 export default function PrevColdText3() {
     return (
         <>
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -14,7 +14,7 @@ export default function PrevColdText3() {
                 <p className="text-center pt-15 text-[18px]">한파에 대한 특보 기준과 질병상식 등을 미리 알아두어 한파특보나 응급상황에 즉시 대처할 수 있도록 합니다.</p>
             </div>
 
-            <p className="font-bold text-[28px] mt-15">국민행동요령</p>
+            <p className="font-bold text-[28px] mt-25">국민행동요령</p>
 
             <div className="flex mt-11 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
@@ -32,7 +32,7 @@ export default function PrevColdText3() {
                 <li>도로가 얼 수 있으니 차에 스노체인 등 월동용품을 준비하고, 부동액 등 자동차 점검을 합니다.</li>
             </ul>
 
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -92,7 +92,7 @@ export default function PrevColdText3() {
                 <p className="absolute w-[100%] h-[1px] bg-[#cccccc] bottom-[110px]"></p>
             </div>
 
-            <div className="flex items-center pt-10 mb-10">
+            <div className="flex items-center pt-25 mb-10">
                 <p className="w-[20px] h-[20px] border-4 border-[#132a35] mr-2 bg-[#ffffff]"></p>
                 <p className="font-bold text-[20px] text-[#132a35]">주요기관 연락처</p>
             </div>
@@ -135,7 +135,7 @@ export default function PrevColdText3() {
 
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
-            <p className="font-bold text-[18px]">소관부서 : 기후재난관리과 (044-205-6369)</p>
+            <p className="font-bold text-[18px] mb-25">소관부서 : 기후재난관리과 (044-205-6369)</p>
         </>
     )
 }

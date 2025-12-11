@@ -1,7 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Outlet, useLocation } from "react-router-dom";
 import { LegendProvider } from "./component/Admin/LegendContext";
 import { AuthProvider } from "./component/Admin/Authcontext";
 import ProtectedRoute from "./component/Admin/ProtectedRoute";
+
+import "./App.css"
 
 import Header from './component/ETC/Header/Header';
 import Footer from './component/ETC/Footer/Footer';
@@ -20,14 +22,19 @@ import MainPopup from "./component/Popup/MainPopup";
 
 
 // 일반 레이아웃
-const UserLayout = () => (
-  <>
-    <MainPopup />
-    <Header />
-    <Outlet />
-    <Footer />
-  </>
-);
+const UserLayout = () => {
+  const location = useLocation();
+  const isMain = location.pathname === "/";  // 메인 페이지 여부 체크
+
+  return (
+    <>
+      <MainPopup />
+      <Header />
+      <Outlet />
+      {!isMain && <Footer />}  {/* 메인 페이지가 아닐 때만 Footer 출력 */}
+    </>
+  );
+};
 
 export default function App() {
   return (

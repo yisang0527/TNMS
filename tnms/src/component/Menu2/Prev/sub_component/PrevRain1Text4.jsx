@@ -3,7 +3,7 @@
 export default function PrevRainText4() {
     return (
         <>
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -14,7 +14,7 @@ export default function PrevRainText4() {
                 <p className="text-center pt-10 text-[18px]">호우가 지나간 후에는 이웃 등 주변의 피해 상황을 확인하고,<br />가까운 행정복지센터 등에 피해를 신고하여 보수·보강을 하도록 합니다.</p>
             </div>
 
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -54,7 +54,7 @@ export default function PrevRainText4() {
                 </li>
             </ul>
 
-            <div className="flex items-center pt-10 mb-10">
+            <div className="flex items-center pt-25 mb-10">
                 <p className="w-[20px] h-[20px] border-4 border-[#132a35] mr-2 bg-[#ffffff]"></p>
                 <p className="font-bold text-[20px] text-[#132a35]">주요기관 연락처</p>
             </div>
@@ -95,7 +95,7 @@ export default function PrevRainText4() {
                 </div>
             </div>
 
-            <p className="font-bold text-[28px] mt-15">국민행동요령</p>
+            <p className="font-bold text-[28px] mt-25">국민행동요령</p>
 
             <div className="flex mt-11 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
@@ -147,7 +147,7 @@ export default function PrevRainText4() {
             </ul>
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
-            <p className="font-bold text-[18px]">소관부서 : 자연재난대응과 (044-205-5233)</p>
+            <p className="font-bold text-[18px] mb-25">소관부서 : 자연재난대응과 (044-205-5233)</p>
         </>
     )
 }

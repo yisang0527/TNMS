@@ -4,7 +4,7 @@ export default function PrevWindText3() {
     return (
         <>
             <div>
-                <div className="flex mt-11 mb-2">
+                <div className="flex mt-25 mb-2">
                     <p className="w-[20px] h-[4px] bg-amber-800"></p>
                     <p className="w-[20px] h-[4px] bg-blue-400"></p>
                 </div>
@@ -17,7 +17,7 @@ export default function PrevWindText3() {
             </div>
 
             <div>
-                <div className="flex mt-11 mb-2">
+                <div className="flex mt-25 mb-2">
                     <p className="w-[20px] h-[4px] bg-amber-800"></p>
                     <p className="w-[20px] h-[4px] bg-blue-400"></p>
                 </div>
@@ -30,7 +30,7 @@ export default function PrevWindText3() {
             </div>
 
             <div>
-                <div className="flex mt-11 mb-2">
+                <div className="flex mt-25 mb-2">
                     <p className="w-[20px] h-[4px] bg-amber-800"></p>
                     <p className="w-[20px] h-[4px] bg-blue-400"></p>
                 </div>
@@ -58,7 +58,7 @@ export default function PrevWindText3() {
             </div>
 
             <div>
-                <div className="flex items-center pt-12 mb-10">
+                <div className="flex items-center pt-25 mb-10">
                     <p className="w-[20px] h-[20px] border-4 border-[#132a35] mr-2 bg-[#ffffff]"></p>
                     <p className="font-bold text-[20px] text-[#132a35]">주요기관 연락처</p>
                 </div>
@@ -94,7 +94,7 @@ export default function PrevWindText3() {
             </div>
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
-            <p className="font-bold text-[18px]">소관부서 : 자연재난대응과 (044-205-5232)</p>
+            <p className="font-bold text-[18px] mb-30">소관부서 : 자연재난대응과 (044-205-5232)</p>
         </>
     )
 }

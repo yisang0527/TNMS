@@ -3,7 +3,7 @@
 export default function PrevRainText1() {
     return (
         <>
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -14,7 +14,7 @@ export default function PrevRainText1() {
                 <p className="text-center pt-14 text-[18px]">호우는 하천 범람, 산사태, 침수 등을 통해 인명피해와 재산피해를 발생시킬 수 있기 때문에 가족이나 이웃과 함께 대비합니다.</p>
             </div>
 
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -58,7 +58,7 @@ export default function PrevRainText1() {
                 </li>
             </ul>
 
-            <div className="flex items-center pt-10 mb-10">
+            <div className="flex items-center pt-25 mb-10">
                 <p className="w-[20px] h-[20px] border-4 border-[#132a35] mr-2 bg-[#ffffff]"></p>
                 <p className="font-bold text-3xl text-[#132a35] text-[20px]">주요기관 연락처</p>
             </div>
@@ -99,9 +99,9 @@ export default function PrevRainText1() {
                 </div>
             </div>
 
-            <p className="font-bold text-[28px] mt-15">국민행동요령</p>
+            <p className="font-bold text-[28px] mt-25">국민행동요령</p>
 
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -152,7 +152,7 @@ export default function PrevRainText1() {
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
             <p className="font-bold text-[18px]">소관부서 : 기후재난관리과 (044-205-6368)</p>
-            <p className="font-bold text-[18px]">소관부서 : 환경부 대기환경정책과 (044-201-7723)</p>
+            <p className="font-bold text-[18px] mb-25">소관부서 : 환경부 대기환경정책과 (044-201-7723)</p>
         </>
     )
 }

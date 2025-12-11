@@ -3,7 +3,7 @@
 export default function PrevDustText2() {
     return (
         <>
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -14,7 +14,7 @@ export default function PrevDustText2() {
                 <p className="text-center pt-14 text-[18px]">황사가 발생된 때에는 최대한 야외활동을 자제하고, 외출 시 꼭 마스크를 착용합니다.</p>
             </div>
 
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -68,7 +68,7 @@ export default function PrevDustText2() {
                 </li>
             </ul>
 
-            <div className="flex items-center pt-10 mb-10">
+            <div className="flex items-center pt-25 mb-10">
                 <p className="w-[20px] h-[20px] border-4 border-[#132a35] mr-2 bg-[#ffffff]"></p>
                 <p className="font-bold text-3xl text-[#132a35] text-[20px]">주요기관 연락처</p>
             </div>
@@ -108,7 +108,7 @@ export default function PrevDustText2() {
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
             <p className="font-bold text-[18px]">소관부서 : 기후재난관리과 (044-205-6368)</p>
-            <p className="font-bold text-[18px]">소관부서 : 환경부 대기환경정책과 (044-201-7723)</p>
+            <p className="font-bold text-[18px] mb-25">소관부서 : 환경부 대기환경정책과 (044-201-7723)</p>
         </>
     )
 }

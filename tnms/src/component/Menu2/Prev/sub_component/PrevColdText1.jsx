@@ -3,7 +3,7 @@
 export default function PrevColdText1() {
     return (
         <>
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -14,7 +14,7 @@ export default function PrevColdText1() {
                 <p className="text-center pt-7 text-[18px]">한파는 저체온증, 동상, 동창 등의 한랭질환을 유발할 수 있으며, 심하면 사망에 이르게 됩니다.<br />뿐만 아니라 농·축·수산 분야의 재산피해와 전력 급증으로 생활불편을 초래하기도 합니다.<br />겨울철에는 다음 사항을 숙지하여 가족이나 이웃과 함께 피해를 사전에 예방할 수 있도록 미리 준비합니다.</p>
             </div>
 
-            <p className="font-bold text-[28px] mt-15">국민행동요령</p>
+            <p className="font-bold text-[28px] mt-25">국민행동요령</p>
 
             <div className="flex mt-11 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
@@ -32,7 +32,7 @@ export default function PrevColdText1() {
                 <li>도로가 얼 수 있으니 차에 스노체인 등 월동용품을 준비하고, 부동액 등 자동차 점검을 합니다.</li>
             </ul>
 
-            <div className="flex mt-11 mb-2">
+            <div className="flex mt-25 mb-2">
                 <p className="w-[20px] h-[4px] bg-amber-800"></p>
                 <p className="w-[20px] h-[4px] bg-blue-400"></p>
             </div>
@@ -82,7 +82,7 @@ export default function PrevColdText1() {
                 </li>
             </ul>
 
-            <div className="flex items-center pt-10 mb-10">
+            <div className="flex items-center pt-25 mb-10">
                 <p className="w-[20px] h-[20px] border-4 border-[#132a35] mr-2 bg-[#ffffff]"></p>
                 <p className="font-bold text-[20px] text-[#132a35]">주요기관 연락처</p>
             </div>
@@ -125,7 +125,7 @@ export default function PrevColdText1() {
 
 
             <p className="w-[100%] h-[1px] bg-[#ccc] mt-15 mb-15"></p>
-            <p className="font-bold text-[18px]">소관부서 : 자연재난대응과 (044-205-5232)</p>
+            <p className="font-bold text-[18px] mb-25">소관부서 : 자연재난대응과 (044-205-5232)</p>
         </>
     )
 }
