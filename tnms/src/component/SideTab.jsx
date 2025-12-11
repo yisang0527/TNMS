@@ -51,7 +51,7 @@ export default function SideTab({ isOpen, region, onClose, onOpen, mapObj, setSe
               mapObj.setLevel(11);
             }
           }}
-  className="fixed right-0 top-[calc(100px+430px)] transform -translate-y-1/2 p-2 bg-gray-200 rounded shadow z-1600"
+  className="fixed right-0 top-[calc(100px+430px)] w-[30px] h-[100px] transform -translate-y-1/2 p-2 bg-[#D4EBF7] rounded shadow z-1600"
 >
           <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[15px] border-r-black"></div>
         </button>
@@ -72,9 +72,9 @@ export default function SideTab({ isOpen, region, onClose, onOpen, mapObj, setSe
           }
         }}
         className={`
-        fixed 
+        fixed w-[30px] h-[100px]
         top-[calc(100px+430px)] 
-        p-2 bg-gray-200 rounded shadow z-[1500]
+        p-2 bg-[#D4EBF7] rounded  z-[1500]
         transform -translate-y-1/2
         transition-transform duration-300
         ${isOpen 
@@ -87,7 +87,7 @@ export default function SideTab({ isOpen, region, onClose, onOpen, mapObj, setSe
 
       {/* 사이드탭 */}
       <div
-        className={`fixed right-0 top-[100px] bg-[#D4EBF7] border-l border-gray-300 shadow-lg transition-all duration-300 overflow-hidden z-1700 shadow-[-3px_3px_5px]
+        className={`fixed right-0 top-[100px] bg-[#D4EBF7]  transition-all duration-300 overflow-hidden z-1700 
           ${isOpen ? "w-[720px] p-5" : "w-0 p-0"}`}
         style={{ height: "calc(100vh - 100px)" }} // 화면 높이에 맞춤
       >

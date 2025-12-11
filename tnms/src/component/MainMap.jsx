@@ -13,31 +13,62 @@ export default function MainMap({ setSelectedRegion, setSideOpen, setMapObj }) {
 
     window.kakao.maps.load(async () => {
       const kakao = window.kakao;
-      
+
+      const initialCenter = new kakao.maps.LatLng(36.3504, 127.3845);
+      const initialLevel = 13;
+
       const map = new kakao.maps.Map(KAKAO.current, {
-        center: new kakao.maps.LatLng(36.3504, 127.3845),
-        level: 13,
+        center: initialCenter,
+        level: initialLevel,
+        draggable: true, // 드래그 허용 (범위 안 제한을 따로 구현)
+        scrollwheel: true, // 마우스 휠 확대/축소 허용
       });
       
       mapRef.current = map;
       setMapObj(map); // ⭐ 추가
-      map.setDraggable(false); // 이건 드래그 안 되게 하는 건데 이거하면 전부 다 안 돼서 우선 오류
-      kakao.maps.event.addListener(map, "zoom_changed", () => {
-        if (map.getLevel() > 13) map.setLevel(13); // 이거 축소 13이상 안 되게 하는 거
-      });
-      // const bounds = new kakao.maps.LatLngBounds(
-      //   new kakao.maps.LatLng(33, 124),   // 남서쪽
-      //   new kakao.maps.LatLng(39, 132)    // 북동쪽
-      // );
 
-      kakao.maps.event.addListener(map, "dragend", () => {
-        const center = map.getCenter();
-        const lat = Math.min(Math.max(center.getLat(), 33), 39);
-        const lng = Math.min(Math.max(center.getLng(), 124), 132);
-        if (lat !== center.getLat() || lng !== center.getLng()) {
-          map.setCenter(new kakao.maps.LatLng(lat, lng));
+      // ⭐ 초기 화면 범위 저장
+      const initialBounds = map.getBounds();
+
+      // ===== 줌 변경 시 범위 제한 =====
+      kakao.maps.event.addListener(map, "zoom_changed", () => {
+        const bounds = map.getBounds();
+        const sw = bounds.getSouthWest();
+        const ne = bounds.getNorthEast();
+        const initSW = initialBounds.getSouthWest();
+        const initNE = initialBounds.getNorthEast();
+
+        if (
+          sw.getLat() < initSW.getLat() ||
+          sw.getLng() < initSW.getLng() ||
+          ne.getLat() > initNE.getLat() ||
+          ne.getLng() > initNE.getLng()
+        ) {
+          map.setBounds(initialBounds); // 범위를 벗어나면 초기 범위로 되돌림
         }
-      });// 이건 이동
+      });
+
+      // ===== 드래그 후 범위 제한 =====
+      kakao.maps.event.addListener(map, "dragend", () => {
+        const bounds = map.getBounds();
+        const sw = bounds.getSouthWest();
+        const ne = bounds.getNorthEast();
+        const initSW = initialBounds.getSouthWest();
+        const initNE = initialBounds.getNorthEast();
+
+        let lat = map.getCenter().getLat();
+        let lng = map.getCenter().getLng();
+
+        // 남서 / 북동 체크
+        if (sw.getLat() < initSW.getLat()) lat += initSW.getLat() - sw.getLat();
+        if (sw.getLng() < initSW.getLng()) lng += initSW.getLng() - sw.getLng();
+        if (ne.getLat() > initNE.getLat()) lat -= ne.getLat() - initNE.getLat();
+        if (ne.getLng() > initNE.getLng()) lng -= ne.getLng() - initNE.getLng();
+
+        map.setCenter(new kakao.maps.LatLng(lat, lng));
+      });
+
+      
       
       const regionCenters = {
         서울: new kakao.maps.LatLng( 37.568420201077174, 127.25074789394824),
@@ -99,29 +130,18 @@ export default function MainMap({ setSelectedRegion, setSideOpen, setMapObj }) {
 
       // 이벤트는 kakao.maps.event.addListener로 붙이기
       kakao.maps.event.addListener(polygon, "click", () => {
-        const map = mapRef.current;
-        if (!map) return;
+          if (selectedPolygon.current && selectedPolygon.current !== polygon) {
+            selectedPolygon.current.setOptions({ fillOpacity: 0.2 });
+          }
+          selectedPolygon.current = polygon;
+          polygon.setOptions({ fillOpacity: 0.9 });
 
-        // 이전 선택된 폴리곤 초기화
-        if (selectedPolygon.current && selectedPolygon.current !== polygon) {
-          selectedPolygon.current.setOptions({ fillOpacity: 0.2 });
-        }
+          setSelectedRegion(data.name);
+          setSideOpen(true);
 
-        selectedPolygon.current = polygon;  // 현재 선택 폴리곤 설정
-          polygon.setOptions({ fillOpacity: 0.9 }); // 선택 색 채우기
-
-          setSelectedRegion(data.name);  // Index.jsx에 선택 지역 전달
-          setSideOpen(true);             // 사이드탭 열기
-
-        // 센터와 줌 이동
-        const center = regionCenters[data.name];
-        if (center) {
-          map.setCenter(center);
-          map.setLevel(data.zoomLevel || 11);
-        } else {
-          console.warn("regionCenters에 해당 지역 없음:", data.name);
-        }
-      });
+          const center = regionCenters[data.name];
+          if (center) map.setCenter(center);
+        });
 
 
           // 마우스 이벤트
