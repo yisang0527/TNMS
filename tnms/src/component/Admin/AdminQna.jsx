@@ -138,7 +138,7 @@ export default function AdminQnA() {
    };
 
    return (
-      <div className="flex-1 p-8 bg-gray-50">
+      <div className="flex-1 p-8">
          <div className="bg-white rounded-lg shadow p-6">
             {/* 탭 */}
             <div className="flex gap-2 mb-6 border-b">

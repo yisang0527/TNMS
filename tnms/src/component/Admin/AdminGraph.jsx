@@ -68,7 +68,7 @@ export default function AdminGraph() {
     };
 
     return (
-        <div className="flex-1 p-8 bg-gray-50">
+        <div className="flex-1 p-8">
             <div className="bg-white rounded-lg shadow p-6">
                 <div className="flex justify-between items-center mb-6">
                     <h2 className="text-2xl font-bold">그래프 범례 관리</h2>
