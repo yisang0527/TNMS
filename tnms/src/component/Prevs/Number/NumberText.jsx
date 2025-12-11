@@ -128,7 +128,7 @@ const emergencyLinks = [
 export default function NumberText() {
   return (
     <div>
-      <div className="max-w-[1250px] bg-[#FFFFFF] border border-[#333333] mx-auto p-[100px_50px_150px] pb-60 mt-20 mb-20">
+      <div className="max-w-[1250px] mx-auto mt-20 mb-20 p-[100px_50px_150px] pb-60 bg-[#FFFFFF] rounded-2xl shadow-xl border border-gray-100">
         <h2 className="text-[32px] font-bold mb-6 ml-[30px]">
           비상연락망
         </h2>

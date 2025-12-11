@@ -46,7 +46,7 @@ export default function Prev() {
 
     return (
         <div>
-            <div className="max-w-[1250px] bg-white border border-[#333333] mx-auto py-[100px] px-[50px] pb-[150px] mt-20 mb-20  ">
+            <div className="max-w-[1250px] mx-auto mt-20 mb-20 py-[100px] px-[50px] pb-[150px] bg-white border border-gray-100 rounded-2xl shadow-xl">
                 <p className="font-bold text-[32px] pb-10">자연재난행동요령</p>
 
                 {/* 버튼 영역 */}
@@ -56,7 +56,7 @@ export default function Prev() {
                             key={tab.key}
                             onClick={() => setSelected(tab.key)}
                             className={`w-[125px] h-[55px] border-2 bg-white shadow-[3px_3px_8px_0px_rgba(0,0,0,0.2)]
-                flex flex-col items-center justify-center relative cursor-pointer font-bold text-[20px]
+                flex flex-col items-center justify-center relative cursor-pointer font-bold text-[20px] rounded-md
                 ${selected === tab.key ? "border-[#75C1E6] border-2 text-[22px]" : "border-gray-300"}`}
                         >
 
@@ -64,7 +64,7 @@ export default function Prev() {
                             <img
                                 src={selected === tab.key ? tab.pickImg : tab.img}
                                 alt={tab.label}
-                                className="w-[50px] h-[50px] opacity-50 absolute z-0"
+                                className="w-[50px] h-[50px] opacity-50 absolute left-0 z-0"
                             />
 
                             {/* 텍스트 */}
