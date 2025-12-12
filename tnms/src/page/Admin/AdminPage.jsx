@@ -6,6 +6,7 @@ import AdminGraph from "../../component/Admin/AdminGraph";
 import AdminNotice from "../../component/Admin/AdminNotice";
 import AdminQna from "../../component/Admin/AdminQna";
 import AdminPopup from "../../component/Admin/AdminPopup";
+import AdminMain from "../../component/Admin/AdminMain"
 
 export default function AdminPage() {
     const { signout } = useAuth();
@@ -18,6 +19,8 @@ export default function AdminPage() {
         { id: "adminqna", label: "Q&A" },
         { id: "adminnotice1", label: "공지사항" },
         { id: "adminpopup", label: "팝업창 관리" },
+        { id: "adminmain", label: "메인페이지 관리" },
+        { id: "adminissues", label: "재난이슈 관리" },
     ];
 
     // 로그아웃 함수 수정
@@ -36,7 +39,11 @@ export default function AdminPage() {
             case "공지사항":
                 return <AdminNotice />;
             case "팝업창 관리":
-            return <AdminPopup />;
+                return <AdminPopup />;
+            case "메인페이지 관리":
+                return <AdminMain />;
+            case "재난이슈 관리": return <div>재난이슈 컴포넌트 미구현</div>;
+                /* return <AdminIssues />; */
             default:
                 return <div>메뉴를 선택하세요</div>;
         }

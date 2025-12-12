@@ -1,3 +1,6 @@
+// component/Main/sideTab.jsx
+
+import { useState, useEffect } from "react";
 import SeoulChart from "./Chart/SeoulChart";
 import GyeonggiChart from "./Chart/GyeonggiChart";
 import GangwonChart from "./Chart/GangwonChart";
@@ -11,6 +14,45 @@ import JejuChart from "./Chart/JejuChart";
 
 
 export default function SideTab({ isOpen, region, onClose, onOpen, mapObj, setSelectedRegion}) {
+  const [chartConfig, setChartConfig] = useState({});
+
+  // 기본 설정값
+  const defaultConfig = {
+    서울: { title: '서울 데이터 차트', subtitle: '수도권 중심지' },
+    경기도: { title: '경기도 데이터 차트', subtitle: '수도권 광역시' },
+    강원도: { title: '강원도 데이터 차트', subtitle: '산악 지역' },
+    충청남도: { title: '충청남도 데이터 차트', subtitle: '중부 서해안' },
+    충청북도: { title: '충청북도 데이터 차트', subtitle: '중부 내륙' },
+    경상남도: { title: '경상남도 데이터 차트', subtitle: '남부 해안' },
+    경상북도: { title: '경상북도 데이터 차트', subtitle: '동남부 내륙' },
+    전라남도: { title: '전라남도 데이터 차트', subtitle: '남서부 해안' },
+    전라북도: { title: '전라북도 데이터 차트', subtitle: '서남부 내륙' },
+    제주도: { title: '제주도 데이터 차트', subtitle: '남부 섬 지역' }
+  };
+
+  // 차트 설정 로드
+  useEffect(() => {
+    loadChartConfig();
+  }, []);
+
+  const loadChartConfig = () => {
+    try {
+      const saved = localStorage.getItem('chart-config');
+      
+      if (saved) {
+        setChartConfig(JSON.parse(saved));
+        console.log('✅ 차트 설정 로드 완료');
+      } else {
+        // 저장된 설정이 없으면 기본값 사용
+        setChartConfig(defaultConfig);
+        console.log('기본 설정 사용');
+      }
+    } catch (error) {
+      console.error('❌ 차트 설정 로드 실패:', error);
+      // 에러 발생 시 기본값 사용
+      setChartConfig(defaultConfig);
+    }
+  };
 
   const fillSeoul = () => {
     if (window.polygonsRef) {
@@ -33,6 +75,7 @@ export default function SideTab({ isOpen, region, onClose, onOpen, mapObj, setSe
       if (window.selectedPolygonRef) window.selectedPolygonRef.current = null;
     }
   };
+
   return (
     <>
       {/* 열기 버튼 */}
@@ -54,13 +97,14 @@ export default function SideTab({ isOpen, region, onClose, onOpen, mapObj, setSe
             const seoulCenter = new kakao.maps.LatLng(37.62808571674803, 127.25024225297835);
             mapObj.setCenter(seoulCenter);
             mapObj.setLevel(9);
-            }
-          }}
-  className="fixed right-0 top-[calc(100px+430px)] w-[30px] h-[100px] transform -translate-y-1/2 p-2 bg-[#D4EBF7] rounded shadow z-1600"
->
+          }
+        }}
+        className="fixed right-0 top-[calc(100px+430px)] w-[30px] h-[100px] transform -translate-y-1/2 p-2 bg-[#D4EBF7] rounded shadow z-1600"
+       >
           <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[15px] border-r-black"></div>
         </button>
       )}
+
       {/* 닫기 버튼 */}
       <button
         onClick={() => {
@@ -98,13 +142,12 @@ export default function SideTab({ isOpen, region, onClose, onOpen, mapObj, setSe
       >
         {isOpen && (
           <>
-            
-            
+            {/* 동적 차트 제목 표시 - 관리자 페이지에서 설정한 제목 사용 */}
+            <h2 className="text-4xl font-bold mb-5 text-[#333333]">
+              {chartConfig[region]?.title || region}
+            </h2>
 
-            {/* 선택 지역 이름 */}
-            <h2 className="text-4xl font-bold mb-5 text-[#333333]">{region}</h2>
-
-            {/* 선택 지역별 내용 */}
+            {/* 선택 지역별 차트 컴포넌트 */}
             {region === "서울" && <SeoulChart />}
             {region === "경기도" && <GyeonggiChart />}
             {region === "강원도" && <GangwonChart />}

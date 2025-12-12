@@ -23,7 +23,7 @@ export default function ChungnamChart() {
       .then((res) => res.json())
       .then((json) => setData(json));
   }, []);
- const legendColors = [ // 이건 색상표 색
+  const legendColors = [ // 이건 색상표 색
     { label: "좋음", color: "#10C525" },
     { label: "보통", color: "#F3FB00" },
     { label: "나쁨", color: "#FF941A" },
@@ -42,26 +42,26 @@ export default function ChungnamChart() {
 
   // ===== 색상 함수 =====
   const getColorByValue = (value, maxValue) => {
-  const ratio = value / maxValue;
+    const ratio = value / maxValue;
 
-  if (ratio <= 0.25) return "#10C525";   // 초록
-  if (ratio <= 0.5) return "#F3FB00";    // 노랑
-  if (ratio <= 0.75) return "#FF941A";   // 주황
-  return "#FF2C30";                      // 빨강
-};
+    if (ratio <= 0.25) return "#10C525";   // 초록
+    if (ratio <= 0.5) return "#F3FB00";    // 노랑
+    if (ratio <= 0.75) return "#FF941A";   // 주황
+    return "#FF2C30";                      // 빨강
+  };
 
   // ===== 차트 데이터 =====
   const chartConfigs = [
-  { label: "강풍", value: windValue, unit: "m/s", maxValue: 30, ticks: { count: 4 } },
-  { label: "호우", value: rainValue, unit: "mm", maxValue: 50, ticks: { count: 5 } },
-  { label: "폭설", value: snowValue, unit: "cm", maxValue: 50, ticks: { count: 5 } },
-  {label: "한파", value: tempValue, unit: "℃", minValue: -20, maxValue: 0, ticks: { count: 5 }  },
-  { label: "황사", value: dustValue, unit: "㎍/㎥", maxValue: 100, ticks: { stepSize: 25 } },
-  { label: "산불", value: fireValue, unit: "횟수", maxValue: 30, ticks: { stepSize: 10 } },
-  { label: "산사태", value: landslideValue, unit: "횟수", maxValue: 20, ticks: { stepSize: 5 } },
-];
+    { label: "강풍", value: windValue, unit: "m/s", maxValue: 30, ticks: { count: 4 } },
+    { label: "호우", value: rainValue, unit: "mm", maxValue: 50, ticks: { count: 5 } },
+    { label: "폭설", value: snowValue, unit: "cm", maxValue: 50, ticks: { count: 5 } },
+    { label: "한파", value: tempValue, unit: "℃", minValue: -20, maxValue: 0, ticks: { count: 5 } },
+    { label: "황사", value: dustValue, unit: "㎍/㎥", maxValue: 100, ticks: { stepSize: 25 } },
+    { label: "산불", value: fireValue, unit: "횟수", maxValue: 30, ticks: { stepSize: 10 } },
+    { label: "산사태", value: landslideValue, unit: "횟수", maxValue: 20, ticks: { stepSize: 5 } },
+  ];
 
-  
+
   return (
     <div className="flex flex-col items-center gap-6">
 
@@ -92,15 +92,15 @@ export default function ChungnamChart() {
               min: cfg.minValue ?? 0,
               max: cfg.maxValue,
               ticks: Array.isArray(cfg.ticks)
-      ? {
-          // ticks가 배열이면 -> includes로 필터링
-          callback: (value) => (cfg.ticks.includes(value) ? value : ""),
-        }
-      : {
-          // ticks가 객체이면 -> 그대로 Chart.js 옵션으로 사용
-          ...cfg.ticks, 
-        },
-  },
+                ? {
+                  // ticks가 배열이면 -> includes로 필터링
+                  callback: (value) => (cfg.ticks.includes(value) ? value : ""),
+                }
+                : {
+                  // ticks가 객체이면 -> 그대로 Chart.js 옵션으로 사용
+                  ...cfg.ticks,
+                },
+            },
             y: {
               ticks: { font: { size: 17, weight: "bold" }, color: "black" },
             },
@@ -116,7 +116,7 @@ export default function ChungnamChart() {
                   {
                     label: cfg.label,
                     data: [cfg.value],
-                     backgroundColor: getColorByValue(cfg.value, cfg.maxValue),
+                    backgroundColor: getColorByValue(cfg.value, cfg.maxValue),
                     borderRadius: 4,
                     barThickness: 25,
                   },
@@ -132,13 +132,13 @@ export default function ChungnamChart() {
         );
       })}
       <div className="flex gap-4 mt-4 justify-center">
-    {legendColors.map((lg) => (
-      <div key={lg.label} className="flex items-center gap-1">
-        <div className="w-4 h-4" style={{ backgroundColor: lg.color }}></div>
-        <div className="text-xs">{lg.label}</div>
+        {legendColors.map((lg) => (
+          <div key={lg.label} className="flex items-center gap-1">
+            <div className="w-4 h-4" style={{ backgroundColor: lg.color }}></div>
+            <div className="text-xs">{lg.label}</div>
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
     </div>
   );
 }
