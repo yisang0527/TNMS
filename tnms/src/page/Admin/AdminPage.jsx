@@ -15,9 +15,9 @@ export default function AdminPage() {
 
     const menuItems = [
         { id: "main", label: "메인 메뉴" },
-        { id: "admingraph", label: "범례설정" },
-        { id: "adminqna", label: "Q&A" },
-        { id: "adminnotice1", label: "공지사항" },
+        { id: "admingraph", label: "그래프 관리" },
+        { id: "adminqna", label: "Q&A 관리" },
+        { id: "adminnotice1", label: "공지사항 관리" },
         { id: "adminpopup", label: "팝업창 관리" },
         { id: "adminmain", label: "메인페이지 관리" },
         { id: "adminissues", label: "재난이슈 관리" },
@@ -32,11 +32,11 @@ export default function AdminPage() {
     // 현재 선택된 메뉴에 따라 컴포넌트 렌더링
     const renderContent = () => {
         switch (activeMenu) {
-            case "범례설정":
+            case "그래프 관리":
                 return <AdminGraph />;
-            case "Q&A":
+            case "Q&A 관리":
                 return <AdminQna />;
-            case "공지사항":
+            case "공지사항 관리":
                 return <AdminNotice />;
             case "팝업창 관리":
                 return <AdminPopup />;
