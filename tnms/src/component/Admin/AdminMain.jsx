@@ -159,7 +159,6 @@ function AdminChartManager() {
                 </span>
               </div>
             </div>
-
             {editingRegion === region ? (
               <div className="space-y-3">
                 <input
