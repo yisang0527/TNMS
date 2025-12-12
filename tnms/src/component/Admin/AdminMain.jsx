@@ -145,7 +145,7 @@ function AdminChartManager() {
       </div>
 
       {/* 지역별 설정 카드 */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
         {regions.map((region) => (
           <div
             key={region}
