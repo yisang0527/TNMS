@@ -135,5 +135,5 @@ export default function MainMap({ setSelectedRegion, setSideOpen, setMapObj }) {
     });
   }, [setSelectedRegion, setSideOpen]);
 
-  return <div ref={KAKAO} style={{ width: "100%", height: "100%" }} />;
+  return <div ref={KAKAO} className="w-[100vw] h-[100vh]" />;
 }

@@ -1,9 +1,9 @@
 /* 전체 Nav 박스 */
 .nav {
-  position: relative;
+  position: fixed;
   background-color: #ffffff;
   border-bottom: 2px solid #e8e8e8;
-  height: 90px;
+  height: 100px;
   width: 100%;
   display: flex;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -87,7 +87,7 @@
 /* 서브 메뉴 전체 박스 */
 .detailMenu {
   position: absolute;
-  top: 90px;
+  top: 100px;
   left: 0;
   width: 100%;
   height: 230px;
