@@ -133,6 +133,7 @@
   align-items: left;
   flex-direction: column;
 }
+
 .detailMenu ul:nth-child(2) {
   position: absolute;
   left: 228px;
@@ -148,6 +149,7 @@
   align-items: left;
   flex-direction: column;
 }
+
 .detailMenu ul:nth-child(4) {
   position: absolute;
   left: 668px;
@@ -155,6 +157,7 @@
   align-items: left;
   flex-direction: column;
 }
+
 .detailMenu ul:nth-child(5) {
   position: absolute;
   left: 902px;
@@ -229,17 +232,18 @@
 
 /* 반응형 디자인 */
 @media (max-width: 1300px) {
+
   .nav-inner,
   .sub-nap {
     width: 95%;
     padding: 0 20px;
   }
-  
+
   .navContainer {
     width: auto;
     gap: 20px;
   }
-  
+
   .navContainer li {
     font-size: 16px;
     padding: 10px 15px;
@@ -250,34 +254,34 @@
   .nav {
     height: 70px;
   }
-  
+
   .nav-inner {
     height: 70px;
   }
-  
+
   .logo {
     width: 100px;
   }
-  
+
   .navContainer {
     flex-wrap: wrap;
     gap: 10px;
   }
-  
+
   .navContainer li {
     font-size: 14px;
     padding: 8px 12px;
   }
-  
+
   .detailMenu {
     top: 70px;
   }
-  
+
   .sub-nap {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .detailMenu ul {
     width: 100%;
   }

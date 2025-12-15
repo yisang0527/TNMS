@@ -3,12 +3,12 @@
 export default function HelpText() {
     return (
 
-        <div className="max-w-[1250px] mx-auto mt-20 mb-20 p-[100px_50px_150px] pb-75 bg-[#FFFFFF] border border-gray-100 rounded-2xl shadow-xl">
+        <div className="w-[90%] max-w-[1250px] mx-auto mt-20 mb-20 p-[100px_50px_150px] pb-75 bg-[#FFFFFF] border border-gray-100 rounded-2xl shadow-xl">
             <h2 className="text-[32px] font-bold mb-[-10px]">
                 센터소개
             </h2>
 
-            <div className="w-[1150px] h-[200px] mt-10 border-t-3 border-black mx-auto grid place-items-center text-[18px] text-[#333333]"
+            <div className="w-full h-[200px] mt-10 border-t-3 border-black mx-auto grid place-items-center text-[18px] text-[#333333]"
                 style={{ backgroundColor: "#F5FCFE" }}>
                 크고 작은 재난을 경험하여 발생한 심리적 충격을 완화하고 재난을 경험하기 전 일상으로<br />
                 빠르게 복귀하실 수 있도록 여러 가지 재난심리회복지원 활동을 진행하고 있습니다.

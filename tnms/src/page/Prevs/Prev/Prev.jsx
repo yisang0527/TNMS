@@ -46,7 +46,7 @@ export default function Prev() {
 
     return (
         <div>
-            <div className="max-w-[1250px] mx-auto mt-20 mb-20 py-[100px] px-[50px] pb-[150px] bg-white border border-gray-100 rounded-2xl shadow-xl">
+            <div className="w-[90%] max-w-[1250px] mx-auto mt-20 mb-20 py-[100px] px-[50px] pb-[150px] bg-white border border-gray-100 rounded-2xl shadow-xl">
                 <p className="font-bold text-[32px] pb-10">자연재난행동요령</p>
 
                 {/* 버튼 영역 */}

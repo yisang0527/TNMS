@@ -24,13 +24,13 @@ const rawData = [
   { date: "779", value: 7.0, name: "경주 인근", region: "경상" },
 ];
 
-const regionOrder = ["수도권","강원","충청","전라","경상","한반도 중북부"];
+const regionOrder = ["수도권", "강원", "충청", "전라", "경상", "한반도 중북부"];
 
 const data = rawData.map(item => {
   const regionIndex = regionOrder.indexOf(item.region);
   return {
     // x축을 숫자로 하고 jitter 적용
-    x: regionIndex + Math.random() * 0.6 - 0.4, 
+    x: regionIndex + Math.random() * 0.6 - 0.4,
     y: item.value,
     date: item.date,
     name: item.name,
@@ -75,13 +75,13 @@ const CustomTooltip = ({ active, payload }) => {
 export default function ExampleScatter() {
   return (
     <div className="w-[1150px] h-[700px] mx-auto border border-[#DFDFDF] 
-    px-[20px] py-[30px] flex justify-center items-center">
+    px-5 py-[30px] flex justify-center items-center">
       <ScatterChart
         width={1200}
         height={650}
         margin={{ top: 50, right: 20, bottom: 20, left: 20 }}
       >
-        <CartesianGrid vertical={false} horizontal={true}/>
+        <CartesianGrid vertical={false} horizontal={true} />
 
         {/* X축 */}
         {/* XAxis는 category로 설정 */}
@@ -91,13 +91,13 @@ export default function ExampleScatter() {
           ticks={[0, 1, 2, 3, 4, 5]}
           tickFormatter={(tick) => regionOrder[tick]}
           interval={0}
-          tick={{ angle: -30, textAnchor: "end" , dy: 10}}
+          tick={{ angle: -30, textAnchor: "end", dy: 10 }}
           domain={[-0.5, 5.5]}
         />
 
         {/* Y축 */}
-        <YAxis 
-          dataKey="y" 
+        <YAxis
+          dataKey="y"
           name="규모"
           domain={[4, 8]}
           ticks={[4.0, 5.0, 6.0, 7.0, 8.0]}
@@ -115,7 +115,7 @@ export default function ExampleScatter() {
           data={data}
           shape={(props) => {
             const { cx, cy, payload } = props;
-            
+
             // 1️⃣ 점 크기
             const { y } = payload;
             let radius = 10; // 기본 5 (5.0~6.0)
@@ -141,7 +141,7 @@ export default function ExampleScatter() {
 
             // let fillColor = regionColors[payload.region] || "#12A2F0";
 
-            return <circle cx={cx} cy={cy} r={radius} fill={fillColor}/>;
+            return <circle cx={cx} cy={cy} r={radius} fill={fillColor} />;
           }}
         />
       </ScatterChart>
