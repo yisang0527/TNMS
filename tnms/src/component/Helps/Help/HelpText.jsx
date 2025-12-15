@@ -4,7 +4,7 @@ export default function HelpText() {
     return (
 
         <div className="w-[90%] max-w-[1250px] mx-auto mt-20 mb-20 p-[100px_50px_150px] pb-75 bg-[#FFFFFF] border border-gray-100 rounded-2xl shadow-xl">
-            <h2 className="text-[32px] font-bold mb-[-10px]">
+            <h2 className="text-[32px] font-bold">
                 센터소개
             </h2>
 
@@ -50,7 +50,7 @@ export default function HelpText() {
             <div>
                 <table className="mx-auto w-full max-w-[1500px]">
                     <thead>
-                        <tr className="border-t-2 border-black border-b-2 border-black h-[70px] text-[18px]">
+                        <tr className="border-t-2 border-b-2 h-[70px] text-[18px]">
                             <th className="px-4 py-3 text-center align-middle">지역</th>
                             <th className="px-4 py-3 text-center align-middle" style={{ backgroundColor: "#C4E4F5" }}>명칭</th>
                             <th className="px-4 py-3 text-center align-middle">전화번호</th>

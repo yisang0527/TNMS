@@ -146,7 +146,7 @@ export default function NumberText() {
               <img
                 src={item.img}
                 alt={item.name}
-                className="w-[200px] h-[80px] object-contain mb-3 border border-[#E0E0E0] rounded bg-white"
+                className="w-[200px] h-20 object-contain mb-3 border border-[#E0E0E0] rounded bg-white"
               />
 
               <div className="flex flex-row items-center justify-end gap-2">
