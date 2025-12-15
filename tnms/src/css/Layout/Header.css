@@ -1,6 +1,6 @@
 /* 전체 Nav 박스 */
 .nav {
-  position: fixed;
+  position: relative;
   background-color: #ffffff;
   border-bottom: 2px solid #e8e8e8;
   height: 100px;
