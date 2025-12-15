@@ -1,96 +1,63 @@
 // Header.jsx
 
-import '../../../css/Layout/Header.css';
-import { useState } from "react";
-import { Link } from "react-router-dom";
-
-import headerImg from "../../../../public/logo1.png"
-
-const Header = () => {
-  const menuLst = [
-    {
-      name: "재난 이슈",
-      subMenu: [
-        { name: "재난 이슈", link: "/issues" }]
-    },
-    {
-      name: "재난 통계",
-      subMenu: [
-        { name: "재난 통계", link: "/stats" }]
-    },
-    {
-      name: "재난예방대비",
-      subMenu: [
-        { name: "재난대비행동요령", link: "/prev" },
-        { name: "비상연락망", link: "/number" }]
-    },
-    {
-      name: "재난심리상담",
-      subMenu: [
-        { name: "상담센터소개", link: "/help" },
-        { name: "재난심리상담", link: "https://www.redcross.or.kr/recovery/recovery_support.do", external: true, },
-        { name: "재난심리 자가진단", link: "https://www.safekorea.go.kr/idsiSFK/neo/sfk/cs/pcm/cyb/SelfDgnssForm.jsp?menuSeq=566", external: true }]
-    },
-    {
-      name: "참여와신고",
-      subMenu: [
-        { name: "Q&A", link: "/qna" },
-        { name: "재난신고하기", link: "https://www.safetyreport.go.kr/#main", external: true },
-        { name: "공지사항", link: "/notice" }]
-    }
-  ];
-
-  // 현재 호버 중인 메뉴 이름
-  const [hoverMenu, setHoverMenu] = useState(null);
-
+export default function Header() {
   return (
-    <nav className="nav">
-      <div className="nav-inner">
-        <Link to="/">
-          <img src={headerImg} alt="Logo" className="logo" />
-        </Link>
+    <>
+      <div className="w-full h-[100px] bg-[#CCCCCC] relative">
+        <div className="w-[1000px] h-full mx-auto absolute top-0 right-[50%] translate-x-[50%]">
 
-        <ul className="navContainer">
-          {menuLst.map((v, idx) => (
-            <li
-              key={idx}
-              className={hoverMenu === v.name ? "active" : ""}
-              onMouseEnter={() => setHoverMenu(v.name)}
-              onMouseLeave={() => setHoverMenu(null)}
-            >
-              {v.name}
-            </li>
-          ))}
-        </ul>
-      </div>
+          <img src="/logo1.png" alt="Logo" className="h-[45px] absolute top-[50%] left-[-12%] translate-y-[-50%]" />
 
-      <div className="detailMenu">
-        <div className="sub-nap">
-          {menuLst.map((v, idx) => (
-            <ul
-              key={idx}
-              onMouseEnter={() => setHoverMenu(v.name)}
-              onMouseLeave={() => setHoverMenu(null)}
-              className={hoverMenu === v.name ? "show" : "hide"}
-            >
-              {v.subMenu.map((sub, subIdx) => (
-                <li key={subIdx}>
-                  {sub.external ? (
-                    <a href={sub.link} target="_blank" rel="noopener noreferrer">
-                      {sub.name}
-                    </a>
-                  ) : (
-                    <Link to={sub.link}>{sub.name}</Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          ))}
+          <ul className="h-full grid grid-cols-5 items-center font-bold text-[20px]">
+            <li className="text-center">재난 이슈</li>
+            <li className="text-center">재난 통계</li>
+            <li className="text-center">재난예방대비</li>
+            <li className="text-center">재난심리상담</li>
+            <li className="text-center">참여와 신고</li>
+          </ul>
         </div>
       </div>
-    </nav>
 
-  );
-};
+      <div className=" w-full h-[250px] bg-[#FFFFFF] absolute z-100">
+        <div className="w-[1000px] h-full mx-auto absolute top-0 right-[50%] translate-x-[50%]">
+          <ul className="h-full grid grid-cols-5 pt-10">
+            <li>
+              <ul>
+                <li className="text-center pb-10">재난 이슈</li>
+              </ul>
+            </li>
 
-export default Header;
+            <li>
+              <ul>
+                <li className="text-center pb-10">재난 통계</li>
+              </ul>
+            </li>
+
+            <li>
+              <ul>
+                <li className="text-center pb-10">자연재난행동요령</li>
+                <li className="text-center pb-10">비상연락망</li>
+              </ul>
+            </li>
+
+            <li>
+              <ul>
+                <li className="text-center pb-10">재난심리센터소개</li>
+                <li className="text-center pb-10">재난심리상담</li>
+                <li className="text-center pb-10">재난심리 자가진단</li>
+              </ul>
+            </li>
+
+            <li>
+              <ul>
+                <li className="text-center pb-10">Q&A</li>
+                <li className="text-center pb-10">재난신고하기</li>
+                <li className="text-center pb-10">공지사항</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </>
+  )
+}
