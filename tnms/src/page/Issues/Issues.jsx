@@ -6,7 +6,7 @@ import IssueMarkers from "../../component/Issues/IssueMarkers";
 
 export default function Issues() {
   const [selectedTab, setSelectedTab] = useState("bar");
-  const [selectedTab2, setSelectedTab2] = useState("civil-defense");
+  const [selectedTab2, setSelectedTab2] = useState("outdoor");
   const [mapInstance, setMapInstance] = useState(null);
 
   const outdoorPositions = [
@@ -109,7 +109,16 @@ export default function Issues() {
   { title: "효령초등학교 운동장", latlng: { lat: 36.15672015, lng: 128.5866156 } },
   { title: "대금고등학교 운동장", latlng: { lat: 36.98112346, lng: 127.5290362 } },
   { title: "쌍봉초등학교 운동장", latlng: { lat: 37.00261037, lng: 127.5423259 } },
-  { title: "삼성초등학교 운동장", latlng: { lat: 37.01986706, lng: 127.4966028 } }
+  { title: "삼성초등학교 운동장", latlng: { lat: 37.01986706, lng: 127.4966028 } },
+  { title: "삼리초등학교",latlng: { lat: 37.357997, lng: 127.324126 },},
+  { title: "강동초등학교",latlng: { lat: 37.785756, lng: 128.944332 },},
+  { title: "매산초등학교 운동장",latlng: { lat: 37.591066, lng: 127.845884 },},
+  { title: "횡계초등학교",latlng: { lat: 37.675993, lng: 128.711328 },},
+  { title: "전주성심여자중학교",latlng: { lat: 35.813290, lng: 127.150711 },},
+  { title: "결성초등학교",latlng: { lat: 36.524595, lng: 126.544183 },},
+  { title: "이리고등학교 운동장",latlng: { lat: 35.949357, lng: 126.955925 },},
+  { title: "조림초등학교",latlng: { lat: 36.738745, lng: 126.785197 },},
+  { title: "녹전초등학교",latlng: { lat: 37.148034, lng: 128.681488 },},
   ];
 
   const civilDefensePositions = [
@@ -241,6 +250,39 @@ export default function Issues() {
   title: "하이제주(지하 1층)",
   latlng: { lat: 33.51238133856093, lng: 126.56263346835107 },
 },
+{
+  title: "진로아파트 지하주차장 1층",
+  latlng: { lat: 37.373888, lng: 128.031975 },
+},
+{
+  title: "북면 주민대피시설 지상 1층",
+  latlng: { lat: 38.114549, lng: 128.199609 },
+},
+{
+  title: "남면행정복지센터",
+  latlng: { lat: 37.268952, lng: 128.740570 },
+},
+{
+  title: "쌍용아파트 지하주차장 1층",
+  latlng: { lat: 37.520195, lng: 129.120093 },
+},
+{
+  title: "아주아파트 지하주차장 1층",
+  latlng: { lat: 36.121856, lng: 128.090377 },
+},
+{
+  title: "현대아파트 104동 지하주차장 1층",
+  latlng: { lat: 35.413197, lng: 127.385242 },
+},
+{
+  title: "문화누리관 1층",
+  latlng: { lat: 35.723770, lng: 128.263213 },
+},
+{
+  title: "동일현대아파트 지하주차장 1층",
+  latlng: { lat: 37.136738, lng: 128.218606 },
+},
+
   ];
 
   const positions =
@@ -282,7 +324,7 @@ export default function Issues() {
       </p>
 
       {/* 대피소 지도 섹션 */}
-      <h4 className="text-[24px] font-bold text-[#333333] mb-[10px]">대피시설 분포</h4>
+      <h4 className="text-[24px] font-bold text-[#333333] mt-[70px] mb-[40px]">대피시설 분포</h4>
       <div className="mb-5">
         <button
           className={`inline-block text-[18px] font-bold w-[120px] h-[50px] border mr-4 ${
@@ -308,6 +350,21 @@ export default function Issues() {
 
       <IssueMap onMapReady={setMapInstance} />
       {mapInstance && <IssueMarkers map={mapInstance} positions={positions} type={selectedTab2} />}
+
+      {/* 지도 밑 박스 */}
+      {selectedTab2 === "outdoor" && (
+        <div className="max-w-[1250px] mx-auto mt-10 border border-gray-100 p-5">
+          <h5>옥외 대피소</h5>
+          <p>서울 3  인천 10  경기 6  강원 3  전남 9  전북 3  경북 32  경남 1  충북 1  충남 2</p>
+        </div>
+      )}
+
+      {selectedTab2 === "civil-defense" && (
+        <div className="max-w-[1250px] mx-auto mt-10 border border-gray-100 p-5">
+          <h5>민방위 대피소</h5>
+          <p>서울 5개  인천 2개  경기 6개  강원 3개  전남 3개  전북 4개  경북 3개  경남 1개  부산 3개</p>
+        </div>
+      )}
     </div>
   );
 }
