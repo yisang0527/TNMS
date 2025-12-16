@@ -355,7 +355,7 @@ export default function Issues() {
       {selectedTab2 === "outdoor" && (
         <div className="max-w-[1250px] mx-auto mt-10 border border-gray-100 p-5">
           <h5>옥외 대피소</h5>
-          <p>서울 3  인천 10  경기 6  강원 3  전남 9  전북 3  경북 32  경남 1  충북 1  충남 2</p>
+          <p>서울 3개 인천 10개  경기 6개  강원 3개  전남 9개  전북 3개  경북 32개  경남 1개  충북 1개  충남 2개</p>
         </div>
       )}
 
