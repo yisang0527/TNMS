@@ -28,12 +28,12 @@ export default function MainMap({ setSelectedRegion, setSideOpen, setMapObj }) {
 
       // 줌 변경 시 레벨 고정 + 중심 유지
       kakao.maps.event.addListener(map, "zoom_changed", () => {
-  const currentLevel = map.getLevel();
-  if (currentLevel > initialLevel) {
-    map.setLevel(initialLevel);        // 줌 제한
-    map.setCenter(initialCenter);      // 축소 시 초기 중심으로 복원
-  }
-});
+      const currentLevel = map.getLevel();
+      if (currentLevel > initialLevel) {
+        map.setLevel(initialLevel);        // 줌 제한
+        map.setCenter(initialCenter);      // 축소 시 초기 중심으로 복원
+      }
+    });
 
       // 드래그 제한: 화면 범위를 벗어나지 않도록 중심 조정
       kakao.maps.event.addListener(map, "drag", () => {
