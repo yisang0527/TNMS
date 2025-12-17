@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import "../../css/Main/MainMap.css";
 
 export default function MainMap({ setSelectedRegion, setSideOpen, setMapObj }) {
   const KAKAO = useRef(null);
@@ -135,5 +134,5 @@ export default function MainMap({ setSelectedRegion, setSideOpen, setMapObj }) {
     });
   }, [setSelectedRegion, setSideOpen]);
 
-  return <div ref={KAKAO} style={{ width: "100%", height: "100%" }} />;
+  return <div ref={KAKAO} className="w-full h-full" />;
 }

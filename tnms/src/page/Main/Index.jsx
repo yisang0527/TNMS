@@ -19,18 +19,19 @@ export default function Index() {
   }, [selectedRegion]);  // selectedRegion이 변경될 때마다 호출
 
   return (
-    <div className="w-full h-full relative">
+    <div className="fixed inset-0 overflow-hidden">
       {/* -------------------------------------
         🟦 메인 지도
         - 지역 클릭 시 selectedRegion 변경
         - 클릭하면 sideOpen(true)
       -------------------------------------- */}
-      <MainMap 
-      // selectedRegion={selectedRegion}
-      setSelectedRegion={setSelectedRegion}
-      setSideOpen={setSideOpen}
-      setMapObj={setMapObj}   // ⭐ 추가
-      />
+      <div className="absolute inset-0">
+        <MainMap
+          setSelectedRegion={setSelectedRegion}
+          setSideOpen={setSideOpen}
+          setMapObj={setMapObj}
+        />
+      </div>
       <SideTab
         isOpen={sideOpen}
         region={selectedRegion}
