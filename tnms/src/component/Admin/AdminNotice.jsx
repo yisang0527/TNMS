@@ -3,6 +3,10 @@
 import { useState, useEffect } from 'react';
 import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, deleteDoc, doc, updateDoc, serverTimestamp } from 'firebase/firestore';
 import { Plus, Trash2, Edit2, X, Check, Bell } from 'lucide-react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../firebase/config'
+
+console.log('🔥 AdminNotice mounted');
 
 const db = getFirestore();
 
@@ -19,15 +23,33 @@ export default function AdminNotice() {
 
     // 공지사항 실시간 조회
     useEffect(() => {
-        const q = query(collection(db, 'notices'), orderBy('createdAt', 'desc'));
-        const unsubscribe = onSnapshot(q, (snapshot) => {
-            const noticeList = snapshot.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            }));
-            setNotices(noticeList);
+        let unsubSnapshot = null;
+
+        const unsubAuth = onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                setNotices([]);
+                if (unsubSnapshot) unsubSnapshot();
+                return;
+            }
+
+            const q = query(
+                collection(db, 'notices'),
+                orderBy('createdAt', 'desc')
+            );
+
+            unsubSnapshot = onSnapshot(q, (snapshot) => {
+                const noticeList = snapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                setNotices(noticeList);
+            });
         });
-        return () => unsubscribe();
+
+        return () => {
+            unsubAuth();
+            if (unsubSnapshot) unsubSnapshot();
+        };
     }, []);
 
     // 공지사항 추가/수정
